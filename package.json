@@ -1,0 +1,22 @@
+{
+  "name": "plekhanov-lab",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kokosik11/plekhanov-lab.git"
+  },
+  "author": "Kokosik11 && EternalTDT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kokosik11/plekhanov-lab/issues"
+  },
+  "homepage": "https://github.com/Kokosik11/plekhanov-lab#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
