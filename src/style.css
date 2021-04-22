@@ -53,6 +53,6 @@ body {
 }
 .header-menu-list button:hover{
   background-color: #D0DEFF;
-  color: #326BFF;
+  color: #326BFF; 
   transition: 0.3s ease;
 }
