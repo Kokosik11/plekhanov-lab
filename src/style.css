@@ -56,3 +56,50 @@ body {
   color: #326BFF; 
   transition: 0.3s ease;
 }
+
+.mainpage {
+  margin-top: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: auto;
+  background: url(../src/img/background-mainpage.png) no-repeat right bottom;
+}
+.container h2 {
+  max-width: 611px;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 55px;
+  color: #2E2F33;
+  margin-bottom: 65px;
+  margin-top: 50px;
+}
+.blue {
+  color: #326BFF;
+}
+.red {
+  color: #FF4026;
+}
+.container .checkout {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 37px;
+  color: #000000;
+  margin-bottom: 35px;
+}
+.container span img {
+  margin-right: 25px;
+}
+.container h1 {
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 122px;
+  color: #326BFF;
+  margin-top: 35px;
+  margin-bottom: 39px;
+}
