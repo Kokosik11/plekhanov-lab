@@ -135,3 +135,107 @@ body {
   max-width: 564px;
   margin-top: 30px;
 }
+
+.services {
+  margin-top: 50px;
+}
+.container-serveces-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 61px;
+  color: #326BFF;
+  margin-bottom: 80px;
+}
+.container-serveces-title img {
+  margin-right: 10px;
+}
+.container-serveces {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 20px;
+  background: #EEF3FF url(../src/img/line.svg) left no-repeat;
+  margin-bottom: 65px;
+}
+.service-card-title {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+  color: #2E2F33;
+  margin-bottom: 34px;
+  padding-top: 55px;
+  cursor: pointer;
+  padding-left: 50px;
+}
+.service-card-subtitle {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 27px;
+  color: #5F626A;
+  max-width: 466px;
+  padding-left: 50px;
+}
+.service-card-title img {
+  margin-left: 10px;
+}
+.buttons {
+  display: flex;
+  padding-left: 50px;
+  padding-right: 40px;
+  margin-bottom: 55px;
+  margin-top: 60px;
+}
+.buttons .button {
+  background-color: #D0DEFF;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+  color: #326BFF;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-right: 40px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.buttons .button-outline {
+  background: #EEF3FF;
+  border: 2px solid #326BFF;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 34px;
+  padding-right: 34px;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+  color: #326BFF;
+  cursor: pointer;
+}
+.buttons .button:last-child {
+  margin-right: 0;
+}
+
+.buttons .solid:hover {
+  background-color: #326BFF;
+  color: #EEF3FF;
+  transition: 0.3s ease;
+}
