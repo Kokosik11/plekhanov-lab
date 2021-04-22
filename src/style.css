@@ -103,3 +103,35 @@ body {
   margin-top: 35px;
   margin-bottom: 39px;
 }
+
+.about-us {
+  margin-top: 52px;
+}
+.container-about-us {
+  max-width: 1200px;
+  margin: auto;
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-text {
+  display: flex;
+  flex-direction: column;
+}
+.card-title {
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 55px;
+  color: #326BFF;
+}
+.card-subtitle {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 0.03em;
+  color: #2E2F33;
+  max-width: 564px;
+  margin-top: 30px;
+}
