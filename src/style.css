@@ -233,9 +233,58 @@ body {
 .buttons .button:last-child {
   margin-right: 0;
 }
-
 .buttons .solid:hover {
   background-color: #326BFF;
   color: #EEF3FF;
   transition: 0.3s ease;
+}
+
+.projects {
+  margin-top: 70px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.project-card img {
+  max-width: 100%;
+}
+.container-projects {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.project-card-title {
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 55px;
+  color: #020516;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.project-card-subtitle {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 37px;
+  color: #3F4147;
+  max-width: 547px;
+  display: inline-block;
+}
+.year {
+  background-color: #E2EEFF;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 37px;
+  color: #326BFF;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-top: 35px;
 }
