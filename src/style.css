@@ -38,6 +38,9 @@ body {
   transition: 0.3s ease;
 }
 .header-menu-list button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
   min-width: 101px;
   min-height: 40px;
   background-color: #326BFF;
