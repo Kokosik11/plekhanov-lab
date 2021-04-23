@@ -167,6 +167,7 @@ body {
   border-radius: 20px;
   background: #EEF3FF url(../src/img/line.svg) left no-repeat;
   margin-bottom: 65px;
+  max-width: 570px;
 }
 .service-card-title {
   display: flex;
@@ -198,11 +199,15 @@ body {
   margin-bottom: 55px;
   margin-top: 60px;
 }
-.buttons .button {
-  background-color: #D0DEFF;
-  border-radius: 8px;
-  outline: none;
+.glow-on-hover {
   border: none;
+  outline: none;
+  color: #fff;
+  background-color: #D0DEFF;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 8px;
   font-weight: 500;
   font-size: 25px;
   line-height: 30px;
@@ -212,31 +217,63 @@ body {
   padding-left: 50px;
   padding-right: 50px;
   margin-right: 40px;
-  cursor: pointer;
+  transition: 0.3s ease;
+  max-width: 220px;
+  display: flex;
+  justify-content: center;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #fff;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
   transition: 0.3s ease;
 }
-.buttons .button-outline {
-  background: #EEF3FF;
-  border: 2px solid #326BFF;
-  box-sizing: border-box;
-  border-radius: 8px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 34px;
-  padding-right: 34px;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 30px;
-  color: #326BFF;
-  cursor: pointer;
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+  transition: 0.3s ease;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #D0DEFF;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
 }
 .buttons .button:last-child {
   margin-right: 0;
-}
-.buttons .solid:hover {
-  background-color: #326BFF;
-  color: #EEF3FF;
-  transition: 0.3s ease;
 }
 
 .projects {
@@ -337,7 +374,7 @@ input[type=text] {
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 25px;
-  padding-right: 239px;
+  padding-right: 220px;
   max-width: 412px;
   transition: 0.3s ease;
 }
