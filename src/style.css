@@ -437,5 +437,5 @@ input[type=text]:focus {
   height: 185px;
   border-radius: 8px;
   object-fit: cover;
-  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
