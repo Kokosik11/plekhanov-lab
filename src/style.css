@@ -476,3 +476,43 @@ input[type=text]:focus {
   object-fit: cover;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
+
+.blog_card-content:nth-child(1n) {
+  font-weight: 600;
+}
+
+.last-new .blog_card-content time,
+.last-new .blog_card-content .blog-card_text
+{
+  font-size: 20px;
+  color:#cbcbcb
+}
+
+.last-new .blog_card-content .blog-card_title {
+  font-size: 35px;
+  color: #326BFF;
+}
+
+.others-new .blog-card {
+  box-sizing: border-box;
+}
+
+.others-new .blog-card .blog_card-content {
+  display: flex;
+  padding: 29px 0 0; 
+  min-height: 179px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.others-new .blog_card-content time,
+.others-new .blog_card-content .blog-card_text
+{
+  font-size: 15px;
+  color:#cbcbcb
+}
+
+.others-new .blog_card-content .blog-card_title {
+  font-size: 22px;
+  color: #326BFF;
+}
