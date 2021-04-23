@@ -417,7 +417,7 @@ input[type=text]:focus {
 
 .blog {
   max-width: 1200px;
-  margin: 55px auto 38px;
+  margin: 55px auto 104px;
 }
 
 .blog-title {
@@ -516,3 +516,4 @@ input[type=text]:focus {
   font-size: 22px;
   color: #326BFF;
 }
+
