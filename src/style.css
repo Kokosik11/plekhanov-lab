@@ -517,3 +517,61 @@ input[type=text]:focus {
   color: #326BFF;
 }
 
+.dev-cycle {
+  background-image: url("./img/dev-cycle/bg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.dev-cycle_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 61px;
+  color: #326BFF;
+  margin-bottom: 80px;
+}
+
+.dev-cycle_title img {
+  margin-right: 10px;
+}
+
+.dev-cycle_cards {
+  max-width: 1146px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.dev-cycle_card {
+  background-color: rgba(123, 160, 253, 60%);
+  border-radius: 20px;
+  background-image: url("./img/dev-cycle/noise.png");
+  backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.25);
+  margin-top: 139px;
+}
+
+.dev-cycle_card:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
+.dev-cycle_card:last-child {
+  margin-bottom: 100px;
+}
+
+.dev-cycle_card-content {
+  color: #FFFFFF;
+  margin-left: 62px;
+}
+
+.dev-cycle_card-title {
+  font-weight: 600;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
