@@ -62,12 +62,21 @@ body {
 }
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   max-width: 1200px;
   margin: auto;
-  background: url(../src/img/background-mainpage.png) no-repeat right bottom;
 }
+
+.mainpage-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(./img/background-mainpage.png) no-repeat right bottom;
+  z-index: -1;
+}
+
 .container h2 {
   max-width: 611px;
   font-weight: 500;
@@ -588,6 +597,7 @@ input[type=text]:focus {
   position: absolute;
   width: 100%;
   min-height: 2000px;
+  z-index: 0;
 } 
 
 .ellipse {
@@ -655,18 +665,34 @@ input[type=text]:focus {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  z-index: 1;
 }
 
+
+
 .dev-cycle_card {
+  position: relative;
   background-color: rgba(123, 160, 253, 60%);
   border-radius: 20px;
-  background-image: url("./img/dev-cycle/noise.png");
   backdrop-filter: blur(20px);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 10px 30px rgba(50, 107, 255, 0.25);
   margin-top: 139px;
+}
+
+.dev-cycle_card-bg {
+  position: absolute;
+  background-image: url("./img/dev-cycle/noise.jpg");
+  background-size: 150px 150px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .08;
+  border-radius: 20px;
+  z-index: -1;
 }
 
 .dev-cycle_card:nth-child(2n) {
@@ -757,7 +783,6 @@ footer {
 }
 
 .footer-content {
-<<<<<<< HEAD
   padding-right: 56px;
 }
 .block-footer {
@@ -771,7 +796,3 @@ footer {
   bottom: 0;
   z-index: -1;
 }
-=======
-  padding-right: 26px;
-}
->>>>>>> c1c5772c2dae634a3284cb2b14595bbf66ff187e
