@@ -137,7 +137,7 @@ body {
 }
 
 .services {
-  margin-top: 50px;
+  margin-top: 300px;
 }
 .container-serveces-title {
   display: flex;
@@ -521,6 +521,66 @@ input[type=text]:focus {
   background-image: url("./img/dev-cycle/bg.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  position: relative;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  bottom: -1;
+  left: 0;
+  user-select: none;
+}
+
+.ellipses {
+  position: absolute;
+  width: 100%;
+  min-height: 2000px;
+} 
+
+.ellipse {
+  position: absolute;
+} 
+
+.ellipse:nth-child(1) {
+  top: 3%;
+  left: 15%;
+}
+
+.ellipse:nth-child(2) {
+  top: 9%;
+  right: 16%;
+  width: 197px;
+  height: 197px;
+}
+
+.ellipse:nth-child(3) {
+  top: 19%;
+  left: 40%;
+  width: 197px;
+  height: 197px;
+}
+
+.ellipse:nth-child(4) {
+  top: 44%;
+  left: 24%;
+}
+
+.ellipse:nth-child(5) {
+  top: 52%;
+  right: 16%;
+}
+
+.ellipse:nth-child(6) {
+  top: 73%;
+  left: 15%;
+}
+
+.ellipse:nth-child(7) {
+  top: 85%;
+  right: 16%;
+  width: 197px;
+  height: 197px;
 }
 
 .dev-cycle_title {
