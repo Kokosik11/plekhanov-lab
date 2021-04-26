@@ -199,6 +199,7 @@ body {
   margin-bottom: 55px;
   margin-top: 60px;
 }
+
 .glow-on-hover {
   border: none;
   outline: none;
@@ -221,6 +222,10 @@ body {
   max-width: 220px;
   display: flex;
   justify-content: center;
+}
+ 
+.secondary {
+  background-color: #EEF3FF;
 }
 
 .glow-on-hover:before {
@@ -265,6 +270,10 @@ body {
   top: 0;
   border-radius: 10px;
   transition: 0.3s ease;
+}
+
+.secondary:after {
+  background: #EEF3FF;
 }
 
 @keyframes glowing {
@@ -757,7 +766,6 @@ footer {
 }
 
 .footer-content {
-<<<<<<< HEAD
   padding-right: 56px;
 }
 .block-footer {
@@ -771,7 +779,3 @@ footer {
   bottom: 0;
   z-index: -1;
 }
-=======
-  padding-right: 26px;
-}
->>>>>>> c1c5772c2dae634a3284cb2b14595bbf66ff187e
