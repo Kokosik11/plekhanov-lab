@@ -481,6 +481,58 @@ input[type=text]:focus {
   font-weight: 600;
 }
 
+.blog-image {
+  position: relative;
+}
+
+.new-more {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #000000b0;
+  opacity: 0;
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  top: 0;
+  left: 0;
+  transition: .5s;
+}
+
+.new-more button {
+  background: none;
+  outline: none;
+  border: none;
+  color: #6a94ff;
+  font-weight: 700;
+  font-size: 20px;
+  border: 3px solid #6a94ff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  transition: .25s;
+}
+
+.others-new .new-more button {
+  padding: 7px 10px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 2px solid #6a94ff;
+}
+
+.new-more button:hover {
+  cursor: pointer;
+  border-color:#326BFF;
+  color: #326BFF;
+  transition: .25s;
+}
+
+.blog-image:hover .new-more {
+  opacity: 1;
+  transition: .5s;
+}
+
 .last-new .blog_card-content time,
 .last-new .blog_card-content .blog-card_text
 {
