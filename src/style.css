@@ -577,6 +577,7 @@ input[type=text]:focus {
 }
 
 footer {
+  position: relative;
   display: flex;
   flex-direction: row-reverse;
   margin-top: 90px;
@@ -607,8 +608,12 @@ footer {
 
 .footer-social li {
   margin: 0 4px;
+  transition: 0.6s ease;
 }
-
+.footer-social li:hover {
+  transform: rotate(360deg);
+  transition: 0.6s ease;
+}
 .footer-content li {
   list-style: none;
   margin-bottom: 17px;
@@ -628,16 +633,28 @@ footer {
 .footer-content ul a {
   text-decoration: none;
   color: #2E2F33;
-  transition: .25s;
+  transition: 0.3s ease;
+  font-weight: 500;
 }
 
 .footer-content ul a:hover {
   color: #2e2f33ce;
-  text-decoration: underline;
+  text-decoration: none;
   text-decoration-color: #2e2f338c;
-  transition: .25s;
+  transition: 0.3s ease;
 }
 
 .footer-content {
-  padding-right: 26px;
+  padding-right: 56px;
+}
+.block-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.map {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
 }
