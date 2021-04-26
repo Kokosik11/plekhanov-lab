@@ -637,3 +637,7 @@ footer {
   text-decoration-color: #2e2f338c;
   transition: .25s;
 }
+
+.footer-content {
+  padding-right: 26px;
+}
