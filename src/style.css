@@ -169,6 +169,7 @@ body {
   justify-content: space-between;
 }
 .service-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -178,6 +179,49 @@ body {
   margin-bottom: 65px;
   max-width: 570px;
 }
+
+.dropdown-menu {
+  display: none;
+}
+
+.service-card h3 {
+  margin: 10px 50px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.dropdown-menu-active {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #D0DEFF;
+  border-radius: 8px;
+  top: 85px;
+  box-shadow: 0px 4px 4px #D0DEFF;
+  width: 429px;
+}
+
+.dropdown-menu-active span {
+  padding-left: 15px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.dropdown-menu-active span:hover {
+  background-color: #bccdf5;
+}
+
+.dropdown-menu-active span:first-child:hover {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.dropdown-menu-active span:last-child:hover {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+
 .service-card-title {
   display: flex;
   align-items: center;

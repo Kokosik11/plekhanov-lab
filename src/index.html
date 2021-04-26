@@ -252,8 +252,17 @@
         </h2>
         <div class="container-serveces">
             <div class="service-card">
-                <span class="service-card-title">Разрабокта веб-приложения <img src="img/arrow-down.svg" alt="icon: arrow-down"></span>
-                <span class="service-card-subtitle">
+                <span class="service-card-title">
+                    Разрабокта веб-приложения <img data-id="1" class="dropdown-arrow" src="img/arrow-down.svg" alt="icon: arrow-down">
+                    <div data-id="1" class="dropdown-menu">
+                        <span data-id="1" class="dropdown-option">Одностраничное-приложение</span>
+                        <span data-id="2" class="dropdown-option">Многостраничное-приложение</span>
+                        <span data-id="3" class="dropdown-option">Интернет магазин</span>
+                        <span data-id="4" class="dropdown-option">Верстка</span>
+                    </div>
+                </span>
+                <h3 data-id="1" class="menu-title"></h3>
+                <span data-id="1" class="service-card-subtitle">
                     Полный цикл разработки вашего сайта.
                     От дизайна до продвижения
                 </span>
@@ -263,8 +272,17 @@
                 </div>
             </div>
             <div class="service-card">
-                <span class="service-card-title">Графический дизайн <img src="img/arrow-down.svg" alt="icon: arrow-down"></span>
-                <span class="service-card-subtitle">
+                <span class="service-card-title">
+                    Графический дизайн <img data-id="2" class="dropdown-arrow" src="img/arrow-down.svg" alt="icon: arrow-down">
+                    <div data-id="2" class="dropdown-menu">
+                        <span class="dropdown-option">Фото-обработка</span>
+                        <span class="dropdown-option">Печатная продукция</span>
+                        <span class="dropdown-option">Логотип</span>
+                        <span class="dropdown-option">Айдентика</span>
+                    </div>
+                </span>
+                <h3 data-id="2" class="menu-title"></h3>
+                <span data-id="2" class="service-card-subtitle">
                     Развивайте свой брэнд, а мы поможем
                     вам с этим
                 </span>
@@ -407,5 +425,6 @@
             </div>
         </footer>
     <script src="scripts/parallax.js"></script>
+    <script src="scripts/dropdown.js"></script>
 </body>
 </html>
