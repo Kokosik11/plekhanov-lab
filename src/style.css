@@ -137,7 +137,7 @@ body {
 }
 
 .services {
-  margin-top: 50px;
+  margin-top: 300px;
 }
 .container-serveces-title {
   display: flex;
@@ -481,6 +481,58 @@ input[type=text]:focus {
   font-weight: 600;
 }
 
+.blog-image {
+  position: relative;
+}
+
+.new-more {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #000000b0;
+  opacity: 0;
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  top: 0;
+  left: 0;
+  transition: .5s;
+}
+
+.new-more button {
+  background: none;
+  outline: none;
+  border: none;
+  color: #6a94ff;
+  font-weight: 700;
+  font-size: 20px;
+  border: 3px solid #6a94ff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  transition: .25s;
+}
+
+.others-new .new-more button {
+  padding: 7px 10px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 2px solid #6a94ff;
+}
+
+.new-more button:hover {
+  cursor: pointer;
+  border-color:#326BFF;
+  color: #326BFF;
+  transition: .25s;
+}
+
+.blog-image:hover .new-more {
+  opacity: 1;
+  transition: .5s;
+}
+
 .last-new .blog_card-content time,
 .last-new .blog_card-content .blog-card_text
 {
@@ -521,6 +573,66 @@ input[type=text]:focus {
   background-image: url("./img/dev-cycle/bg.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  position: relative;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  bottom: -1;
+  left: 0;
+  user-select: none;
+}
+
+.ellipses {
+  position: absolute;
+  width: 100%;
+  min-height: 2000px;
+} 
+
+.ellipse {
+  position: absolute;
+} 
+
+.ellipse:nth-child(1) {
+  top: 3%;
+  left: 15%;
+}
+
+.ellipse:nth-child(2) {
+  top: 9%;
+  right: 16%;
+  width: 197px;
+  height: 197px;
+}
+
+.ellipse:nth-child(3) {
+  top: 19%;
+  left: 40%;
+  width: 197px;
+  height: 197px;
+}
+
+.ellipse:nth-child(4) {
+  top: 44%;
+  left: 24%;
+}
+
+.ellipse:nth-child(5) {
+  top: 52%;
+  right: 16%;
+}
+
+.ellipse:nth-child(6) {
+  top: 73%;
+  left: 15%;
+}
+
+.ellipse:nth-child(7) {
+  top: 85%;
+  right: 16%;
+  width: 197px;
+  height: 197px;
 }
 
 .dev-cycle_title {
@@ -645,6 +757,7 @@ footer {
 }
 
 .footer-content {
+<<<<<<< HEAD
   padding-right: 56px;
 }
 .block-footer {
@@ -658,3 +771,7 @@ footer {
   bottom: 0;
   z-index: -1;
 }
+=======
+  padding-right: 26px;
+}
+>>>>>>> c1c5772c2dae634a3284cb2b14595bbf66ff187e
