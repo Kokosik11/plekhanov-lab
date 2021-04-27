@@ -1015,7 +1015,7 @@ footer {
 .anchor:nth-child(5) {
   display: block;
   position: absolute;
-  top: 86%;
+  top: 88%;
   left: -14.5px;
   font-weight: 500;
   width: 34px;
@@ -1078,4 +1078,20 @@ footer {
   background-color: #326BFF;
   opacity: 1;
   transition: 0.3s ease;
+}
+
+.anchor-title {
+  opacity: 0;
+  position: absolute;
+  font-weight: 500;
+  color: #56585c;
+  width: 150px;
+  left: 50px;
+  top: 7px;
+  transition: .3s;
+}
+
+.active-title {
+  opacity: 1;
+  transition: .3s;
 }
