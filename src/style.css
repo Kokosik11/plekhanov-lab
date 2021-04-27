@@ -9,14 +9,28 @@ html {
 }
 
 .header {
-  margin-top: 25px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  transition: all .3s ease;
+  background-color: #fff;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 11%);
+}
+.header.out {
+	transform: translateY(-100%);
 }
 .header-body {
   margin: auto;
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
-  max-height: 75px;
+  max-height: 100px;
+}
+
+main {
+  margin-top: 80px;
 }
 
 .header-menu {
