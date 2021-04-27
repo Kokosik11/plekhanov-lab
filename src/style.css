@@ -860,10 +860,11 @@ footer {
   position: fixed;
   top: 10%;
   left: 2%;
-  width: 10px;
+  width: 7px;
   height: 75vh;
   background-color: #e7e7e7;
   z-index: 3;
+  border-radius: 8px;
 }
 
 .progress {
@@ -873,6 +874,7 @@ footer {
   width: 100%;
   height: 0;
   background-color: #326BFF;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar {
