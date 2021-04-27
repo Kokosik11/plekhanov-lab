@@ -64,7 +64,7 @@ window.addEventListener('scroll', e => {
 const anchors = document.querySelectorAll(".anchor");
 
 anchors[0].onclick = () => {
-    window.scrollTo(0, 0);
+    window.location.hash = "#top";
 }
 
 anchors[1].onclick = () => {
