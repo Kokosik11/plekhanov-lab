@@ -24,13 +24,23 @@ window.addEventListener('scroll', e => {
         const anchor = document.querySelector('.anchor[data-id="4"]');
         anchor.classList.add("active-anchor")
     }
-
-    if(scrolled >= 100) {
+    
+    if(scrolled >= 85) {
         const anchor = document.querySelector('.anchor[data-id="5"]');
         anchor.classList.add("active-anchor")
     }
 
+    if(scrolled >= 100) {
+        const anchor = document.querySelector('.anchor[data-id="6"]');
+        anchor.classList.add("active-anchor")
+    }
+
     if(scrolled < 100) {
+        const anchor = document.querySelector('.anchor[data-id="6"]');
+        anchor.classList.remove("active-anchor")
+    }
+
+    if(scrolled < 85) {
         const anchor = document.querySelector('.anchor[data-id="5"]');
         anchor.classList.remove("active-anchor")
     }
@@ -72,5 +82,9 @@ anchors[3].onclick = () => {
 
 anchors[4].onclick = () => {
     window.location.hash = "#fourth";
+}
 
+
+anchors[5].onclick = () => {
+    window.location.hash = "#fifth";
 }

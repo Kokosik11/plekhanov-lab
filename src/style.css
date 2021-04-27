@@ -1015,7 +1015,7 @@ footer {
 .anchor:nth-child(5) {
   display: block;
   position: absolute;
-  top: 97%;
+  top: 86%;
   left: -14.5px;
   font-weight: 500;
   width: 34px;
@@ -1025,6 +1025,29 @@ footer {
 }
 
 .anchor:nth-child(5)::before {
+  content: "Наши проекты";
+  position: absolute;
+  width: 150px;
+  left: 50px;
+  top: 7px;
+  color: #56585c;
+  opacity: 0;
+  transition: 0.25s;
+}
+
+.anchor:nth-child(6) {
+  display: block;
+  position: absolute;
+  top: 97%;
+  left: -14.5px;
+  font-weight: 500;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #e7e7e7;
+}
+
+.anchor:nth-child(6)::before {
   content: "Заказать работу";
   position: absolute;
   width: 150px;
