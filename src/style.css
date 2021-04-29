@@ -42,6 +42,10 @@ main {
   padding: 0;
 }
 
+.header-menu-list img {
+  max-width: 100%;
+}
+
 .header-menu-list a {
   text-decoration: none;
   font-style: normal;
@@ -787,6 +791,10 @@ input[type=text]:focus {
   font-weight: 600;
   font-size: 40px;
   margin-bottom: 30px;
+}
+
+.dev-cycle_card-text {
+  font-size: 19px;
 }
 
 footer {
