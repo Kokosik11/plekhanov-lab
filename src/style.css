@@ -1169,3 +1169,7 @@ footer {
   opacity: 1;
   transition: .3s;
 }
+
+time span {
+  color:rgba(0, 118, 252, 0.404);
+}
