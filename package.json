@@ -15,9 +15,5 @@
   "bugs": {
     "url": "https://github.com/Kokosik11/plekhanov-lab/issues"
   },
-  "homepage": "https://github.com/Kokosik11/plekhanov-lab#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.7"
-  }
+  "homepage": "https://github.com/Kokosik11/plekhanov-lab#readme"
 }
