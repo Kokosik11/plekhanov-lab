@@ -1,0 +1,449 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plekhanov Lab</title>
+    <link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'mainpage/css/normalize.css' %}">
+    <link rel="icon" type="image/png" href="../img/logo.ico">
+    <link rel="stylesheet" href="{% static 'mainpage/css/animate.css' %}">
+</head>
+<body>
+
+    <div class="scroll">
+        <div class="progress"></div>
+        
+        <div class="anchors">
+            <div data-id="1" class="anchor">
+                <div class="anchor-title active-anchor">В начало</div>
+            </div>
+            <div data-id="2" class="anchor">
+                <div class="anchor-title">Кто мы</div>
+            </div>
+            <div data-id="3" class="anchor">
+                <div class="anchor-title">Разработка</div>
+            </div>
+            <div data-id="4" class="anchor">
+                <div class="anchor-title">Услуги</div>
+            </div>
+            <div data-id="5" class="anchor">
+                <div class="anchor-title">Наши проекты</div>
+            </div>
+            <div data-id="6" class="anchor">
+                <div class="anchor-title">Заказать работу</div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="header-body">
+            <ul class="header-menu">
+                <li class="header-menu-list">
+                    <a href="https://reu.by/" class="header-menu-link" target="_blank">
+                        <img src="img/reu-logo.svg" alt="icon: reu">
+                    </a>
+                </li>
+                <li class="header-menu-list">
+                    <a href="/" class="header-menu-link">
+                        <img src="img/lab-logo.svg" alt="icon: lab">
+                    </a> 
+                </li>
+            </ul>
+            <ul class="header-menu">
+                <li class="header-menu-list">
+                    <a href="#first" class="header-menu-link">Кто мы?</a>
+                </li>
+                <li class="header-menu-list">
+                    <a href="#second" class="header-menu-link">Разработка</a>
+                </li>
+                <li class="header-menu-list">
+                    <a href="#third" class="header-menu-link">Наши услуги</a>
+                </li>
+                <li class="header-menu-list">
+                    <a href="#fourth" class="header-menu-link">Проекты</a>
+                </li>
+                <li class="header-menu-list">
+                    <a href="#fifth" class="header-menu-link">Заказать работу</a>
+                </li>
+                <li class="header-menu-list">
+                    <button class="button">Вперед!</button>
+                </li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+    <main>
+    <section class="mainpage">
+        <div class="container">
+            <img src="img/background-mainpage.png" class="mainpage-img wow bounceInRight" alt="image: abstract">
+            <h2 class="wow fadeInUp"><span class="blue wow fadeIn">Лаборатория</span>
+                графического дизайна и
+                web-проектирования РЭУ
+                им. Плеханова, Минский филиал
+            </h2>
+            <span class="checkout wow fadeInLeft">
+                <img src="img/check.svg" alt="icon: check mark">
+                Быстро и качественно
+            </span>
+            <span class="checkout wow fadeInLeft">
+                <img src="img/check.svg" alt="icon: check mark">
+                Поддержка на всех стадиях
+            </span>
+            <span class="checkout wow fadeInLeft">
+                <img src="img/check.svg" alt="icon: check mark">
+                Индивидуальность
+            </span>
+            <h1 class="wow fadeIn">
+                <span class="red">10+</span> успешных
+                проектов
+            </h1>
+        </div>
+    </section>
+
+    <section class="about-us">
+        <div class="container-about-us">
+            <div class="card">
+                <div class="card-text">
+                    <span class="card-title">Лаборатория</span>
+                    <span class="card-subtitle">
+                        Лаборатория графического дизайна 
+                        и web-проектирования РЭУ имени 
+                        Плеханова, Минский филиал - место современных
+                        решений в области IT технологий. 
+                    </span>
+                </div>
+                <img src="img/scientist.svg" alt="image: scientist" class="wow bounceInRight">
+            </div>
+            <div class="card">
+                <img src="img/team.svg" alt="image: team" class="wow bounceInLeft">
+                <div class="card-text">
+                    <span id="first" class="card-title anchor-us">Кто мы?</span>
+                    <span class="card-subtitle">
+                        Наша команда - сплоченный коллектив 
+                        целеустремленных разработчиков и 
+                        дизайнеров, которые выполняют свою 
+                        работу с душой и энтузиазмом.
+                        Лаборатория графического дизайна и 
+                        web-проектирования РЭУ имени 
+                        Плеханова, Минский филиал - место со своей 
+                        атмосферой и студенческим задором.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog">
+        <h2 class="blog-title">Блог лаборатории</h2>
+        
+        <div class="blog-content">
+            <div class="last-new">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="img/blog-lab.png" alt="blog-news-1" class="blog-card_image wow fadeInUp">
+                        <div class="new-more">
+                            <button>Подробнее</button>
+                        </div>
+                    </div>
+                    <div class="blog_card-content">
+                        <time>20 апреля, 2021</time>
+                        <div class="blog-card_title">Открытие лаборатории Приходите!</div>
+                        <div class="blog-card_text">
+                            Очень мега-интересный текст а,
+                            который хочется читать всегда так:
+                            в метро, в самолете, в машине и,
+                            в дороге, короче говоря в дороге
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="others-new">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="img/blog-lab.png" alt="blog-news-1" class="blog-card_image wow fadeInUp">
+                        <div class="new-more">
+                            <button>Подробнее</button>
+                        </div>
+                    </div>
+                    <div class="blog_card-content">
+                        <time>20 апреля, 2021</time>
+                        <div class="blog-card_title">Открытие лаборатории Приходите!</div>
+                        <div class="blog-card_text">
+                            Очень мега-интересный текст а,
+                            который хочется читать всегда так:
+                            в метро, в самолете, в машине и,
+                            в дороге, короче говоря в дороге
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="img/blog-lab.png" alt="blog-news-1" class="blog-card_image wow fadeInUp">
+                        <div class="new-more">
+                            <button>Подробнее</button>
+                        </div>
+                    </div>
+                    <div class="blog_card-content">
+                        <time>20 апреля, 2021</time>
+                        <div class="blog-card_title">Открытие лаборатории Приходите!</div>
+                        <div class="blog-card_text">
+                            Очень мега-интересный текст а,
+                            который хочется читать всегда так:
+                            в метро, в самолете, в машине и,
+                            в дороге, короче говоря в дороге
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="img/blog-lab.png" alt="blog-news-1" class="blog-card_image wow fadeInUp">
+                        <div class="new-more">
+                            <button>Подробнее</button>
+                        </div>
+                    </div>
+                    <div class="blog_card-content">
+                        <time>20 апреля, 2021</time>
+                        <div class="blog-card_title">Открытие лаборатории Приходите!</div>
+                        <div class="blog-card_text">
+                            Очень мега-интересный текст а,
+                            который хочется читать всегда так:
+                            в метро, в самолете, в машине и,
+                            в дороге, короче говоря в дороге
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dev-cycle">
+        <h2 class="dev-cycle_title" id="second">
+            <img src="img/dev-cycle/cycle.png" alt="cycle">
+            Полный цикл разработки
+        </h2>
+
+        <div class="ellipses">
+            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
+        </div>
+
+        <div class="dev-cycle_cards">
+            <div class="dev-cycle_card">
+                <div class="dev-cycle_card-bg"></div>
+                <div class="dev-cycle_card-content">
+                    <div class="dev-cycle_card-title wow fadeInDown">Прототипирование дизайна</div>
+                    <div class="dev-cycle_card-text wow fadeInUp">
+                        Полная работа над дизайном десктопного или мобильного приложения. Мы создаем
+                        логотипы, svg-иллюстрации, используем 
+                        UI & UX практики. Уникальный дизайн,
+                        созданный с любовью. Вы полюбите наш 
+                        дизайн также, как любим его мы.
+                    </div>
+                </div>
+                <img src="./img/dev-cycle/Development-rafiki 1.png" alt="" class="wow fadeInRight">
+            </div>
+            <div class="dev-cycle_card">
+                <div class="dev-cycle_card-bg"></div>
+                <div class="dev-cycle_card-content">
+                    <div class="dev-cycle_card-title wow fadeInDown">Разаботка технической части</div>
+                    <div class="dev-cycle_card-text wow fadeInUp">
+                        Frontend и Backend разработка: python django, react.js, angular.js, vue.js, typescript, MySql, postgreSQL.
+                        <br><br>
+                        Использование лучших практик разработки веб-приложений, функциональные и объектно-ориентированные технологии.
+                    </div>
+                </div>
+                <img src="./img/dev-cycle/Software engineer-pana 1.png" alt="" class="wow fadeInLeft">
+            </div>
+            <div class="dev-cycle_card">
+                <div class="dev-cycle_card-bg"></div>
+                <div class="dev-cycle_card-content">
+                    <div class="dev-cycle_card-title wow fadeInDown">Графический дизайн и айдентика</div>
+                    <div class="dev-cycle_card-text wow fadeInUp">
+                        Персонализированное брендирование, графический дизайн, дизайн логотипа, айдентика. Наслаждайтесь.
+                    </div>
+                </div>
+                <img src="./img/dev-cycle/Website Creator-rafiki 1.png" alt="" class="wow fadeInRight">
+            </div>
+        </div>
+        <img class="wave" src="./img/dev-cycle/wave.png" alt="wave">
+    </section>
+
+    <section class="services" id="third">
+        <h2 class="container-serveces-title">
+            <img src="img/pencil.png" alt="image: pencil">
+            Наши услуги
+        </h2>
+        <div class="container-serveces">
+            <div class="service-card wow fadeInUp">
+                <span class="service-card-title">
+                    Разрабокта веб-приложения <img data-id="1" class="dropdown-arrow" src="img/arrow-down.svg" alt="icon: arrow-down">
+                    <div data-id="1" class="dropdown-menu">
+                        <span data-id="1" class="dropdown-option">Одностраничное-приложение</span>
+                        <span data-id="2" class="dropdown-option">Многостраничное-приложение</span>
+                        <span data-id="3" class="dropdown-option">Интернет магазин</span>
+                        <span data-id="4" class="dropdown-option">Верстка</span>
+                    </div>
+                </span>
+                <h3 data-id="1" class="menu-title"></h3>
+                <span data-id="1" class="service-card-subtitle">
+                    Полный цикл разработки вашего сайта.
+                    От дизайна до продвижения
+                </span>
+                <div class="buttons">
+                    <button class="glow-on-hover">Заказать</button>
+                    <button class="glow-on-hover secondary">Подробнее</button>
+                </div>
+            </div>
+            <div class="service-card wow fadeInUp">
+                <span class="service-card-title">
+                    Графический дизайн <img data-id="2" class="dropdown-arrow" src="img/arrow-down.svg" alt="icon: arrow-down">
+                    <div data-id="2" class="dropdown-menu">
+                        <span class="dropdown-option">Фото-обработка</span>
+                        <span class="dropdown-option">Печатная продукция</span>
+                        <span class="dropdown-option">Логотип</span>
+                        <span class="dropdown-option">Айдентика</span>
+                    </div>
+                </span>
+                <h3 data-id="2" class="menu-title"></h3>
+                <span data-id="2" class="service-card-subtitle">
+                    Развивайте свой брэнд, а мы поможем
+                    вам с этим
+                </span>
+                <div class="buttons">
+                    <button class="glow-on-hover">Заказать</button>
+                    <button class="glow-on-hover secondary">Подробнее</button>
+                </div>
+            </div>
+            <div class="service-card wow fadeInUp">
+                <span class="service-card-title">Seo/smm продвижение</span>
+                <span class="service-card-subtitle">
+                    Ни один, даже самый лучший сайт не
+                    может без поисковой оптимизации.
+                    Мы оптимизируем его за вас!
+                </span>
+                <div class="buttons">
+                    <button class="glow-on-hover">Заказать</button>
+                    <button class="glow-on-hover secondary">Подробнее</button>
+                </div>
+            </div>
+            <div class="service-card wow fadeInUp">
+                <span class="service-card-title">Веб-дизайн (UI & UX)</span>
+                <span class="service-card-subtitle">
+                    Уникальный дизайн для вашего
+                    сайта/приложения
+                </span>
+                <div class="buttons">
+                    <button class="glow-on-hover">Заказать</button>
+                    <button class="glow-on-hover secondary">Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="fourth">
+        <h2 class="container-serveces-title">
+            Наши проекты
+        </h2>
+        <div class="container-projects">
+            <div class="project-card">
+                <img src="img/grifons.png" alt="image: grifons" class="wow fadeInLeft">
+                <h3 class="project-card-title wow fadeInUp">Грифоны</h3>
+                <span class="project-card-subtitle wow fadeInUp">
+                    Сайт для минской любительской 
+                    хоккейной лиги "Кубок Грифонов"
+                </span>
+                <div class="year wow fadeInUp">2021</div>
+            </div>
+            <div class="project-card">
+                <img src="img/lab.png" alt="image: laboratory" class="wow fadeInRight">
+                <h3 class="project-card-title wow fadeInUp">Лаборатория</h3>
+                <span class="project-card-subtitle wow fadeInUp">
+                    Сайт лаборатории графического
+                    дизайна и веб-проектирования....
+                </span>
+                <div class="year wow fadeInUp">2021</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="form" id="fifth">
+        <div class="container-form">
+            <div class="text">
+                <form action="#" class="form-feedback wow bounceInLeft">
+                    <h2>Свяжитесь с нами!</h2>
+                    <span>Как вас зовут?</span>
+                    <input type="text" name="name" id="input-name" placeholder="Введите ваше имя">
+                    <span>Ваш номер телефона</span>
+                    <input type="text" name="telephone" id="input-tel" placeholder="Введите ваш номер телефона">
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+            <img src="img/astronaut.svg" alt="image: astronaut" class="wow bounceInRight">
+        </div>
+    </section>
+    </main>
+        
+
+        <footer>
+            <div class="map wow fadeInUp">
+                <img src="img/map.png" alt="image: map">
+            </div>
+
+            <div class="footer-content wow fadeInRight">
+                <img src="./img/lab-logo.svg" width="92px" alt="lab-logo">
+
+                <div class="footer-contacts">
+                    <h3>Заказать работу</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="mailto:lab@reu.by">lab@reu.by</a></li>
+                            <li><a href="tel:+375298769456">+375298769456</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-language">
+                    <h3>Язык</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="?ru">Русский</a></li>
+                            <li><a href="?en">English</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-social">
+                    <h3>Социальное</h3>
+                    <nav>
+                        <ul>
+                            <li><a target="_blank" href="https://linkedin.com/"><img src="./img/social-icons/linkedin.svg" alt="linkedin"></a></li>
+                            <li><a target="_blank" href="https://dribbble.com/"><img src="./img/social-icons/dribbble.svg" alt="dribbble"></a></li>
+                            <li><a target="_blank" href="https://instagram.com/"><img src="./img/social-icons/instagram.svg" alt="instagram"></a></li>
+                            <li><a target="_blank" href="https://facebook.com/"><img src="./img/social-icons/facebook.svg" alt="facebook"></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    <script src="{% static 'mainpage/scripts/parallax.js' %}"></script>
+    <script src="{% static 'mainpage/scripts/dropdown.js' %}"></script>
+    <script src="{% static 'mainpage/scripts/scrollbar.js' %}"></script>
+    <script src="{% static 'mainpage/scripts/wow.min.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'mainpage/scripts/header.js' %}"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>
