@@ -39,7 +39,7 @@
 
     <header class="header">
         <nav class="header-body">
-            <ul class="header-menu">
+            <ul data-type="icons" class="header-menu">
                 <li class="header-menu-list">
                     <a href="https://reu.by/" class="header-menu-link" target="_blank">
                         <img src="img/reu-logo.svg" alt="icon: reu">
@@ -51,7 +51,7 @@
                     </a> 
                 </li>
             </ul>
-            <ul class="header-menu">
+            <ul data-type="links" class="header-menu">
                 <li class="header-menu-list">
                     <a href="#first" class="header-menu-link">Кто мы?</a>
                 </li>
@@ -71,6 +71,8 @@
                     <button class="button">Вперед!</button>
                 </li>
             </ul>
+
+            <!-- <div data-type="burger" class="burger-menu"></div> -->
         </nav>
         </div>
     </header>
@@ -78,7 +80,7 @@
     <main>
     <section class="mainpage">
         <div class="container">
-            <div class="mainpage-img wow bounceInRight"></div>
+            <img src="img/background-mainpage.png" class="mainpage-img wow bounceInRight"></img>
             <h2 class="wow fadeInUp"><span class="blue wow fadeIn">Лаборатория</span>
                 графического дизайна и
                 web-проектирования Минского филиала РЭУ
@@ -375,7 +377,7 @@
     <section class="form" id="fifth">
         <div class="container-form">
             <div class="text">
-                <form action="#" class="form-feedback wow bounceInLeft">
+                <form action="#" style="max-width: 700px;" class="form-feedback wow bounceInLeft">
                     <h2>Свяжитесь с нами!</h2>
                     <span>Как вас зовут?</span>
                     <input type="text" name="name" id="input-name" placeholder="Введите ваше имя">

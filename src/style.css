@@ -23,8 +23,8 @@ html {
 }
 .header-body {
   margin: auto;
-  max-width: 1180px;
   display: flex;
+  max-width: 1180px;
   justify-content: space-between;
   max-height: 100px;
   padding-right: 10px;
@@ -80,6 +80,12 @@ main {
   transition: 0.3s ease;
 }
 
+@media (max-width: 1320px) {
+  .header-body {
+    justify-content: center;
+  }
+}
+
 .mainpage {
   margin-top: 15px;
 }
@@ -93,14 +99,22 @@ main {
 }
 
 .mainpage-img {
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  right: -150px;
   position: absolute;
-  right: -150px;
-  background: url(./img/background-mainpage.png) no-repeat right bottom;
+  margin-left: 600px;
+  right: 0;
+  top: 150px;
   z-index: -1;
+}
+
+
+@media (max-width: 860px) {
+  .mainpage-img {
+    display: none;
+  }
+
+  .mainpage h2 {
+    text-align: center;
+  }
 }
 
 .container h2 {
@@ -425,6 +439,13 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+
+@media (max-width: 1080px) {
+  .container-form {
+    flex-direction: column;
+  }
+}
+
 .text {
   display: flex;
   flex-direction: column;
@@ -786,6 +807,7 @@ input[type=text]:focus {
 .dev-cycle_card-content {
   color: #FFFFFF;
   margin-left: 62px;
+  max-width: 400px;
 }
 
 .dev-cycle_card-title {
@@ -796,6 +818,32 @@ input[type=text]:focus {
 
 .dev-cycle_card-text {
   font-size: 19px;
+}
+
+@media (max-width: 972px) {
+  .dev-cycle_cards {
+    max-width: 600px;
+  }
+
+  .dev-cycle_card-title {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .dev-cycle_card-content {
+    text-align: center;
+    margin: 0;
+    max-width: 500px;
+  }
+
+  .dev-cycle_card-text {
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+  }
+
+  .dev-cycle_card, .dev-cycle_card:nth-child(2n) {
+    flex-direction: column;
+  }
 }
 
 footer {
@@ -917,6 +965,11 @@ footer {
   }
 }
 
+.burger-menu {
+  background-color: #00ffd5;
+  width: 97px;
+}
+
 @media (max-width: 1061px) {
   .blog-content {
     justify-content: center;
@@ -952,6 +1005,18 @@ footer {
     justify-content: center;
     align-items: center;
     max-width: 100%;
+  }
+
+  .header-body {
+    justify-content: space-between;
+  }
+
+  .header-menu[data-type="icons"] {
+    padding-left: 20px;
+  }
+
+  .header-menu[data-type="links"] {
+    display: none;
   }
 }
 
