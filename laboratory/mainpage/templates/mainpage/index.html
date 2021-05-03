@@ -143,6 +143,7 @@
         
         <div class="blog-content">
             <div class="last-new">
+                {% for post in heading %}
                 <div class="blog-card">
                     <div class="blog-image">
                         <img src="img/blog-lab.png" alt="blog-news-1" class="blog-card_image wow fadeInUp">
@@ -151,19 +152,18 @@
                         </div>
                     </div>
                     <div class="blog_card-content">
-                        <time>20 апреля, 2021</time>
-                        <div class="blog-card_title">Открытие лаборатории Приходите!</div>
+                        <time>{{ post.created_on }}</time>
+                        <div class="blog-card_title">{{ post.title }}</div>
                         <div class="blog-card_text">
-                            Очень мега-интересный текст а,
-                            который хочется читать всегда так:
-                            в метро, в самолете, в машине и,
-                            в дороге, короче говоря в дороге
+                            {{ post.content|truncatewords:22 }}
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
             
             <div class="others-new">
+                {% for post in default %}
                 <div class="blog-card">
                     <div class="blog-image">
                         <img src="img/blog-lab.png" alt="blog-news-1" class="blog-card_image wow fadeInUp">
@@ -172,52 +172,14 @@
                         </div>
                     </div>
                     <div class="blog_card-content">
-                        <time>20 апреля, 2021</time>
-                        <div class="blog-card_title">Открытие лаборатории Приходите!</div>
+                        <time>{{ post.created_on }}</time>
+                        <div class="blog-card_title">{{ post.title }}</div>
                         <div class="blog-card_text">
-                            Очень мега-интересный текст а,
-                            который хочется читать всегда так:
-                            в метро, в самолете, в машине и,
-                            в дороге, короче говоря в дороге
+                            {{ post.content|truncatewords:22  }}
                         </div>
                     </div>
                 </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="img/blog-lab.png" alt="blog-news-1" class="blog-card_image wow fadeInUp">
-                        <div class="new-more">
-                            <button>Подробнее</button>
-                        </div>
-                    </div>
-                    <div class="blog_card-content">
-                        <time>20 апреля, 2021</time>
-                        <div class="blog-card_title">Открытие лаборатории Приходите!</div>
-                        <div class="blog-card_text">
-                            Очень мега-интересный текст а,
-                            который хочется читать всегда так:
-                            в метро, в самолете, в машине и,
-                            в дороге, короче говоря в дороге
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="img/blog-lab.png" alt="blog-news-1" class="blog-card_image wow fadeInUp">
-                        <div class="new-more">
-                            <button>Подробнее</button>
-                        </div>
-                    </div>
-                    <div class="blog_card-content">
-                        <time>20 апреля, 2021</time>
-                        <div class="blog-card_title">Открытие лаборатории Приходите!</div>
-                        <div class="blog-card_text">
-                            Очень мега-интересный текст а,
-                            который хочется читать всегда так:
-                            в метро, в самолете, в машине и,
-                            в дороге, короче говоря в дороге
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
