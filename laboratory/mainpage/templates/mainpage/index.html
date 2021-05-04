@@ -146,7 +146,7 @@
                 {% for post in heading %}
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="img/blog-lab.png" alt="blog-news-1" class="blog-card_image wow fadeInUp">
+                        <img src="{{ post.image.url }}" alt="blog-news-1" class="blog-card_image wow fadeInUp">
                         <div class="new-more">
                             <button><a href="{% url 'post-detail' post.slug %}">Подробнее</a></button>
                         </div>
@@ -166,7 +166,7 @@
                 {% for post in default %}
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="img/blog-lab.png" alt="blog-news-1" class="blog-card_image wow fadeInUp">
+                        <img src="{{ post.image.url }}" alt="blog-news-1" class="blog-card_image wow fadeInUp">
                         <div class="new-more">
                             <button><a href="{% url 'post-detail' post.slug %}">Подробнее</a></button>
                         </div>
