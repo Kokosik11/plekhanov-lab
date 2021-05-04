@@ -596,7 +596,12 @@ input[type=text]:focus {
   border: 3px solid #6a94ff;
   padding: 15px 30px;
   border-radius: 8px;
-  transition: .25s;
+  transition: 0.3s ease;
+}
+
+.new-more button a {
+  text-decoration: none;
+  color: #6a94ff;
 }
 
 .others-new .new-more button {
@@ -606,11 +611,11 @@ input[type=text]:focus {
   border: 2px solid #6a94ff;
 }
 
-.new-more button:hover {
+.new-more button a:hover {
   cursor: pointer;
   border-color:#326BFF;
   color: #326BFF;
-  transition: .25s;
+  transition: 0.3s ease;
 }
 
 .blog-image:hover .new-more {

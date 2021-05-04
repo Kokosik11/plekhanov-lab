@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Post
 
 class BlogListView(ListView):
@@ -12,3 +12,7 @@ class BlogListView(ListView):
     context['default'] = Post.objects.filter(is_head=False, status=1)
     context['heading'] = Post.objects.filter(is_head=True, status=1)
     return context
+
+class BlogDetailView(DetailView):
+    model = Post
+    template_name = 'mainpage/post-detail.html'
