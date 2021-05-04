@@ -318,24 +318,16 @@
             Наши проекты
         </h2>
         <div class="container-projects">
+            {% for project in all_projects %}
             <div class="project-card">
-                <img src="img/grifons.png" alt="image: grifons" class="wow fadeInLeft">
-                <h3 class="project-card-title wow fadeInUp">Грифоны</h3>
+                <img src="{{ project.image.url }}" alt="image: grifons" class="wow fadeInLeft">
+                <h3 class="project-card-title wow fadeInUp">{{ project.name }}</h3>
                 <span class="project-card-subtitle wow fadeInUp">
-                    Сайт для минской любительской 
-                    хоккейной лиги "Кубок Грифонов"
+                    {{ project.content }}
                 </span>
-                <div class="year wow fadeInUp">2021</div>
+                <div class="year wow fadeInUp">{{ project.year }}</div>
             </div>
-            <div class="project-card">
-                <img src="img/lab.png" alt="image: laboratory" class="wow fadeInRight">
-                <h3 class="project-card-title wow fadeInUp">Лаборатория</h3>
-                <span class="project-card-subtitle wow fadeInUp">
-                    Сайт лаборатории графического
-                    дизайна и веб-проектирования....
-                </span>
-                <div class="year wow fadeInUp">2021</div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 

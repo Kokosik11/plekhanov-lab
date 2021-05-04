@@ -373,6 +373,8 @@ main {
 }
 .project-card img {
   max-width: 100%;
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.3));
+  border-radius: 20px;
 }
 .container-projects {
   max-width: 1200px;
@@ -386,7 +388,7 @@ main {
   font-size: 45px;
   line-height: 55px;
   color: #020516;
-  margin-top: 10px;
+  margin-top: 40px;
   margin-bottom: 25px;
 }
 .project-card-subtitle {

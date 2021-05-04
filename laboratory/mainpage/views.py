@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Post
+from .models import Post, Project
 
 class BlogListView(ListView):
   model = Post
@@ -11,6 +11,7 @@ class BlogListView(ListView):
     context = super().get_context_data(*args, **kwargs)
     context['default'] = Post.objects.filter(is_head=False, status=1)
     context['heading'] = Post.objects.filter(is_head=True, status=1)
+    context['all_projects'] = Project.objects.filter(status=1)
     return context
 
 class BlogDetailView(DetailView):
