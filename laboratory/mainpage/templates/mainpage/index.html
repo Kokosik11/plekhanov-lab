@@ -320,7 +320,7 @@
         <div class="container-projects">
             {% for project in all_projects %}
             <div class="project-card">
-                <img src="{{ project.image.url }}" alt="image: grifons" class="wow fadeInLeft">
+                <a href="{% url 'project-detail' project.slug %}"><img src="{{ project.image.url }}" alt="image: grifons" class="wow fadeInLeft"></a>
                 <h3 class="project-card-title wow fadeInUp">{{ project.name }}</h3>
                 <span class="project-card-subtitle wow fadeInUp">
                     {{ project.content }}

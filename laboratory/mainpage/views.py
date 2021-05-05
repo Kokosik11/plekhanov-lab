@@ -16,4 +16,9 @@ class BlogListView(ListView):
 
 class BlogDetailView(DetailView):
     model = Post
-    template_name = 'mainpage/post-detail.html'
+    template_name = "mainpage/post-detail.html"
+
+
+class ProjectDetailView(DetailView):
+  model = Project
+  template_name = "mainpage/project-detail.html"
