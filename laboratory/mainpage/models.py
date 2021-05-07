@@ -41,3 +41,15 @@ class Project(models.Model):
     ordering = ['-created_on']
     verbose_name = "Проект"
     verbose_name_plural = "Проекты"
+
+class Feedback(models.Model):
+  name = models.CharField("Имя", max_length=200)
+  email = models.EmailField()
+  phone = models.CharField("Телефон", max_length=150)
+
+  def __str__(self):
+    return self.email
+
+  class Meta:
+    verbose_name = "Отзыв"
+    verbose_name_plural = "Отзывы"

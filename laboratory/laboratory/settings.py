@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainpage.apps.MainpageConfig',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +143,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'img')
 MEDIA_URL = '/img/'
+
+RECAPTCHA_PUBLIC_KEY = '6LdfFMoaAAAAAC4BxukGs4GmnzI2AM_WTnCNue4k'
+RECAPTCHA_PRIVATE_KEY = '6LdfFMoaAAAAAA-cOHroUJCbkB0FSRTVoWkTY6Ym'
