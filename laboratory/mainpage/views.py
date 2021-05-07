@@ -15,26 +15,15 @@ class BlogListView(ListView):
     context['default'] = Post.objects.filter(is_head=False, status=1)
     context['heading'] = Post.objects.filter(is_head=True, status=1)
     context['all_projects'] = Project.objects.filter(status=1)
+    context['form'] = FeedbackForm()
     return context
 
-  def feedback(self):
-    if request.method == "POST":
-      form = FeedbackForm(request.POST)
-      if form.is_valid():
-        form.save()
-        name = form.cleaned_data.get('name')
-        email = form.cleaned_data.get('email')
-        send_mail(
-          'Ваша заявка успешно отправлена команде Лаборатории',
-          f'Здравствуйте, {name}.\n\nВаша заявка с заказом успешно отправлена нашей команде. \n\nВ ближайшее время мы свяжемся с вами!',
-          settings.EMAIL_HOST_USER,
-          [f'{email}'],
-          fail_silently=False,
-        )
-        return redirect('blog')
-    else:
-      form = FeedbackForm()
-    return render(request, "mainpage/index.html", {'form': form})
+    def form_valid(self, form):
+      if request.method == "POST":
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+          form.save()
+          return redirect('blog')
 
 class BlogDetailView(DetailView):
     model = Post

@@ -334,12 +334,15 @@
     <section class="form" id="fifth">
         <div class="container-form">
             <div class="text">
-                <form action="#" class="form-feedback wow bounceInLeft">
+                <form action="#" method="POST" class="form-feedback wow bounceInLeft">
+                    {% csrf_token %}
                     <h2>Свяжитесь с нами!</h2>
                     <span>Как вас зовут?</span>
-                    <input type="text" name="name" id="input-name" placeholder="Введите ваше имя">
+                    {{ form.name }}
                     <span>Ваш номер телефона</span>
-                    <input type="text" name="telephone" id="input-tel" placeholder="Введите ваш номер телефона">
+                    {{ form.phone }}
+                    <span>Ваш email</span>
+                    {{ form.email }}
                     <button type="submit">Отправить</button>
                 </form>
             </div>
