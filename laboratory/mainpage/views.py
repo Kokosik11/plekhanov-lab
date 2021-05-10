@@ -4,6 +4,7 @@ from .models import Post, Project
 from .forms import FeedbackForm
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib import messages
 
 class BlogListView(ListView):
   model = Post
@@ -18,12 +19,25 @@ class BlogListView(ListView):
     context['form'] = FeedbackForm()
     return context
 
-    def form_valid(self, form):
-      if request.method == "POST":
-        form = FeedbackForm(request.POST)
-        if form.is_valid():
-          form.save()
-          return redirect('blog')
+  def post(self, request):
+    form = FeedbackForm(request.POST)
+    if form.is_valid():
+      feedback = form.save()
+      name = form.cleaned_data.get('name')
+      email = form.cleaned_data.get('email')
+      phone = form.cleaned_data.get('phone')
+      num = feedback.uuid
+      messages.add_message(request, messages.INFO, f'Спасибо за оставленную заявку, {name}!')
+      send_mail(
+        'Ваша заявка успешно добавлена.',
+        f'Здравствуйте, {name}.\n\nВаша заявка № {num} успешно зарегистрирована. \n\nВ скором времени наша команда свяжется с вами по номеру {phone}.',
+        settings.EMAIL_HOST_USER,
+        [f'{email}'],
+        fail_silently=False,
+      )
+      return redirect('blog')
+    else:
+      form = FeedbackForm()
 
 class BlogDetailView(DetailView):
     model = Post

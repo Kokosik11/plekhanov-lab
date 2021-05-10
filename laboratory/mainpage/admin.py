@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Project
+from .models import Post, Project, Feedback
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -19,6 +19,12 @@ class ProjectAdmin(admin.ModelAdmin):
     search_fields = ('name', 'created_on',)
     ordering = ['created_on']
 
+@admin.register(Feedback)
+class FeedbackAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'uuid')
+    list_display_links = ('email', 'uuid',)
+    search_fields = ('name', 'email', 'phone', 'uuid',)
+    ordering = ['name']
 
 admin.site.site_title = 'Администрирование Лаборатории'
 admin.site.site_header = 'Лаборатория Графического дизайна и веб-проектирования'

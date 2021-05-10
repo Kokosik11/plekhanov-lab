@@ -80,6 +80,15 @@ main {
   transition: 0.3s ease;
 }
 
+.alert-success {
+	color: #6E9D79;
+	font-size: 20px;
+	background-color: #D4EDDA;
+	padding: 15px 35px 15px 15px;
+	text-align: center;
+	margin-top: 30px;
+}
+
 .mainpage {
   margin-top: 15px;
 }

@@ -1,4 +1,5 @@
 from django.db import models
+from shortuuidfield import ShortUUIDField
 
 STATUS = (
   (0, "Draft"),
@@ -46,6 +47,7 @@ class Feedback(models.Model):
   name = models.CharField("Имя", max_length=200)
   email = models.EmailField()
   phone = models.CharField("Телефон", max_length=150)
+  uuid = ShortUUIDField()
 
   def __str__(self):
     return self.email
