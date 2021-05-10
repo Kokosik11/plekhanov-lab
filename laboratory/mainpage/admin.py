@@ -1,8 +1,9 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
 from .models import Post, Project, Feedback
 
 @admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(TranslationAdmin):
     list_display = ('title', 'created_on', 'status')
     list_editable = ('status',)
     list_display_links = ('title',)
@@ -11,7 +12,7 @@ class PostAdmin(admin.ModelAdmin):
     ordering = ['created_on']
 
 @admin.register(Project)
-class ProjectAdmin(admin.ModelAdmin):
+class ProjectAdmin(TranslationAdmin):
     list_display = ('name', 'created_on', 'status')
     list_editable = ('status',)
     list_display_links = ('name',)

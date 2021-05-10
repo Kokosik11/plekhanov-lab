@@ -89,6 +89,10 @@ main {
 	margin-top: 30px;
 }
 
+.blocker {
+  z-index: 50 !important;
+}
+
 .mainpage {
   margin-top: 15px;
 }
@@ -271,7 +275,7 @@ main {
   font-size: 22px;
   line-height: 27px;
   color: #5F626A;
-  max-width: 466px;
+  max-width: 430px;
   padding-left: 50px;
 }
 .service-card-title img {
@@ -283,6 +287,39 @@ main {
   padding-right: 40px;
   margin-bottom: 55px;
   margin-top: 60px;
+}
+
+.buttons a {
+  text-decoration: none;
+}
+
+.lan-select {
+  border: 1px solid #C1C1C2;
+  outline: none;
+  background: #fff;
+  border-radius: 8px;
+  padding: 5px;
+  transition: 0.3s ease;
+}
+.lan-select:focus {
+  border: 1px solid #326BFF;
+  transition: 0.3s ease;
+}
+.lan-button {
+  border: 1px solid #326BFF;
+  outline: none;
+  border-radius: 10px;
+  padding: 7px;
+  background: #326BFF;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.lan-button:hover {
+  background: #fff;
+  color: #326BFF;
+  border: 1px solid #326BFF;
+  transition: 0.3s ease;
 }
 
 .glow-on-hover {
@@ -379,6 +416,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
 }
 .project-card img {
   max-width: 100%;
@@ -407,6 +445,8 @@ main {
   color: #3F4147;
   max-width: 547px;
   display: inline-block;
+  min-height: 111px;
+  text-align: center;
 }
 .year {
   background-color: #E2EEFF;

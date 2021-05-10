@@ -1,0 +1,366 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-10 21:34+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\mainpage\templates\mainpage\index.html:59
+#: .\mainpage\templates\mainpage\index.html:134
+msgid "Кто мы?"
+msgstr "Who we are?"
+
+#: .\mainpage\templates\mainpage\index.html:62
+msgid "Разработка"
+msgstr "Development"
+
+#: .\mainpage\templates\mainpage\index.html:65
+#: .\mainpage\templates\mainpage\index.html:264
+msgid "Наши услуги"
+msgstr "Services"
+
+#: .\mainpage\templates\mainpage\index.html:68
+msgid "Проекты"
+msgstr "Projects"
+
+#: .\mainpage\templates\mainpage\index.html:71
+#: .\mainpage\templates\mainpage\index.html:397
+msgid "Заказать работу"
+msgstr "Order project"
+
+#: .\mainpage\templates\mainpage\index.html:74
+msgid "Вперед!"
+msgstr "Go!"
+
+#: .\mainpage\templates\mainpage\index.html:92
+#: .\mainpage\templates\mainpage\index.html:119
+#: .\mainpage\templates\mainpage\index.html:153
+msgid "Лаборатория"
+msgstr "Laboratory"
+
+#: .\mainpage\templates\mainpage\index.html:92
+msgid ""
+"графического дизайна и\n"
+"                web-проектирования РЭУ\n"
+"                им. Плеханова, Минский филиал"
+msgstr ""
+"of graphic design and web-development, Russian Plekhanov University of "
+"Economics, Minsk branch"
+
+#: .\mainpage\templates\mainpage\index.html:98
+msgid "Быстро и качественно"
+msgstr "Fast and quality"
+
+#: .\mainpage\templates\mainpage\index.html:102
+msgid "Поддержка на всех стадиях"
+msgstr "Full-cycle help"
+
+#: .\mainpage\templates\mainpage\index.html:106
+msgid "Индивидуальность"
+msgstr "Individuality"
+
+#: .\mainpage\templates\mainpage\index.html:109
+msgid ""
+"успешных\n"
+"                проектов"
+msgstr "successful projects"
+
+#: .\mainpage\templates\mainpage\index.html:121
+msgid ""
+"\n"
+"                        Лаборатория графического дизайна \n"
+"                        и web-проектирования РЭУ имени \n"
+"                        Плеханова, Минский филиал - место современных\n"
+"                        решений в области IT технологий.\"\n"
+"                        "
+msgstr ""
+"\n"
+"                        Laboratory of graphic design \n"
+"                        and web-development, Russian \n"
+"                        Plekhanov Universiry of Economics, Minsk - \n"
+"                        a place with modern decisions in IT world.\"\n"
+"                        "
+
+#: .\mainpage\templates\mainpage\index.html:136
+msgid ""
+"\n"
+"                        Наша команда - сплоченный коллектив \n"
+"                        целеустремленных разработчиков и \n"
+"                        дизайнеров, которые выполняют свою \n"
+"                        работу с душой и энтузиазмом.\n"
+"                        Лаборатория графического дизайна и \n"
+"                        web-проектирования РЭУ имени \n"
+"                        Плеханова, Минский филиал - место со своей \n"
+"                        атмосферой и студенческим задором.\"\n"
+"                        "
+msgstr ""
+"\n"
+"                        We are close-knit team \n"
+"                        of purposeful developers and designers, \n"
+"                        that performs its job with \n"
+"                        love and enthusiasm. \n"
+"                        Laboratory of graphic design \n"
+"                        and web-development, Russian Plekhanov University \n"
+"                        of Economics, Minsk branch - is a place with \n"
+"                        its own special atmosphere. \n"
+"                        "
+
+#: .\mainpage\templates\mainpage\index.html:162
+#: .\mainpage\templates\mainpage\index.html:182
+#: .\mainpage\templates\mainpage\index.html:288
+#: .\mainpage\templates\mainpage\index.html:316
+#: .\mainpage\templates\mainpage\index.html:330
+#: .\mainpage\templates\mainpage\index.html:343
+msgid "Подробнее"
+msgstr "More"
+
+#: .\mainpage\templates\mainpage\index.html:201
+msgid "Полный цикл разработки"
+msgstr "Full-cycle development"
+
+#: .\mainpage\templates\mainpage\index.html:218
+msgid "Прототипирование дизайна"
+msgstr "Ptototyping design"
+
+#: .\mainpage\templates\mainpage\index.html:220
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "                        Полная работа над дизайном десктопного "
+#| "или                         мобильного приложения. Мы создаем\n"
+#| "                        логотипы, svg-иллюстрации, используем \n"
+#| "                        UI & UX практики. Уникальный дизайн,\n"
+#| "                        созданный с любовью. Вы полюбите наш \n"
+#| "                        дизайн также, как любим его мы.\n"
+#| "                    "
+msgid ""
+"\n"
+"                        Полная работа над дизайном десктопного или "
+"мобильного приложения. Мы создаем\n"
+"                        логотипы, svg-иллюстрации, используем \n"
+"                        UI & UX практики. Уникальный дизайн,\n"
+"                        созданный с любовью. Вы полюбите наш \n"
+"                        дизайн также, как любим его мы.\n"
+"                    "
+msgstr ""
+"\n"
+"                        Whole process for an pc-oriented "
+"or                         mobile app. We create\n"
+"                        logo's, svg-illustrations, we use \n"
+"                        UI & UX practice. Unique design,\n"
+"                        maded with love. You will love \n"
+"                        our design, like we love this.\n"
+"                    "
+
+#: .\mainpage\templates\mainpage\index.html:234
+msgid "Разаботка технической части"
+msgstr "Backend development"
+
+#: .\mainpage\templates\mainpage\index.html:236
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "                        Frontend и Backend разработка: python django, "
+#| "react.                        js, angular.js, vue.js, typescript, MySql, "
+#| "postgreSQL.\n"
+#| "                        <br><br>\n"
+#| "                        Использование лучших практик разработки "
+#| "веб-                        приложений, функциональные и объектно-"
+#| "ориентированные технологии.\n"
+#| "                    "
+msgid ""
+"\n"
+"                        Frontend и Backend разработка: python django, react."
+"js, angular.js, vue.js, typescript, MySql, postgreSQL.\n"
+"                        <br><br>\n"
+"                        Использование лучших практик разработки веб-"
+"приложений, функциональные и объектно-ориентированные технологии.\n"
+"                    "
+msgstr ""
+"\n"
+"                        Frontend and Backend development: python django, "
+"react.                        js, angular.js, vue.js, typescript, MySql, "
+"postgreSQL.\n"
+"                        <br><br>\n"
+"                        We use best-practices of web-"
+"development,                        functional and object-oriented "
+"technologies.\n"
+"                    "
+
+#: .\mainpage\templates\mainpage\index.html:248
+msgid "Графический дизайн и айдентика"
+msgstr "Graphic design and identica"
+
+#: .\mainpage\templates\mainpage\index.html:250
+#, fuzzy
+#| msgid ""
+#| "Персонализированное брендирование, графический дизайн, дизайн логотипа, "
+#| "айдентика. Наслаждайтесь."
+msgid ""
+"\n"
+"                        Персонализированное брендирование, графический "
+"дизайн, дизайн логотипа, айдентика. Наслаждайтесь.\n"
+"                    "
+msgstr "Personal branding, graphic design, logo design, identica. Enjoy! \n"
+
+#: .\mainpage\templates\mainpage\index.html:269
+msgid "Разрабокта веб-приложения"
+msgstr "Web application development"
+
+#: .\mainpage\templates\mainpage\index.html:271
+msgid "Одностраничное-приложение"
+msgstr "Landing-page"
+
+#: .\mainpage\templates\mainpage\index.html:272
+msgid "Многостраничное-приложение"
+msgstr "Complicated app"
+
+#: .\mainpage\templates\mainpage\index.html:273
+msgid "Интернет магазин"
+msgstr "Online-store"
+
+#: .\mainpage\templates\mainpage\index.html:274
+msgid "Верстка"
+msgstr "Layout"
+
+#: .\mainpage\templates\mainpage\index.html:279
+msgid ""
+"\n"
+"                     Полный цикл разработки вашего сайта.\n"
+"                     От дизайна до продвижения\n"
+"                     "
+msgstr ""
+"\n"
+"                    Full-cycle development\n"
+"                    From design to seo\n"
+"                "
+
+#: .\mainpage\templates\mainpage\index.html:286
+#: .\mainpage\templates\mainpage\index.html:315
+#: .\mainpage\templates\mainpage\index.html:329
+#: .\mainpage\templates\mainpage\index.html:342
+msgid "Заказ"
+msgstr "Order"
+
+#: .\mainpage\templates\mainpage\index.html:299
+msgid "Графический дизайн"
+msgstr "Graphic design and identica"
+
+#: .\mainpage\templates\mainpage\index.html:301
+msgid "Фото-обработка"
+msgstr "Photo processing"
+
+#: .\mainpage\templates\mainpage\index.html:302
+msgid "Печатная продукция"
+msgstr "Printed products"
+
+#: .\mainpage\templates\mainpage\index.html:303
+msgid "Логотип"
+msgstr "Logo"
+
+#: .\mainpage\templates\mainpage\index.html:304
+msgid "Айдентика"
+msgstr "Identica"
+
+#: .\mainpage\templates\mainpage\index.html:309
+msgid ""
+"\n"
+"                     Развивайте свой брэнд, а мы поможем\n"
+"                     вам с этим\n"
+"                     "
+msgstr ""
+"\n"
+"                     Develop your own brand, and we will\n"
+"                     help you with it\n"
+"                     "
+
+#: .\mainpage\templates\mainpage\index.html:320
+msgid "Seo/smm продвижение"
+msgstr "Seo/smm advancment"
+
+#: .\mainpage\templates\mainpage\index.html:322
+msgid ""
+"\n"
+"                     Ни один, даже самый лучший сайт не\n"
+"                     может без поисковой оптимизации.\n"
+"                     Мы оптимизируем его за вас!\n"
+"                     "
+msgstr ""
+"\n"
+"                     Even the best website\n"
+"                     is nothing without search optimisation.\n"
+"                     We will optimizing this for you!\n"
+"                     "
+
+#: .\mainpage\templates\mainpage\index.html:334
+msgid "Веб-дизайн (UI & UX)"
+msgstr "Web-design (UI & UX)"
+
+#: .\mainpage\templates\mainpage\index.html:336
+msgid ""
+"\n"
+"                    Уникальный дизайн для вашего\n"
+"                    сайта/приложения'\n"
+"                "
+msgstr ""
+"\n"
+"                    Unique design for\n"
+"                    yours web application\n"
+"                "
+
+#: .\mainpage\templates\mainpage\index.html:351
+msgid "Наши проекты"
+msgstr "Projects"
+
+#: .\mainpage\templates\mainpage\index.html:372
+msgid "Свяжитесь с нами!"
+msgstr "Contact us"
+
+#: .\mainpage\templates\mainpage\index.html:373
+msgid "Как вас зовут?"
+msgstr "What is your name?"
+
+#: .\mainpage\templates\mainpage\index.html:375
+msgid "Ваш номер телефона"
+msgstr "Your mobile phone"
+
+#: .\mainpage\templates\mainpage\index.html:377
+msgid "Ваш email"
+msgstr "Your email"
+
+#: .\mainpage\templates\mainpage\index.html:379
+msgid "Отправить"
+msgstr "Send"
+
+#: .\mainpage\templates\mainpage\index.html:407
+msgid "Язык"
+msgstr "Language"
+
+#: .\mainpage\templates\mainpage\index.html:430
+msgid "Социальное"
+msgstr "Social"
+
+#~ msgid "Мда"
+#~ msgstr "okay"
+
+#, fuzzy
+#~| msgid "Отправить"
+#~ msgid "Оформить"
+#~ msgstr "Send"
+
+#, fuzzy
+#~| msgid "Лаборатория"
+#~ msgid "Блог лаборатории"
+#~ msgstr "Laboratory blog"

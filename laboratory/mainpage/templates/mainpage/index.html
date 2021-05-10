@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{% static 'mainpage/css/normalize.css' %}">
     <link rel="icon" type="image/png" href="../img/logo.ico">
     <link rel="stylesheet" href="{% static 'mainpage/css/animate.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 </head>
 <body>
 
@@ -45,33 +45,33 @@
             <ul class="header-menu">
                 <li class="header-menu-list">
                     <a href="https://reu.by/" class="header-menu-link" target="_blank">
-                        <img src="img/reu-logo.svg" alt="icon: reu">
+                        <img src="/img/reu-logo.svg" alt="icon: reu">
                     </a>
                 </li>
                 <li class="header-menu-list">
                     <a href="/" class="header-menu-link">
-                        <img src="img/lab-logo.svg" alt="icon: lab">
+                        <img src="/img/lab-logo.svg" alt="icon: lab">
                     </a> 
                 </li>
             </ul>
             <ul class="header-menu">
                 <li class="header-menu-list">
-                    <a href="#first" class="header-menu-link">Кто мы?</a>
+                    <a href="#first" class="header-menu-link">{% trans "Кто мы?" %}</a>
                 </li>
                 <li class="header-menu-list">
-                    <a href="#second" class="header-menu-link">Разработка</a>
+                    <a href="#second" class="header-menu-link">{% trans "Разработка" %}</a>
                 </li>
                 <li class="header-menu-list">
-                    <a href="#third" class="header-menu-link">Наши услуги</a>
+                    <a href="#third" class="header-menu-link">{% trans "Наши услуги" %}</a>
                 </li>
                 <li class="header-menu-list">
-                    <a href="#fourth" class="header-menu-link">Проекты</a>
+                    <a href="#fourth" class="header-menu-link">{% trans "Проекты" %}</a>
                 </li>
                 <li class="header-menu-list">
-                    <a href="#fifth" class="header-menu-link">Заказать работу</a>
+                    <a href="#fifth" class="header-menu-link">{% trans "Заказать работу" %}</a>
                 </li>
                 <li class="header-menu-list">
-                    <button class="button">Вперед!</button>
+                    <button class="button">{% trans "Вперед!" %}</button>
                 </li>
             </ul>
         </nav>
@@ -88,27 +88,26 @@
     <main>
     <section class="mainpage">
         <div class="container">
-            <img src="img/background-mainpage.png" class="mainpage-img wow bounceInRight" alt="image: abstract">
-            <h2 class="wow fadeInUp"><span class="blue wow fadeIn">Лаборатория</span>
-                графического дизайна и
+            <img src="/img/background-mainpage.png" class="mainpage-img wow bounceInRight" alt="image: abstract">
+            <h2 class="wow fadeInUp"><span class="blue wow fadeIn">{% trans "Лаборатория" %} </span>{% blocktrans %}графического дизайна и
                 web-проектирования РЭУ
-                им. Плеханова, Минский филиал
+                им. Плеханова, Минский филиал{% endblocktrans %}
             </h2>
             <span class="checkout wow fadeInLeft">
-                <img src="img/check.svg" alt="icon: check mark">
-                Быстро и качественно
+                <img src="/img/check.svg" alt="icon: check mark">
+                {% trans "Быстро и качественно" %}
             </span>
             <span class="checkout wow fadeInLeft">
-                <img src="img/check.svg" alt="icon: check mark">
-                Поддержка на всех стадиях
+                <img src="/img/check.svg" alt="icon: check mark">
+                {% trans "Поддержка на всех стадиях" %}
             </span>
             <span class="checkout wow fadeInLeft">
-                <img src="img/check.svg" alt="icon: check mark">
-                Индивидуальность
+                <img src="/img/check.svg" alt="icon: check mark">
+                {% trans "Индивидуальность" %}
             </span>
             <h1 class="wow fadeIn">
-                <span class="red">10+</span> успешных
-                проектов
+                <span class="red">10+ </span>{% blocktrans %}успешных
+                проектов{% endblocktrans %}
             </h1>
         </div>
     </section>
@@ -117,21 +116,24 @@
         <div class="container-about-us">
             <div class="card">
                 <div class="card-text">
-                    <span class="card-title">Лаборатория</span>
+                    <span class="card-title">{% trans "Лаборатория" %}</span>
                     <span class="card-subtitle">
+                        {% blocktrans %}
                         Лаборатория графического дизайна 
                         и web-проектирования РЭУ имени 
                         Плеханова, Минский филиал - место современных
-                        решений в области IT технологий. 
+                        решений в области IT технологий."
+                        {% endblocktrans %}
                     </span>
                 </div>
-                <img src="img/scientist.svg" alt="image: scientist" class="wow bounceInRight">
+                <img src="/img/scientist.svg" alt="image: scientist" class="wow bounceInRight">
             </div>
             <div class="card">
-                <img src="img/team.svg" alt="image: team" class="wow bounceInLeft">
+                <img src="/img/team.svg" alt="image: team" class="wow bounceInLeft">
                 <div class="card-text">
-                    <span id="first" class="card-title anchor-us">Кто мы?</span>
+                    <span id="first" class="card-title anchor-us">{% trans "Кто мы?" %}</span>
                     <span class="card-subtitle">
+                        {% blocktrans %}
                         Наша команда - сплоченный коллектив 
                         целеустремленных разработчиков и 
                         дизайнеров, которые выполняют свою 
@@ -139,7 +141,8 @@
                         Лаборатория графического дизайна и 
                         web-проектирования РЭУ имени 
                         Плеханова, Минский филиал - место со своей 
-                        атмосферой и студенческим задором.
+                        атмосферой и студенческим задором."
+                        {% endblocktrans %}
                     </span>
                 </div>
             </div>
@@ -147,7 +150,7 @@
     </section>
 
     <section class="blog">
-        <h2 class="blog-title">Блог лаборатории</h2>
+        <h2 class="blog-title">{% trans 'Лаборатория' %}</h2>
         
         <div class="blog-content">
             <div class="last-new">
@@ -156,7 +159,7 @@
                     <div class="blog-image">
                         <img src="{{ post.image.url }}" alt="blog-news-1" class="blog-card_image wow fadeInUp">
                         <div class="new-more">
-                            <button><a href="{% url 'post-detail' post.slug %}">Подробнее</a></button>
+                            <button><a href="{% url 'post-detail' post.slug %}">{% trans "Подробнее" %}</a></button>
                         </div>
                     </div>
                     <div class="blog_card-content">
@@ -176,7 +179,7 @@
                     <div class="blog-image">
                         <img src="{{ post.image.url }}" alt="blog-news-1" class="blog-card_image wow fadeInUp">
                         <div class="new-more">
-                            <button><a href="{% url 'post-detail' post.slug %}">Подробнее</a></button>
+                            <button><a href="{% url 'post-detail' post.slug %}">{% trans "Подробнее" %}</a></button>
                         </div>
                     </div>
                     <div class="blog_card-content">
@@ -194,133 +197,150 @@
 
     <section class="dev-cycle">
         <h2 class="dev-cycle_title" id="second">
-            <img src="img/dev-cycle/cycle.png" alt="cycle">
-            Полный цикл разработки
+            <img src="/img/dev-cycle/cycle.png" alt="cycle">
+            {% trans "Полный цикл разработки" %}
         </h2>
 
         <div class="ellipses">
-            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="./img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
         </div>
 
         <div class="dev-cycle_cards">
             <div class="dev-cycle_card">
                 <div class="dev-cycle_card-bg"></div>
                 <div class="dev-cycle_card-content">
-                    <div class="dev-cycle_card-title wow fadeInDown">Прототипирование дизайна</div>
+                    <div class="dev-cycle_card-title wow fadeInDown">{% trans "Прототипирование дизайна" %}</div>
                     <div class="dev-cycle_card-text wow fadeInUp">
+                    {% blocktrans %}
                         Полная работа над дизайном десктопного или мобильного приложения. Мы создаем
                         логотипы, svg-иллюстрации, используем 
                         UI & UX практики. Уникальный дизайн,
                         созданный с любовью. Вы полюбите наш 
                         дизайн также, как любим его мы.
+                    {% endblocktrans %}
                     </div>
                 </div>
-                <img src="./img/dev-cycle/Development-rafiki 1.png" alt="" class="wow fadeInRight">
+                <img src="/img/dev-cycle/Development-rafiki 1.png" alt="" class="wow fadeInRight">
             </div>
             <div class="dev-cycle_card">
                 <div class="dev-cycle_card-bg"></div>
                 <div class="dev-cycle_card-content">
-                    <div class="dev-cycle_card-title wow fadeInDown">Разаботка технической части</div>
+                    <div class="dev-cycle_card-title wow fadeInDown">{% trans "Разаботка технической части" %}</div>
                     <div class="dev-cycle_card-text wow fadeInUp">
+                    {% blocktrans %}
                         Frontend и Backend разработка: python django, react.js, angular.js, vue.js, typescript, MySql, postgreSQL.
                         <br><br>
                         Использование лучших практик разработки веб-приложений, функциональные и объектно-ориентированные технологии.
+                    {% endblocktrans %}
                     </div>
                 </div>
-                <img src="./img/dev-cycle/Software engineer-pana 1.png" alt="" class="wow fadeInLeft">
+                <img src="/img/dev-cycle/Software engineer-pana 1.png" alt="" class="wow fadeInLeft">
             </div>
             <div class="dev-cycle_card">
                 <div class="dev-cycle_card-bg"></div>
                 <div class="dev-cycle_card-content">
-                    <div class="dev-cycle_card-title wow fadeInDown">Графический дизайн и айдентика</div>
+                    <div class="dev-cycle_card-title wow fadeInDown">{% trans "Графический дизайн и айдентика" %}</div>
                     <div class="dev-cycle_card-text wow fadeInUp">
+                    {% blocktrans %}
                         Персонализированное брендирование, графический дизайн, дизайн логотипа, айдентика. Наслаждайтесь.
+                    {% endblocktrans %}
                     </div>
                 </div>
-                <img src="./img/dev-cycle/Website Creator-rafiki 1.png" alt="" class="wow fadeInRight">
+                <img src="/img/dev-cycle/Website Creator-rafiki 1.png" alt="" class="wow fadeInRight">
             </div>
         </div>
-        <img class="wave" src="./img/dev-cycle/wave.png" alt="wave">
+        <img class="wave" src="/img/dev-cycle/wave.png" alt="wave">
     </section>
 
     <section class="services" id="third">
         <h2 class="container-serveces-title">
-            <img src="img/pencil.png" alt="image: pencil">
-            Наши услуги
+            <img src="/img/pencil.png" alt="image: pencil">
+            {% trans "Наши услуги" %}
         </h2>
         <div class="container-serveces">
             <div class="service-card wow fadeInUp">
                 <span class="service-card-title">
-                    Разрабокта веб-приложения <img data-id="1" class="dropdown-arrow" src="img/arrow-down.svg" alt="icon: arrow-down">
+                   {% trans 'Разрабокта веб-приложения' %}<img data-id="1" class="dropdown-arrow" src="/img/arrow-down.svg" alt="icon: arrow-down">
                     <div data-id="1" class="dropdown-menu">
-                        <span data-id="1" class="dropdown-option">Одностраничное-приложение</span>
-                        <span data-id="2" class="dropdown-option">Многостраничное-приложение</span>
-                        <span data-id="3" class="dropdown-option">Интернет магазин</span>
-                        <span data-id="4" class="dropdown-option">Верстка</span>
+                        <span data-id="1" class="dropdown-option"> {% trans 'Одностраничное-приложение' %}</span>
+                        <span data-id="2" class="dropdown-option"> {% trans 'Многостраничное-приложение' %}</span>
+                        <span data-id="3" class="dropdown-option"> {% trans 'Интернет магазин' %}</span>
+                        <span data-id="4" class="dropdown-option"> {% trans 'Верстка' %}</span>
                     </div>
                 </span>
                 <h3 data-id="1" class="menu-title"></h3>
                 <span data-id="1" class="service-card-subtitle">
-                    Полный цикл разработки вашего сайта.
-                    От дизайна до продвижения
+                     {% blocktrans %}
+                     Полный цикл разработки вашего сайта.
+                     От дизайна до продвижения
+                     {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <a href="#ex1" rel="modal:open"><button class="glow-on-hover">Заказать</button></a>
-                    <button class="glow-on-hover secondary">Подробнее</button>
+                    <a data-fancybox data-src="#hidden-content" href="javascript:;">
+                        <button class="glow-on-hover">{% trans 'Заказ' %}</button>
+                    </a>
+                    <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
                 </div>
             </div>
 
-            <div id="ex1" class="modal">
-                <p>Thanks for clicking. That felt good.</p>
+            <div style="display: none;" id="hidden-content">
+                <h2>Hello</h2>
+                <p>You are awesome.</p>
             </div>
 
             <div class="service-card wow fadeInUp">
                 <span class="service-card-title">
-                    Графический дизайн <img data-id="2" class="dropdown-arrow" src="img/arrow-down.svg" alt="icon: arrow-down">
+                     {% blocktrans %}Графический дизайн{% endblocktrans %} <img data-id="2" class="dropdown-arrow" src="/img/arrow-down.svg" alt="icon: arrow-down">
                     <div data-id="2" class="dropdown-menu">
-                        <span class="dropdown-option">Фото-обработка</span>
-                        <span class="dropdown-option">Печатная продукция</span>
-                        <span class="dropdown-option">Логотип</span>
-                        <span class="dropdown-option">Айдентика</span>
+                        <span class="dropdown-option"> {% trans 'Фото-обработка' %}</span>
+                        <span class="dropdown-option"> {% trans 'Печатная продукция' %}</span>
+                        <span class="dropdown-option"> {% trans 'Логотип' %}</span>
+                        <span class="dropdown-option"> {% trans 'Айдентика' %}</span>
                     </div>
                 </span>
                 <h3 data-id="2" class="menu-title"></h3>
                 <span data-id="2" class="service-card-subtitle">
-                    Развивайте свой брэнд, а мы поможем
-                    вам с этим
+                     {% blocktrans %}
+                     Развивайте свой брэнд, а мы поможем
+                     вам с этим
+                     {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <button class="glow-on-hover">Заказать</button>
-                    <button class="glow-on-hover secondary">Подробнее</button>
+                    <button class="glow-on-hover">{% trans 'Заказ' %}</button>
+                    <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
                 </div>
             </div>
             <div class="service-card wow fadeInUp">
-                <span class="service-card-title">Seo/smm продвижение</span>
+                <span class="service-card-title">{% trans 'Seo/smm продвижение' %}</span>
                 <span class="service-card-subtitle">
-                    Ни один, даже самый лучший сайт не
-                    может без поисковой оптимизации.
-                    Мы оптимизируем его за вас!
+                     {% blocktrans %}
+                     Ни один, даже самый лучший сайт не
+                     может без поисковой оптимизации.
+                     Мы оптимизируем его за вас!
+                     {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <button class="glow-on-hover">Заказать</button>
-                    <button class="glow-on-hover secondary">Подробнее</button>
+                    <button class="glow-on-hover">{% trans 'Заказ' %}</button>
+                    <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
                 </div>
             </div>
             <div class="service-card wow fadeInUp">
-                <span class="service-card-title">Веб-дизайн (UI & UX)</span>
+                <span class="service-card-title"> {% trans 'Веб-дизайн (UI & UX)' %}</span>
                 <span class="service-card-subtitle">
+                {% blocktrans %}
                     Уникальный дизайн для вашего
-                    сайта/приложения
+                    сайта/приложения'
+                {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <button class="glow-on-hover">Заказать</button>
-                    <button class="glow-on-hover secondary">Подробнее</button>
+                    <button class="glow-on-hover">{% trans 'Заказ' %}</button>
+                    <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
                 </div>
             </div>
         </div>
@@ -328,7 +348,7 @@
 
     <section class="projects" id="fourth">
         <h2 class="container-serveces-title">
-            Наши проекты
+             {% trans 'Наши проекты' %}
         </h2>
         <div class="container-projects">
             {% for project in all_projects %}
@@ -349,17 +369,17 @@
             <div class="text">
                 <form action="#" method="POST" class="form-feedback wow bounceInLeft">
                     {% csrf_token %}
-                    <h2>Свяжитесь с нами!</h2>
-                    <span>Как вас зовут?</span>
+                    <h2> {% trans 'Свяжитесь с нами!' %}</h2>
+                    <span> {% trans 'Как вас зовут?' %}</span>
                     {{ form.name }}
-                    <span>Ваш номер телефона</span>
+                    <span> {% trans 'Ваш номер телефона' %}</span>
                     {{ form.phone }}
-                    <span>Ваш email</span>
+                    <span> {% trans 'Ваш email' %}</span>
                     {{ form.email }}
-                    <button type="submit">Отправить</button>
+                    <button type="submit"> {% trans 'Отправить' %}</button>
                 </form>
             </div>
-            <img src="img/astronaut.svg" alt="image: astronaut" class="wow bounceInRight">
+            <img src="/img/astronaut.svg" alt="image: astronaut" class="wow bounceInRight">
         </div>
     </section>
     </main>
@@ -367,14 +387,14 @@
 
         <footer>
             <div class="map wow fadeInUp">
-                <img src="img/map.png" alt="image: map">
+                <img src="/img/map.png" alt="image: map">
             </div>
 
             <div class="footer-content wow fadeInRight">
-                <img src="./img/lab-logo.svg" width="92px" alt="lab-logo">
+                <img src="/img/lab-logo.svg" width="92px" alt="lab-logo">
 
                 <div class="footer-contacts">
-                    <h3>Заказать работу</h3>
+                    <h3> {% trans 'Заказать работу' %}</h3>
                     <nav>
                         <ul>
                             <li><a href="mailto:lab@reu.by">lab@reu.by</a></li>
@@ -384,23 +404,36 @@
                 </div>
 
                 <div class="footer-language">
-                    <h3>Язык</h3>
+                    <h3> {% trans 'Язык' %}</h3>
                     <nav>
                         <ul>
-                            <li><a href="?ru">Русский</a></li>
-                            <li><a href="?en">English</a></li>
+                            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                                <input name="next" type="hidden" value="{{ redirect_to }}">
+                                <select name="language" class="lan-select">
+                                    {% get_current_language as LANGUAGE_CODE %}
+                                    {% get_available_languages as LANGUAGES %}
+                                    {% get_language_info_list for LANGUAGES as languages %}
+                                    {% for language in languages %}
+                                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                                                selected{% endif %}>
+                                            {{ language.name_local }} ({{ language.code }})
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                <input type="submit" value="Go" class="lan-button">
+                            </form>
                         </ul>
                     </nav>
                 </div>
 
                 <div class="footer-social">
-                    <h3>Социальное</h3>
+                    <h3> {% trans 'Социальное' %}</h3>
                     <nav>
                         <ul>
-                            <li><a target="_blank" href="https://linkedin.com/"><img src="./img/social-icons/linkedin.svg" alt="linkedin"></a></li>
-                            <li><a target="_blank" href="https://dribbble.com/"><img src="./img/social-icons/dribbble.svg" alt="dribbble"></a></li>
-                            <li><a target="_blank" href="https://instagram.com/"><img src="./img/social-icons/instagram.svg" alt="instagram"></a></li>
-                            <li><a target="_blank" href="https://facebook.com/"><img src="./img/social-icons/facebook.svg" alt="facebook"></a></li>
+                            <li><a target="_blank" href="https://linkedin.com/"><img src="/img/social-icons/linkedin.svg" alt="linkedin"></a></li>
+                            <li><a target="_blank" href="https://dribbble.com/"><img src="/img/social-icons/dribbble.svg" alt="dribbble"></a></li>
+                            <li><a target="_blank" href="https://instagram.com/"><img src="/img/social-icons/instagram.svg" alt="instagram"></a></li>
+                            <li><a target="_blank" href="https://facebook.com/"><img src="/img/social-icons/facebook.svg" alt="facebook"></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -412,8 +445,7 @@
     <script src="{% static 'mainpage/scripts/wow.min.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'mainpage/scripts/header.js' %}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script>
         new WOW().init();
     </script>
