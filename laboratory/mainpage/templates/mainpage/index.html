@@ -20,22 +20,22 @@
         
         <div class="anchors">
             <div data-id="1" class="anchor">
-                <div class="anchor-title active-anchor">В начало</div>
+                <div class="anchor-title active-anchor">{% trans 'В начало' %}</div>
             </div>
             <div data-id="2" class="anchor">
-                <div class="anchor-title">Кто мы</div>
+                <div class="anchor-title">{% trans 'Кто мы' %}</div>
             </div>
             <div data-id="3" class="anchor">
-                <div class="anchor-title">Разработка</div>
+                <div class="anchor-title">{% trans 'Разработка' %}</div>
             </div>
             <div data-id="4" class="anchor">
-                <div class="anchor-title">Услуги</div>
+                <div class="anchor-title">{% trans 'Услуги' %}</div>
             </div>
             <div data-id="5" class="anchor">
-                <div class="anchor-title">Наши проекты</div>
+                <div class="anchor-title">{% trans 'Наши проекты' %}</div>
             </div>
             <div data-id="6" class="anchor">
-                <div class="anchor-title">Заказать работу</div>
+                <div class="anchor-title">{% trans 'Заказать работу' %}</div>
             </div>
         </div>
     </div>
@@ -195,6 +195,42 @@
         </div>
     </section>
 
+<style>
+.dev-cycle
+{
+  background-image:url('{{ STATIC_URL }}img/dev-cycle/bg.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.dev-cycle_card-bg {
+  position: absolute;
+  background-image:url('{{ STATIC_URL }}img/dev-cycle/noise.jpg');
+  background-size: 150px 150px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .08;
+  border-radius: 20px;
+  z-index: -1;
+}
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 20px;
+  background-image:url('{{ STATIC_URL }}img/line.svg');
+  background-color: #EEF3FF;
+  background-repeat: no-repeat;
+  margin-bottom: 65px;
+  max-width: 570px;
+}
+</style>
+
+
     <section class="dev-cycle">
         <h2 class="dev-cycle_title" id="second">
             <img src="/img/dev-cycle/cycle.png" alt="cycle">
@@ -283,7 +319,7 @@
                 </span>
                 <div class="buttons">
                     <a data-fancybox data-src="#hidden-content" href="javascript:;">
-                        <button class="glow-on-hover">{% trans 'Заказ' %}</button>
+                        <button class="glow-on-hover">{% trans 'Заказать' %}</button>
                     </a>
                     <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
                 </div>
@@ -312,7 +348,7 @@
                      {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <button class="glow-on-hover">{% trans 'Заказ' %}</button>
+                    <button class="glow-on-hover">{% trans 'Заказать' %}</button>
                     <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
                 </div>
             </div>
@@ -326,7 +362,7 @@
                      {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <button class="glow-on-hover">{% trans 'Заказ' %}</button>
+                    <button class="glow-on-hover">{% trans 'Заказать' %}</button>
                     <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
                 </div>
             </div>
@@ -339,7 +375,7 @@
                 {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <button class="glow-on-hover">{% trans 'Заказ' %}</button>
+                    <button class="glow-on-hover">{% trans 'Заказать' %}</button>
                     <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
                 </div>
             </div>
@@ -353,7 +389,7 @@
         <div class="container-projects">
             {% for project in all_projects %}
             <div class="project-card">
-                <a href="{% url 'project-detail' project.slug %}"><img src="{{ project.image.url }}" alt="image: grifons" class="wow fadeInLeft"></a>
+                <a href="{% url 'project-detail' project.slug %}"><img src="{{ project.image.url }}" alt="image: grifons" class="hvr-bob"></a>
                 <h3 class="project-card-title wow fadeInUp">{{ project.name }}</h3>
                 <span class="project-card-subtitle wow fadeInUp">
                     {{ project.content }}
