@@ -432,7 +432,7 @@ main {
 }
 .project-card-title {
   font-weight: 600;
-  font-size: 45px;
+  font-size: 35px;
   line-height: 55px;
   color: #020516;
   margin-top: 40px;
@@ -440,7 +440,7 @@ main {
 }
 .project-card-subtitle {
   font-weight: 500;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 37px;
   color: #3F4147;
   max-width: 547px;
@@ -835,7 +835,7 @@ footer {
   position: relative;
   display: flex;
   flex-direction: row-reverse;
-  margin-top: 90px;
+  margin-top: 150px;
 }
 
 .footer-content {
@@ -843,6 +843,10 @@ footer {
   align-items: flex-start;
   justify-content: space-between;
   max-width: 683px;
+}
+
+.footer-language {
+  min-width: 165px;
 }
 
 .footer-content div {

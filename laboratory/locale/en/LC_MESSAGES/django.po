@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-11 12:22+0300\n"
+"POT-Creation-Date: 2021-05-12 13:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,59 +17,60 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\mainpage\templates\mainpage\index.html:23
+#: .\mainpage\templates\mainpage\index.html:58
 msgid "В начало"
 msgstr "Top"
 
-#: .\mainpage\templates\mainpage\index.html:26
+#: .\mainpage\templates\mainpage\index.html:61
 msgid "Кто мы"
 msgstr "Who we are?"
 
-#: .\mainpage\templates\mainpage\index.html:29
-#: .\mainpage\templates\mainpage\index.html:62
+#: .\mainpage\templates\mainpage\index.html:64
+#: .\mainpage\templates\mainpage\index.html:97
 msgid "Разработка"
 msgstr "Development"
 
-#: .\mainpage\templates\mainpage\index.html:32
+#: .\mainpage\templates\mainpage\index.html:67
 msgid "Услуги"
 msgstr "Services"
 
-#: .\mainpage\templates\mainpage\index.html:35
-#: .\mainpage\templates\mainpage\index.html:387
+#: .\mainpage\templates\mainpage\index.html:70
+#: .\mainpage\templates\mainpage\index.html:386
 msgid "Наши проекты"
 msgstr "Projects"
 
-#: .\mainpage\templates\mainpage\index.html:38
-#: .\mainpage\templates\mainpage\index.html:71
-#: .\mainpage\templates\mainpage\index.html:433
+#: .\mainpage\templates\mainpage\index.html:73
+#: .\mainpage\templates\mainpage\index.html:106
+#: .\mainpage\templates\mainpage\index.html:432
 msgid "Заказать работу"
 msgstr "Order project"
 
-#: .\mainpage\templates\mainpage\index.html:59
-#: .\mainpage\templates\mainpage\index.html:134
+#: .\mainpage\templates\mainpage\index.html:94
+#: .\mainpage\templates\mainpage\index.html:169
 msgid "Кто мы?"
 msgstr "Who we are?"
 
-#: .\mainpage\templates\mainpage\index.html:65
-#: .\mainpage\templates\mainpage\index.html:300
+#: .\mainpage\templates\mainpage\index.html:100
+#: .\mainpage\templates\mainpage\index.html:299
 msgid "Наши услуги"
 msgstr "Services"
 
-#: .\mainpage\templates\mainpage\index.html:68
+#: .\mainpage\templates\mainpage\index.html:103
 msgid "Проекты"
 msgstr "Projects"
 
-#: .\mainpage\templates\mainpage\index.html:74
-msgid "Вперед!"
-msgstr "Go!"
+#: .\mainpage\templates\mainpage\index.html:109
+#| msgid "Заказать"
+msgid "Аккаунт"
+msgstr "Account"
 
-#: .\mainpage\templates\mainpage\index.html:92
-#: .\mainpage\templates\mainpage\index.html:119
-#: .\mainpage\templates\mainpage\index.html:153
+#: .\mainpage\templates\mainpage\index.html:127
+#: .\mainpage\templates\mainpage\index.html:154
+#: .\mainpage\templates\mainpage\index.html:188
 msgid "Лаборатория"
 msgstr "Laboratory"
 
-#: .\mainpage\templates\mainpage\index.html:92
+#: .\mainpage\templates\mainpage\index.html:127
 msgid ""
 "графического дизайна и\n"
 "                web-проектирования РЭУ\n"
@@ -78,25 +79,25 @@ msgstr ""
 "of graphic design and web-development, Russian Plekhanov University of "
 "Economics, Minsk branch"
 
-#: .\mainpage\templates\mainpage\index.html:98
+#: .\mainpage\templates\mainpage\index.html:133
 msgid "Быстро и качественно"
 msgstr "Fast and quality"
 
-#: .\mainpage\templates\mainpage\index.html:102
+#: .\mainpage\templates\mainpage\index.html:137
 msgid "Поддержка на всех стадиях"
 msgstr "Full-cycle help"
 
-#: .\mainpage\templates\mainpage\index.html:106
+#: .\mainpage\templates\mainpage\index.html:141
 msgid "Индивидуальность"
 msgstr "Individuality"
 
-#: .\mainpage\templates\mainpage\index.html:109
+#: .\mainpage\templates\mainpage\index.html:144
 msgid ""
 "успешных\n"
 "                проектов"
 msgstr "successful projects"
 
-#: .\mainpage\templates\mainpage\index.html:121
+#: .\mainpage\templates\mainpage\index.html:156
 msgid ""
 "\n"
 "                        Лаборатория графического дизайна \n"
@@ -112,7 +113,7 @@ msgstr ""
 "                        a place with modern decisions in IT world.\"\n"
 "                        "
 
-#: .\mainpage\templates\mainpage\index.html:136
+#: .\mainpage\templates\mainpage\index.html:171
 msgid ""
 "\n"
 "                        Наша команда - сплоченный коллектив \n"
@@ -136,24 +137,24 @@ msgstr ""
 "                        its own special atmosphere. \n"
 "                        "
 
-#: .\mainpage\templates\mainpage\index.html:162
-#: .\mainpage\templates\mainpage\index.html:182
-#: .\mainpage\templates\mainpage\index.html:324
-#: .\mainpage\templates\mainpage\index.html:352
-#: .\mainpage\templates\mainpage\index.html:366
-#: .\mainpage\templates\mainpage\index.html:379
+#: .\mainpage\templates\mainpage\index.html:197
+#: .\mainpage\templates\mainpage\index.html:217
+#: .\mainpage\templates\mainpage\index.html:323
+#: .\mainpage\templates\mainpage\index.html:351
+#: .\mainpage\templates\mainpage\index.html:365
+#: .\mainpage\templates\mainpage\index.html:378
 msgid "Подробнее"
 msgstr "More"
 
-#: .\mainpage\templates\mainpage\index.html:237
+#: .\mainpage\templates\mainpage\index.html:236
 msgid "Полный цикл разработки"
 msgstr "Full-cycle development"
 
-#: .\mainpage\templates\mainpage\index.html:254
+#: .\mainpage\templates\mainpage\index.html:253
 msgid "Прототипирование дизайна"
 msgstr "Ptototyping design"
 
-#: .\mainpage\templates\mainpage\index.html:256
+#: .\mainpage\templates\mainpage\index.html:255
 msgid ""
 "\n"
 "                        Полная работа над дизайном десктопного или "
@@ -173,11 +174,11 @@ msgstr ""
 "                        our design, like we love this.\n"
 "                    "
 
-#: .\mainpage\templates\mainpage\index.html:270
+#: .\mainpage\templates\mainpage\index.html:269
 msgid "Разаботка технической части"
 msgstr "Backend development"
 
-#: .\mainpage\templates\mainpage\index.html:272
+#: .\mainpage\templates\mainpage\index.html:271
 msgid ""
 "\n"
 "                        Frontend и Backend разработка: python django, react."
@@ -197,11 +198,11 @@ msgstr ""
 "technologies.\n"
 "                    "
 
-#: .\mainpage\templates\mainpage\index.html:284
+#: .\mainpage\templates\mainpage\index.html:283
 msgid "Графический дизайн и айдентика"
 msgstr "Graphic design and identica"
 
-#: .\mainpage\templates\mainpage\index.html:286
+#: .\mainpage\templates\mainpage\index.html:285
 msgid ""
 "\n"
 "                        Персонализированное брендирование, графический "
@@ -213,27 +214,27 @@ msgstr ""
 "identica. Enjoy!\n"
 "                    "
 
-#: .\mainpage\templates\mainpage\index.html:305
+#: .\mainpage\templates\mainpage\index.html:304
 msgid "Разрабокта веб-приложения"
 msgstr "Web application development"
 
-#: .\mainpage\templates\mainpage\index.html:307
+#: .\mainpage\templates\mainpage\index.html:306
 msgid "Одностраничное-приложение"
 msgstr "Landing-page"
 
-#: .\mainpage\templates\mainpage\index.html:308
+#: .\mainpage\templates\mainpage\index.html:307
 msgid "Многостраничное-приложение"
 msgstr "Complicated app"
 
-#: .\mainpage\templates\mainpage\index.html:309
+#: .\mainpage\templates\mainpage\index.html:308
 msgid "Интернет магазин"
 msgstr "Online-store"
 
-#: .\mainpage\templates\mainpage\index.html:310
+#: .\mainpage\templates\mainpage\index.html:309
 msgid "Верстка"
 msgstr "Layout"
 
-#: .\mainpage\templates\mainpage\index.html:315
+#: .\mainpage\templates\mainpage\index.html:314
 msgid ""
 "\n"
 "                     Полный цикл разработки вашего сайта.\n"
@@ -245,34 +246,34 @@ msgstr ""
 "                    From design to seo\n"
 "                "
 
-#: .\mainpage\templates\mainpage\index.html:322
-#: .\mainpage\templates\mainpage\index.html:351
-#: .\mainpage\templates\mainpage\index.html:365
-#: .\mainpage\templates\mainpage\index.html:378
+#: .\mainpage\templates\mainpage\index.html:321
+#: .\mainpage\templates\mainpage\index.html:350
+#: .\mainpage\templates\mainpage\index.html:364
+#: .\mainpage\templates\mainpage\index.html:377
 msgid "Заказать"
 msgstr "Order"
 
-#: .\mainpage\templates\mainpage\index.html:335
+#: .\mainpage\templates\mainpage\index.html:334
 msgid "Графический дизайн"
 msgstr "Graphic design and identica"
 
-#: .\mainpage\templates\mainpage\index.html:337
+#: .\mainpage\templates\mainpage\index.html:336
 msgid "Фото-обработка"
 msgstr "Photo processing"
 
-#: .\mainpage\templates\mainpage\index.html:338
+#: .\mainpage\templates\mainpage\index.html:337
 msgid "Печатная продукция"
 msgstr "Printed products"
 
-#: .\mainpage\templates\mainpage\index.html:339
+#: .\mainpage\templates\mainpage\index.html:338
 msgid "Логотип"
 msgstr "Logo"
 
-#: .\mainpage\templates\mainpage\index.html:340
+#: .\mainpage\templates\mainpage\index.html:339
 msgid "Айдентика"
 msgstr "Identica"
 
-#: .\mainpage\templates\mainpage\index.html:345
+#: .\mainpage\templates\mainpage\index.html:344
 msgid ""
 "\n"
 "                     Развивайте свой брэнд, а мы поможем\n"
@@ -284,11 +285,11 @@ msgstr ""
 "                     help you with it\n"
 "                     "
 
-#: .\mainpage\templates\mainpage\index.html:356
+#: .\mainpage\templates\mainpage\index.html:355
 msgid "Seo/smm продвижение"
 msgstr "Seo/smm advancment"
 
-#: .\mainpage\templates\mainpage\index.html:358
+#: .\mainpage\templates\mainpage\index.html:357
 msgid ""
 "\n"
 "                     Ни один, даже самый лучший сайт не\n"
@@ -302,11 +303,11 @@ msgstr ""
 "                     We will optimizing this for you!\n"
 "                     "
 
-#: .\mainpage\templates\mainpage\index.html:370
+#: .\mainpage\templates\mainpage\index.html:369
 msgid "Веб-дизайн (UI & UX)"
 msgstr "Web-design (UI & UX)"
 
-#: .\mainpage\templates\mainpage\index.html:372
+#: .\mainpage\templates\mainpage\index.html:371
 msgid ""
 "\n"
 "                    Уникальный дизайн для вашего\n"
@@ -318,33 +319,36 @@ msgstr ""
 "                    yours web application\n"
 "                "
 
-#: .\mainpage\templates\mainpage\index.html:408
+#: .\mainpage\templates\mainpage\index.html:407
 msgid "Свяжитесь с нами!"
 msgstr "Contact us"
 
-#: .\mainpage\templates\mainpage\index.html:409
+#: .\mainpage\templates\mainpage\index.html:408
 msgid "Как вас зовут?"
 msgstr "What is your name?"
 
-#: .\mainpage\templates\mainpage\index.html:411
+#: .\mainpage\templates\mainpage\index.html:410
 msgid "Ваш номер телефона"
 msgstr "Your mobile phone"
 
-#: .\mainpage\templates\mainpage\index.html:413
+#: .\mainpage\templates\mainpage\index.html:412
 msgid "Ваш email"
 msgstr "Your email"
 
-#: .\mainpage\templates\mainpage\index.html:415
+#: .\mainpage\templates\mainpage\index.html:414
 msgid "Отправить"
 msgstr "Send"
 
-#: .\mainpage\templates\mainpage\index.html:443
+#: .\mainpage\templates\mainpage\index.html:442
 msgid "Язык"
 msgstr "Language"
 
-#: .\mainpage\templates\mainpage\index.html:466
+#: .\mainpage\templates\mainpage\index.html:465
 msgid "Социальное"
 msgstr "Social"
+
+#~ msgid "Вперед!"
+#~ msgstr "Go!"
 
 #~ msgid "Мда"
 #~ msgstr "okay"

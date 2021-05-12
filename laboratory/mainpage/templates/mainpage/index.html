@@ -15,6 +15,41 @@
 </head>
 <body>
 
+<style>
+.dev-cycle
+{
+  background-image:url('{{ STATIC_URL }}/img/dev-cycle/bg.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.dev-cycle_card-bg {
+  position: absolute;
+  background-image:url('{{ STATIC_URL }}/img/dev-cycle/noise.jpg');
+  background-size: 150px 150px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .08;
+  border-radius: 20px;
+  z-index: -1;
+}
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 20px;
+  background-image:url('{{ STATIC_URL }}/img/line.svg');
+  background-color: #EEF3FF;
+  background-repeat: no-repeat;
+  margin-bottom: 65px;
+  max-width: 570px;
+}
+</style>
+
     <div class="scroll">
         <div class="progress"></div>
         
@@ -71,7 +106,7 @@
                     <a href="#fifth" class="header-menu-link">{% trans "Заказать работу" %}</a>
                 </li>
                 <li class="header-menu-list">
-                    <button class="button">{% trans "Вперед!" %}</button>
+                    <a href="{% url 'registration' %}"><button class="button">{% trans "Аккаунт" %}</button></a>
                 </li>
             </ul>
         </nav>
@@ -126,10 +161,10 @@
                         {% endblocktrans %}
                     </span>
                 </div>
-                <img src="/img/scientist.svg" alt="image: scientist" class="wow bounceInRight">
+                <img src="/img/scientist.svg" loading="lazy" alt="image: scientist" class="wow bounceInRight">
             </div>
             <div class="card">
-                <img src="/img/team.svg" alt="image: team" class="wow bounceInLeft">
+                <img src="/img/team.svg" loading="lazy" alt="image: team" class="wow bounceInLeft">
                 <div class="card-text">
                     <span id="first" class="card-title anchor-us">{% trans "Кто мы?" %}</span>
                     <span class="card-subtitle">
@@ -157,7 +192,7 @@
                 {% for post in heading %}
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="{{ post.image.url }}" alt="blog-news-1" class="blog-card_image wow fadeInUp">
+                        <img src="{{ post.image.url }}" loading="lazy" alt="blog-news-1" class="blog-card_image wow fadeInUp">
                         <div class="new-more">
                             <button><a href="{% url 'post-detail' post.slug %}">{% trans "Подробнее" %}</a></button>
                         </div>
@@ -177,7 +212,7 @@
                 {% for post in default %}
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="{{ post.image.url }}" alt="blog-news-1" class="blog-card_image wow fadeInUp">
+                        <img src="{{ post.image.url }}" loading="lazy" alt="blog-news-1" class="blog-card_image wow fadeInUp">
                         <div class="new-more">
                             <button><a href="{% url 'post-detail' post.slug %}">{% trans "Подробнее" %}</a></button>
                         </div>
@@ -195,56 +230,20 @@
         </div>
     </section>
 
-<style>
-.dev-cycle
-{
-  background-image:url('{{ STATIC_URL }}img/dev-cycle/bg.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  position: relative;
-}
-.dev-cycle_card-bg {
-  position: absolute;
-  background-image:url('{{ STATIC_URL }}img/dev-cycle/noise.jpg');
-  background-size: 150px 150px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: .08;
-  border-radius: 20px;
-  z-index: -1;
-}
-.service-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  border-radius: 20px;
-  background-image:url('{{ STATIC_URL }}img/line.svg');
-  background-color: #EEF3FF;
-  background-repeat: no-repeat;
-  margin-bottom: 65px;
-  max-width: 570px;
-}
-</style>
-
-
     <section class="dev-cycle">
         <h2 class="dev-cycle_title" id="second">
-            <img src="/img/dev-cycle/cycle.png" alt="cycle">
+            <img src="/img/dev-cycle/cycle.png" loading="lazy" alt="cycle">
             {% trans "Полный цикл разработки" %}
         </h2>
 
         <div class="ellipses">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
         </div>
 
         <div class="dev-cycle_cards">
@@ -262,7 +261,7 @@
                     {% endblocktrans %}
                     </div>
                 </div>
-                <img src="/img/dev-cycle/Development-rafiki 1.png" alt="" class="wow fadeInRight">
+                <img src="/img/dev-cycle/Development-rafiki 1.png" alt="" loading="lazy" class="wow fadeInRight">
             </div>
             <div class="dev-cycle_card">
                 <div class="dev-cycle_card-bg"></div>
@@ -276,7 +275,7 @@
                     {% endblocktrans %}
                     </div>
                 </div>
-                <img src="/img/dev-cycle/Software engineer-pana 1.png" alt="" class="wow fadeInLeft">
+                <img src="/img/dev-cycle/Software engineer-pana 1.png" alt="" loading="lazy" class="wow fadeInLeft">
             </div>
             <div class="dev-cycle_card">
                 <div class="dev-cycle_card-bg"></div>
@@ -288,15 +287,15 @@
                     {% endblocktrans %}
                     </div>
                 </div>
-                <img src="/img/dev-cycle/Website Creator-rafiki 1.png" alt="" class="wow fadeInRight">
+                <img src="/img/dev-cycle/Website Creator-rafiki 1.png" loading="lazy" alt="" class="wow fadeInRight">
             </div>
         </div>
-        <img class="wave" src="/img/dev-cycle/wave.png" alt="wave">
+        <img class="wave" src="/img/dev-cycle/wave.png" loading="lazy" alt="wave">
     </section>
 
     <section class="services" id="third">
         <h2 class="container-serveces-title">
-            <img src="/img/pencil.png" alt="image: pencil">
+            <img src="/img/pencil.png" loading="lazy" alt="image: pencil">
             {% trans "Наши услуги" %}
         </h2>
         <div class="container-serveces">
@@ -389,7 +388,7 @@
         <div class="container-projects">
             {% for project in all_projects %}
             <div class="project-card">
-                <a href="{% url 'project-detail' project.slug %}"><img src="{{ project.image.url }}" alt="image: grifons" class="hvr-bob"></a>
+                <a href="{% url 'project-detail' project.slug %}"><img src="{{ project.image.url }}" loading="lazy" alt="image: grifons" class="hvr-bob"></a>
                 <h3 class="project-card-title wow fadeInUp">{{ project.name }}</h3>
                 <span class="project-card-subtitle wow fadeInUp">
                     {{ project.content }}
@@ -415,7 +414,7 @@
                     <button type="submit"> {% trans 'Отправить' %}</button>
                 </form>
             </div>
-            <img src="/img/astronaut.svg" alt="image: astronaut" class="wow bounceInRight">
+            <img src="/img/astronaut.svg" alt="image: astronaut" loading="lazy" class="wow bounceInRight">
         </div>
     </section>
     </main>
@@ -423,17 +422,17 @@
 
         <footer>
             <div class="map wow fadeInUp">
-                <img src="/img/map.png" alt="image: map">
+                <img src="/img/map.png" loading="lazy" alt="image: map">
             </div>
 
             <div class="footer-content wow fadeInRight">
-                <img src="/img/lab-logo.svg" width="92px" alt="lab-logo">
+                <img src="/img/lab-logo.svg" loading="lazy" width="92px" alt="lab-logo">
 
                 <div class="footer-contacts">
                     <h3> {% trans 'Заказать работу' %}</h3>
                     <nav>
                         <ul>
-                            <li><a href="mailto:lab@reu.by">lab@reu.by</a></li>
+                            <li><a href="mailto:laboratoryrea@gmail.com">laboratoryrea@gmail.com</a></li>
                             <li><a href="tel:+375298769456">+375298769456</a></li>
                         </ul>
                     </nav>
@@ -466,10 +465,10 @@
                     <h3> {% trans 'Социальное' %}</h3>
                     <nav>
                         <ul>
-                            <li><a target="_blank" href="https://linkedin.com/"><img src="/img/social-icons/linkedin.svg" alt="linkedin"></a></li>
-                            <li><a target="_blank" href="https://dribbble.com/"><img src="/img/social-icons/dribbble.svg" alt="dribbble"></a></li>
-                            <li><a target="_blank" href="https://instagram.com/"><img src="/img/social-icons/instagram.svg" alt="instagram"></a></li>
-                            <li><a target="_blank" href="https://facebook.com/"><img src="/img/social-icons/facebook.svg" alt="facebook"></a></li>
+                            <li><a target="_blank" href="https://linkedin.com/"><img src="/img/social-icons/linkedin.svg" loading="lazy" alt="linkedin"></a></li>
+                            <li><a target="_blank" href="https://dribbble.com/"><img src="/img/social-icons/dribbble.svg" loading="lazy" alt="dribbble"></a></li>
+                            <li><a target="_blank" href="https://instagram.com/"><img src="/img/social-icons/instagram.svg" loading="lazy" alt="instagram"></a></li>
+                            <li><a target="_blank" href="https://facebook.com/"><img src="/img/social-icons/facebook.svg" loading="lazy" alt="facebook"></a></li>
                         </ul>
                     </nav>
                 </div>
