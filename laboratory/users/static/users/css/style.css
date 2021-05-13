@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background-color: #FAFBFC;
+  border-radius: 29px;
+  display: flex;
+  justify-content: space-between;
+  padding: 96px;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 29px;
+}
+.left-corner {
+  display: flex;
+  flex-direction: column;
+}
+#left-img {
+  max-width: 100%;
+  margin-top: 125px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo span {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #494949;
+  margin-left: 10px;
+}
+.subtitle {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #CACACA;
+  max-width: 380px;
+  margin-top: 20px;
+}
+.right-corner {
+  display: flex;
+  flex-direction: column;
+  max-width: 344px;
+}
+.language {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.language span {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #CACACA;
+  margin-right: 15px;
+}
+.right-corner h2 {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 37px;
+  color: #494949;
+}
+.login {
+  display: flex;
+}
+.register {
+  display: flex;
+  flex-direction: column;
+}
+.login span, a {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #CACACA;
+  text-decoration: none;
+}
+.login a {
+  color: #407BFF;
+  margin-left: 5px;
+  margin-bottom: 40px;
+  transition: 0.3s ease;
+}
+.login a:hover {
+  color: #88ADFF;
+  transition: 0.3s ease
+}
+#input-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #494949;
+}
+input[type="text"],
+input[type="password"] {
+  background: #FAFBFC;
+  border: 2px solid #E7E7E7;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #BBBBBB;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 13px;
+  outline: none;
+  margin-bottom: 30px;
+  transition: 0.3s ease;
+  width: 100%;
+  margin-top: 19px;
+}
+input[type="text"],
+input[type="password"]:focus {
+  border: 2px solid #BEBEBE;
+  transition: 0.3s ease;
+}
+.input-password1 {
+  margin-bottom: 0px !important;
+}
+.right-corner button {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.right-corner button:last-child {
+  margin: 0;
+}
+.blue {
+  background-color: #326BFF;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  transition: 0.3s ease;
+  width: 100%;
+}
+.blue:hover {
+  background-color: #7098FF;
+  transition: 0.3s ease;
+}
+#blue-login {
+  margin-top: 30px;
+}
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #CACACA;
+  outline: none;
+  background-color: #FAFBFC;
+  border: 1.5px solid #E7E7E7;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding-top: 11px;
+  padding-bottom: 12px;
+  transition: 0.3s ease;
+  width: 100%;
+}
+.social:hover {
+  background-color: #F4F5F5;
+  transition: 0.3s ease;
+}
+.social img {
+  margin-right: 10px;
+}

@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plekhanov Lab - Регистрация</title>
+  <title>Plekhanov Lab - Вход</title>
   <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
   <link rel="stylesheet" href="{% static 'mainpage/css/normalize.css' %}">
   <link rel="icon" type="image/png" href="../img/logo.ico">
@@ -23,31 +23,29 @@
           графического дизайна и веб-проектирования 
           РЭУ, Минский филиал
         </span>
-        <img src="/img/login-illustration.svg" alt="img: illustration" id="left-img">
+        <img src="/img/Laboratory-svg.svg" alt="img: illustration" id="left-img">
       </div>
       <div class="right-corner">
         <div class="language">
           <span>Русский (ru)</span>
           <img src="/img/Stroke.svg" alt="icon: arrow">
         </div>
-        <h2>Зарегистрируйтесь 
-            в Лаборатории
+        <h2>Войдите в свой аккаунт
         </h2>
-        <div class="login">
-          <span>Уже зарегистрированы?</span>
-          <a href="{% url 'login' %}">Войти</a>
+        <div class="login register">
+          <span>Еще не зарегистрированы?</span>
+          <a href="{% url 'registration' %}">Зарегистрироваться</a>
         </div>
         <form method="POST">
           {% csrf_token %}
           <span id="input-title">Ваше имя</span>
           {{ form.username }}
-          <span id="input-title">Ваш email</span>
-          {{ form.email }}
           <span id="input-title">Ваш пароль</span>
-          {{ form.password1 }}
-          {{ form.password2 }}
-          <button class="button blue" type="submit">Создать аккаунт</button>
+          {{ form.password }}
+          <button class="button blue" id="blue-login" type="submit">Войти</button>
         </form>
+        <button class="button social"><img src="/img/Google.svg" alt="icon: Google">Войти через Google</button>
+        <button class="button social"><img src="/img/Facebook.svg" alt="icon: Facebook">Войти через Facebook</button>
       </div>
     </div>
   </section>

@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plekhanov Lab - Выход</title>
+  <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'mainpage/css/normalize.css' %}">
+  <link rel="icon" type="image/png" href="../img/logo.ico">
+</head>
+<body>
+    <h1>Вы успешно вышли с аккаунта</h1>
+    <a href="{% url 'login' %}">Войти снова</a>
+  <script src="{% static 'users/js/script.js' %}"></script>
+</body>
+</html>

@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 class RegisterView(ListView):
   model = User
@@ -29,4 +31,10 @@ class RegisterView(ListView):
           [f'{email}'],
           fail_silently=False,
         )
-        return redirect('blog')
+        return redirect('login')
+
+
+@method_decorator(login_required, name='dispatch')
+class ProfileView(ListView):
+  model = User
+  template_name = "users/profile.html"
