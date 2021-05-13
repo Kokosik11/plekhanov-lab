@@ -11,44 +11,43 @@
     <link rel="stylesheet" href="{% static 'mainpage/css/normalize.css' %}">
     <link rel="icon" type="image/png" href="../img/logo.ico">
     <link rel="stylesheet" href="{% static 'mainpage/css/animate.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 </head>
 <body>
-
-<style>
-.dev-cycle
-{
-  background-image:url('{{ STATIC_URL }}/img/dev-cycle/bg.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  position: relative;
-}
-.dev-cycle_card-bg {
-  position: absolute;
-  background-image:url('{{ STATIC_URL }}/img/dev-cycle/noise.jpg');
-  background-size: 150px 150px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: .08;
-  border-radius: 20px;
-  z-index: -1;
-}
-.service-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  border-radius: 20px;
-  background-image:url('{{ STATIC_URL }}/img/line.svg');
-  background-color: #EEF3FF;
-  background-repeat: no-repeat;
-  margin-bottom: 65px;
-  max-width: 570px;
-}
-</style>
+<div class="wrapper">
+    <style>
+    .dev-cycle
+    {
+    background-image:url('{{ STATIC_URL }}/img/dev-cycle/bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    }
+    .dev-cycle_card-bg {
+    position: absolute;
+    background-image:url('{{ STATIC_URL }}/img/dev-cycle/noise.jpg');
+    background-size: 150px 150px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .08;
+    border-radius: 20px;
+    z-index: -1;
+    }
+    .service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 20px;
+    background-image:url('{{ STATIC_URL }}/img/line.svg');
+    background-color: #EEF3FF;
+    background-repeat: no-repeat;
+    margin-bottom: 65px;
+    max-width: 570px;
+    }
+    </style>
 
     <div class="scroll">
         <div class="progress"></div>
@@ -75,7 +74,7 @@
         </div>
     </div>
 
-    <header class="header">
+    <header id="header" class="header lock-padding">
         <nav class="header-body">
             <ul class="header-menu">
                 <li class="header-menu-list">
@@ -110,7 +109,6 @@
                 </li>
             </ul>
         </nav>
-        </div>
     </header>
     {% if messages %}
     <ul class="messages">
@@ -317,16 +315,46 @@
                      {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <a data-fancybox data-src="#hidden-content" href="javascript:;">
+                    <a href="#popup" class="popup-link">
                         <button class="glow-on-hover">{% trans 'Заказать' %}</button>
                     </a>
-                    <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
+                    <a href="#popup_2" class="popup-link">
+                        <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
+                    </a>
                 </div>
             </div>
 
-            <div style="display: none;" id="hidden-content">
-                <h2>Hello</h2>
-                <p>You are awesome.</p>
+            <div id="popup" class="popup">
+                <div class="popup__body">
+                    <div class="popup__content">
+                        <a href="#header" class="popup__close close-popup">X</a>
+                        <div class="popup__title">Это модальное окно №1</div>
+                        <div class="popup__text">
+                            Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Quibusdam, labore.
+                            Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Quibusdam, labore.
+                            Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Quibusdam, labore.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="popup_2" class="popup">
+                <div class="popup__body">
+                    <div class="popup__content">
+                        <a href="#header" class="popup__close close-popup">X</a>
+                        <div class="popup__title">Это модальное окно №2</div>
+                        <div class="popup__text">
+                            Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Quibusdam, labore.
+                            Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Quibusdam, labore.
+                            Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Quibusdam, labore.
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="service-card wow fadeInUp">
@@ -420,67 +448,69 @@
     </main>
         
 
-        <footer>
-            <div class="map wow fadeInUp">
-                <img src="/img/map.png" loading="lazy" alt="image: map">
+    <footer>
+        <div class="map wow fadeInUp">
+            <img src="/img/map.png" loading="lazy" alt="image: map">
+        </div>
+
+        <div class="footer-content wow fadeInRight">
+            <img src="/img/lab-logo.svg" loading="lazy" width="92px" alt="lab-logo">
+
+            <div class="footer-contacts">
+                <h3> {% trans 'Заказать работу' %}</h3>
+                <nav>
+                    <ul>
+                        <li><a href="mailto:laboratoryrea@gmail.com">laboratoryrea@gmail.com</a></li>
+                        <li><a href="tel:+375298769456">+375298769456</a></li>
+                    </ul>
+                </nav>
             </div>
 
-            <div class="footer-content wow fadeInRight">
-                <img src="/img/lab-logo.svg" loading="lazy" width="92px" alt="lab-logo">
-
-                <div class="footer-contacts">
-                    <h3> {% trans 'Заказать работу' %}</h3>
-                    <nav>
-                        <ul>
-                            <li><a href="mailto:laboratoryrea@gmail.com">laboratoryrea@gmail.com</a></li>
-                            <li><a href="tel:+375298769456">+375298769456</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div class="footer-language">
-                    <h3> {% trans 'Язык' %}</h3>
-                    <nav>
-                        <ul>
-                            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                                <input name="next" type="hidden" value="{{ redirect_to }}">
-                                <select name="language" class="lan-select">
-                                    {% get_current_language as LANGUAGE_CODE %}
-                                    {% get_available_languages as LANGUAGES %}
-                                    {% get_language_info_list for LANGUAGES as languages %}
-                                    {% for language in languages %}
-                                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
-                                                selected{% endif %}>
-                                            {{ language.name_local }} ({{ language.code }})
-                                        </option>
-                                    {% endfor %}
-                                </select>
-                                <input type="submit" value="Go" class="lan-button">
-                            </form>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div class="footer-social">
-                    <h3> {% trans 'Социальное' %}</h3>
-                    <nav>
-                        <ul>
-                            <li><a target="_blank" href="https://linkedin.com/"><img src="/img/social-icons/linkedin.svg" loading="lazy" alt="linkedin"></a></li>
-                            <li><a target="_blank" href="https://dribbble.com/"><img src="/img/social-icons/dribbble.svg" loading="lazy" alt="dribbble"></a></li>
-                            <li><a target="_blank" href="https://instagram.com/"><img src="/img/social-icons/instagram.svg" loading="lazy" alt="instagram"></a></li>
-                            <li><a target="_blank" href="https://facebook.com/"><img src="/img/social-icons/facebook.svg" loading="lazy" alt="facebook"></a></li>
-                        </ul>
-                    </nav>
-                </div>
+            <div class="footer-language">
+                <h3> {% trans 'Язык' %}</h3>
+                <nav>
+                    <ul>
+                        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                            <input name="next" type="hidden" value="{{ redirect_to }}">
+                            <select name="language" class="lan-select">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                                            selected{% endif %}>
+                                        {{ language.name_local }} ({{ language.code }})
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            <input type="submit" value="Go" class="lan-button">
+                        </form>
+                    </ul>
+                </nav>
             </div>
-        </footer>
+
+            <div class="footer-social">
+                <h3> {% trans 'Социальное' %}</h3>
+                <nav>
+                    <ul>
+                        <li><a target="_blank" href="https://linkedin.com/"><img src="/img/social-icons/linkedin.svg" loading="lazy" alt="linkedin"></a></li>
+                        <li><a target="_blank" href="https://dribbble.com/"><img src="/img/social-icons/dribbble.svg" loading="lazy" alt="dribbble"></a></li>
+                        <li><a target="_blank" href="https://instagram.com/"><img src="/img/social-icons/instagram.svg" loading="lazy" alt="instagram"></a></li>
+                        <li><a target="_blank" href="https://facebook.com/"><img src="/img/social-icons/facebook.svg" loading="lazy" alt="facebook"></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</div>
+
     <script src="{% static 'mainpage/scripts/parallax.js' %}"></script>
     <script src="{% static 'mainpage/scripts/dropdown.js' %}"></script>
     <script src="{% static 'mainpage/scripts/scrollbar.js' %}"></script>
     <script src="{% static 'mainpage/scripts/wow.min.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'mainpage/scripts/header.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="{% static 'mainpage/scripts/popup.js' %}"></script>
     <script>
         new WOW().init();
     </script>
