@@ -44,8 +44,12 @@
           {{ form.password }}
           <button class="button blue" id="blue-login" type="submit">Войти</button>
         </form>
-        <button class="button social"><img src="/img/Google.svg" alt="icon: Google">Войти через Google</button>
-        <button class="button social"><img src="/img/Facebook.svg" alt="icon: Facebook">Войти через Facebook</button>
+        <a href="{% url 'social:begin' 'google-oauth2' %}">
+          <button type="button" class="button social"><img src="/img/Google.svg" alt="icon: Google">Войти через Google</button>
+        </a>
+        <a href="{% url 'social:begin' 'github' %}">
+          <button class="button social"><img src="/img/Github.svg" alt="icon: Github">Войти через Github</button>
+        </a>
       </div>
     </div>
   </section>

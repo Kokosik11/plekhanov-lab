@@ -42,9 +42,12 @@ INSTALLED_APPS = [
     'mainpage.apps.MainpageConfig',
     'captcha',
     'users.apps.UsersConfig',
+    'social_django',
 ]
 
 AUTHENTICATION_BACKENDS = [
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.github.GithubOAuth2',
     'django.contrib.auth.backends.ModelBackend',
     'users.authentication.EmailAuthBackend',
 ]
@@ -58,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'laboratory.urls'
@@ -73,6 +77,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -167,3 +173,9 @@ RECAPTCHA_PRIVATE_KEY = '6LdfFMoaAAAAAA-cOHroUJCbkB0FSRTVoWkTY6Ym'
 
 LOGIN_REDIRECT_URL = 'profile'
 LOGIN_URL = 'login'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '30192686673-dpotujmokj59kpl1idtrrbsod062vgom.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'RkvUrTignesEcmNheyqBzNkx'
+
+SOCIAL_AUTH_GITHUB_KEY = 'Iv1.67491d57f83931d7'
+SOCIAL_AUTH_GITHUB_SECRET = '617e27140311fcc2e6a748c64e8c27f9f9fb8122'

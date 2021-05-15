@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('users.urls')),
     path('account/', views.profile, name="profile"),
     path('i18n/', include('django.conf.urls.i18n')),
+    path('oauth/', include('social_django.urls', namespace="social")),
 ]
 
 urlpatterns += i18n_patterns(
