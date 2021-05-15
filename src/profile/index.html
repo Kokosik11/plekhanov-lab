@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plekhanov Lab | Профиль</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./assets/logo.svg" alt="logo">
+            <h1>Аккаунт</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Профиль</a></li>
+                <li><a href="#">Мои заказы</a></li>
+                <li>Здравствуй, Андрей</li>
+                <li><img src="./assets/avatar.png" width="42" alt="avatar"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="./assets/Password.svg" width="25" alt="Password">Личная информация</a></li>
+                <li><a href="#"><img src="./assets/Shield Done.svg" width="23" alt="Shield Done">Конфиденциальность</a></li>
+                <li><a href="#"><img src="./assets/Bag.svg" width="26" alt="Bag">Заказы</a></li>
+            </ul>
+        </nav>
+
+        <section class="personal-info">
+            <h2>Личная информация</h2>
+            <div class="person">
+                <img src="./assets/avatar.png" width="75" alt="big avatar">
+                <h3>Андрей Криволасов</h3>
+                <span>Укажите основную информацию о себе</span>
+            </div>
+            <form>
+                <label for="name">Имя</label>
+                <input type="text" name="name" id="name" placeholder="Андрей">
+                <label for="surname">Фамилия</label>
+                <input type="text" name="surname" id="surname" placeholder="Криволасов">
+                <label for="birth">Дата рождения</label>
+                <form id="birth">
+                    <select name="date" id="date"></select>
+                    <select name="month" id="month"></select>
+                    <select name="year" id="year"></select>
+                </form>
+
+                <input type="submit" value="Сохранить">
+            </form>
+        </section>
+
+        <section class="confidentiality">
+            <h2>Конфиденциальность</h2>
+            <form>
+                <label for="phone">Телефон</label>
+                <input type="text" id="phone" name="phone" placeholder="+375297682367">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="example@mail.com">
+                <input type="submit" value="Сохранить">
+            </form>
+        </section>
+
+        <section class="orders">
+            <article class="order">
+                <time>10 мая 2020, 11:47</time>
+                <header class="order-info">
+                    <div class="order-name">
+                        <h3>#4675</h3>
+                        <time>10 мая 2020, 11:47</time>
+                    </div>
+                    <div class="order-status green">Принят</div>
+                    <div class="arrow">&gt;</div>
+                </header>
+                
+                <article class="order-details">
+                    <div class="client">
+                        <span class="label">Клиент</span>
+                        <span class="content">Андрей Криволасов</span>
+                    </div>
+                    <div class="service">
+                        <span class="label">Услуга</span>
+                        <span class="content">Лендинг пейдж</span>
+                    </div>
+                    <div class="price">
+                        <span class="label">Стоимость</span>
+                        <span class="content gray">Расчитывается...</span>
+                    </div>
+                    <div class="status">
+                        <span class="label">Статус</span>
+                        <span class="content"><div class="circle green"></div>Принят</span>
+                    </div>
+                </article>
+            </article>
+
+            <article class="order">
+                <time>12 мая 2020, 15:10</time>
+                <header class="order-info">
+                    <div class="order-name">
+                        <h3>#4681</h3>
+                        <time>12 мая 2020, 15:10</time>
+                    </div>
+                    <div class="order-status red">Отменен</div>
+                    <div class="arrow">&gt;</div>
+                </header>
+
+                <article class="order-details">
+                    <div class="client">
+                        <span class="label">Клиент</span>
+                        <span class="content">Андрей Криволасов</span>
+                    </div>
+                    <div class="service">
+                        <span class="label">Услуга</span>
+                        <span class="content">Лендинг пейдж</span>
+                    </div>
+                    <div class="price">
+                        <span class="label">Стоимость</span>
+                        <span class="content"></span>
+                    </div>
+                    <div class="status">
+                        <span class="label">Статус</span>
+                        <span class="content"><div class="circle red"></div>Отменен</span>
+                    </div>
+                </article>
+
+            </article>
+        </section>
+    </main>
+</body>
+</html>
