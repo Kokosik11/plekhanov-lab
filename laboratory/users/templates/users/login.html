@@ -38,7 +38,7 @@
         </div>
         <form method="POST">
           {% csrf_token %}
-          <span id="input-title">Ваше имя</span>
+          <span id="input-title">Ваше имя или email</span>
           {{ form.username }}
           <span id="input-title">Ваш пароль</span>
           {{ form.password }}

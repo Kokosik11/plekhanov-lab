@@ -7,7 +7,10 @@ class Profile(models.Model):
   image = models.ImageField(default="default.jpg", upload_to="profile_images")
   phone = models.CharField("Телефон", max_length=50, blank=True)
   birthdate = models.DateField(blank = True, null = True)
-  
+
+  def __str__(self):
+    return f'Профиль пользователя {self.user.username}'
+
   def save(self, *args, **kwards):
     super().save()
     
@@ -17,6 +20,8 @@ class Profile(models.Model):
       resize = (64, 64)
       image.thumbnail(resize)
       image.save(self.image.path)
-
-  def __str__(self):
-    return f'Профиль пользователя {self.user.username}'
+      
+  class Meta:
+    verbose_name = "Профиль"
+    verbose_name_plural = "Профили"
+    User._meta.get_field('email')._unique = True
