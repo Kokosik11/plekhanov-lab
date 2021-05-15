@@ -131,13 +131,6 @@ input[type="password"]:focus {
 .input-password1 {
   margin-bottom: 0px !important;
 }
-.right-corner button {
-  margin-bottom: 15px;
-  cursor: pointer;
-}
-.right-corner button:last-child {
-  margin: 0;
-}
 .blue {
   background-color: #326BFF;
   border-radius: 8px;
@@ -151,6 +144,7 @@ input[type="password"]:focus {
   padding-bottom: 13px;
   transition: 0.3s ease;
   width: 100%;
+  cursor: pointer;
 }
 .blue:hover {
   background-color: #7098FF;
@@ -176,6 +170,9 @@ input[type="password"]:focus {
   padding-bottom: 12px;
   transition: 0.3s ease;
   width: 100%;
+  margin-top: 15px;
+  cursor: pointer;
+
 }
 .social:hover {
   background-color: #F4F5F5;
@@ -183,4 +180,21 @@ input[type="password"]:focus {
 }
 .social img {
   margin-right: 10px;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: auto;
+}
+.alert-success {
+	color: #6E9D79;
+	font-size: 20px;
+	background-color: #D4EDDA;
+	padding: 15px 35px 15px 15px;
+	text-align: center;
+	margin-top: 30px;
+}
+.messages {
+  padding: 0;
 }

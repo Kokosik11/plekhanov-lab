@@ -104,9 +104,15 @@
                 <li class="header-menu-list">
                     <a href="#fifth" class="header-menu-link">{% trans "Заказать работу" %}</a>
                 </li>
+                {% if user.is_authenticated %}
+                <li class="header-menu-list">
+                    <a href="{% url 'profile' %}"><button class="button">{% trans "Аккаунт" %}</button></a>
+                </li>
+                {% else %}
                 <li class="header-menu-list">
                     <a href="{% url 'registration' %}"><button class="button">{% trans "Аккаунт" %}</button></a>
                 </li>
+                {% endif %}
             </ul>
         </nav>
     </header>
@@ -299,84 +305,51 @@
         <div class="container-serveces">
             <div class="service-card wow fadeInUp">
                 <span class="service-card-title">
-                   {% trans 'Разрабокта веб-приложения' %}<img data-id="1" class="dropdown-arrow" src="/img/arrow-down.svg" alt="icon: arrow-down">
-                    <div data-id="1" class="dropdown-menu">
-                        <span data-id="1" class="dropdown-option"> {% trans 'Одностраничное-приложение' %}</span>
-                        <span data-id="2" class="dropdown-option"> {% trans 'Многостраничное-приложение' %}</span>
-                        <span data-id="3" class="dropdown-option"> {% trans 'Интернет магазин' %}</span>
-                        <span data-id="4" class="dropdown-option"> {% trans 'Верстка' %}</span>
+                   {% trans 'Разрабокта веб-приложения' %}
+                    <div class="dropdown-menu">
+                        <span class="dropdown-option"> {% trans 'Одностраничное-приложение' %}</span>
+                        <span class="dropdown-option"> {% trans 'Многостраничное-приложение' %}</span>
+                        <span class="dropdown-option"> {% trans 'Интернет магазин' %}</span>
+                        <span class="dropdown-option"> {% trans 'Верстка' %}</span>
                     </div>
                 </span>
-                <h3 data-id="1" class="menu-title"></h3>
-                <span data-id="1" class="service-card-subtitle">
+                <h3 class="menu-title"></h3>
+                <span class="service-card-subtitle">
                      {% blocktrans %}
                      Полный цикл разработки вашего сайта.
                      От дизайна до продвижения
                      {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <a href="#popup" class="popup-link">
-                        <button class="glow-on-hover">{% trans 'Заказать' %}</button>
-                    </a>
+                    <button class="glow-on-hover">{% trans 'Заказать' %}</button>
                     <a href="#popup_2" class="popup-link">
                         <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
                     </a>
                 </div>
             </div>
 
-            <div id="popup" class="popup">
-                <div class="popup__body">
-                    <div class="popup__content">
-                        <a href="#header" class="popup__close close-popup">X</a>
-                        <div class="popup__title">Это модальное окно №1</div>
-                        <div class="popup__text">
-                            Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Quibusdam, labore.
-                            Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Quibusdam, labore.
-                            Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Quibusdam, labore.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="popup_2" class="popup">
-                <div class="popup__body">
-                    <div class="popup__content">
-                        <a href="#header" class="popup__close close-popup">X</a>
-                        <div class="popup__title">Это модальное окно №2</div>
-                        <div class="popup__text">
-                            Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Quibusdam, labore.
-                            Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Quibusdam, labore.
-                            Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Quibusdam, labore.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="service-card wow fadeInUp">
                 <span class="service-card-title">
-                     {% blocktrans %}Графический дизайн{% endblocktrans %} <img data-id="2" class="dropdown-arrow" src="/img/arrow-down.svg" alt="icon: arrow-down">
-                    <div data-id="2" class="dropdown-menu">
+                     {% blocktrans %}Графический дизайн{% endblocktrans %}
+                    <div class="dropdown-menu">
                         <span class="dropdown-option"> {% trans 'Фото-обработка' %}</span>
                         <span class="dropdown-option"> {% trans 'Печатная продукция' %}</span>
                         <span class="dropdown-option"> {% trans 'Логотип' %}</span>
                         <span class="dropdown-option"> {% trans 'Айдентика' %}</span>
                     </div>
                 </span>
-                <h3 data-id="2" class="menu-title"></h3>
-                <span data-id="2" class="service-card-subtitle">
+                <h3 class="menu-title"></h3>
+                <span class="service-card-subtitle">
                      {% blocktrans %}
-                     Развивайте свой брэнд, а мы поможем
+                     Развивайте свой бренд, а мы поможем
                      вам с этим
                      {% endblocktrans %}
                 </span>
                 <div class="buttons">
                     <button class="glow-on-hover">{% trans 'Заказать' %}</button>
-                    <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
+                    <a href="#popup" class="popup-link">
+                        <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
+                    </a>
                 </div>
             </div>
             <div class="service-card wow fadeInUp">
@@ -390,7 +363,9 @@
                 </span>
                 <div class="buttons">
                     <button class="glow-on-hover">{% trans 'Заказать' %}</button>
-                    <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
+                    <a href="#popup_3" class="popup-link">
+                        <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
+                    </a>
                 </div>
             </div>
             <div class="service-card wow fadeInUp">
@@ -403,11 +378,159 @@
                 </span>
                 <div class="buttons">
                     <button class="glow-on-hover">{% trans 'Заказать' %}</button>
-                    <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
+                    <a href="popup_4" class="popup-link">
+                        <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <div id="popup" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#header" class="popup__close close-popup">X</a>
+                <div class="popup__title">Графический дизайн</div>
+                <div class="popup__subtitle">
+                    Имидж компании всегда являлся главным инструментом для развития и продвижения бизнеса. 
+                    Хотите повысить узнаваемость продукта? Хотите, чтобы у вашей компании был свой логотип и фирменный знак?
+                    В лаборатории мы делаем запоминающийся и стильный дизайн.
+                    Каждый логотип - уникальная работа нашей команды дизайнеров.
+                </div>
+
+                <div class="popup__text__title">
+                    Логотип
+                </div>
+                <div class="popup__text">
+                    Сделаем уникальный и запоминающийся логотип вашего Бренда.
+                    Есть идея? Мы доведем ее до конца.
+                </div>
+
+                <div class="popup__text__title">
+                    Айдентика
+                </div>
+                <div class="popup__text">
+                    Мерчендайзинг, дизайн визитных карточек,
+                    фирменные кружки или ручки.
+                    Сделаем брендирование и повысим узнаваемость.
+                </div>
+
+                <div class="popup__text__title">
+                    Печатная продукция
+                </div>
+                <div class="popup__text">
+                    Задизайним обложку книги, буклета или листовки,
+                    журнала.
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="popup_2" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#header" class="popup__close close-popup">X</a>
+
+                <div class="popup__title">Разработка веб-приложения</div>
+                <div class="popup__subtitle">
+                    Лаборатория помогает клиентам разрабатывать масштабируемые веб-решения 
+                    с нуля или трансформировать устаревшие системы в современные 
+                    решения. Мы гарантируем прозрачность реализации проекта 
+                    и профессиональный подход к созданию веб-решений — от 
+                    лендингов до крупных платформ. 
+                </div>
+
+                <div class="popup__text__title">
+                    Интернет-магазин
+                </div>
+                <div class="popup__text">
+                    Мы создаем веб-приложения любых уровней сложности и 
+                    нагрузки для электронной торговли.
+                    Мы помогаем нашим клиентам адаптировать пользовательский опыт 
+                    под их потребности.
+                </div>
+
+                <div class="popup__text__title">
+                    Одностраничное-приложение
+                </div>
+                <div class="popup__text">
+                    Лэндинг - это одностраничное-приложение, которое является презентацией
+                    вашего профиля/товара/компании.
+                    Поможем сделать вам эффектиынй рекламный инструмент
+                </div>
+
+                <div class="popup__text__title">
+                    Многостраничное-приложение
+                </div>
+                <div class="popup__text">
+                    Блог, форум, сайт компании. Реализуем сложный, многостраничный сайт
+                    любой сложности.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup_3" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#header" class="popup__close close-popup">X</a>
+
+                <div class="popup__title">Seo продвижение</div>
+                <div class="popup__subtitle">
+                    Даже самый современный и высокотехнологичный сайт обесценивает
+                    все свои преимущества отсутствием поисковой оптимизации.
+                    Настроим индексацию вашего сайта в поисковых системах,
+                    добавим мета-теги для поисковых роботов с целью увеличения
+                    сетевого трафика и потенциальных клиентов.
+                </div>
+
+                <div class="popup__text__title">
+                    Seo-оптимизация
+                </div>
+                <div class="popup__text">
+                    Собираем запросы, по которым целесообразно продвигать ваш сайт. 
+                    В отбор идут только тематические запросы, которые приведут  на сайт потенциальных клиентов.
+                    Проводим техническую оптимизацию, изменяем содержимое сайта.
+                </div>
+
+                <div class="popup__text__title">
+                    Яндекс Вебмастер и Google Analytics
+                </div>
+                <div class="popup__text">
+                    Установка и настройка целей в системе сбора статистики. 
+                    Добавление сайта в панель Яндекс.Вебмастер/Google Analytics. 
+                    Установка региона сайта (согласно региону продвижения). 
+                    Проверка настройки уведомлений о важных страницах сайта. 
+                    Проверка валидации и добавление sitemap.xml в Яндекс.Вебмастер/Google Analytics
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup_4" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#header" class="popup__close close-popup">X</a>
+
+                <div class="popup__title">Веб-дизайн</div>
+                <div class="popup__subtitle">
+                    Мы в Лаборатории считаем, что внещняя составляющая сайта также важна,
+                    как и его внутренняя составляющая. Наши дизайнеры делают привлекательный и удобный дизайн с использованием
+                    лучших UI & UX практик.
+                </div>
+
+                <div class="popup__text__title">
+                    Прототипирование макета
+                </div>
+                <div class="popup__text">
+                    Наша команда работает с Figma/Adobe XD/Photoshop для прототипирования макета
+                    будущего сайта. Удобства пользования и внешняя привлекательность - это наши, главные
+                    принципы.
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="projects" id="fourth">
         <h2 class="container-serveces-title">
@@ -505,7 +628,6 @@
 </div>
 
     <script src="{% static 'mainpage/scripts/parallax.js' %}"></script>
-    <script src="{% static 'mainpage/scripts/dropdown.js' %}"></script>
     <script src="{% static 'mainpage/scripts/scrollbar.js' %}"></script>
     <script src="{% static 'mainpage/scripts/wow.min.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
