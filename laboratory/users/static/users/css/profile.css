@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header {
+    display: flex;
+    max-width: 1200px;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 25px;
+    color: #326BFF;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo h1 {
+    margin-left: 12px;
+}
+
+.header nav ul {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+    font-weight: 500;
+}
+
+.header .menu {
+    margin-left: 31px;
+}
+
+.header .menu a {
+    color: #2E2F33;
+    transition: .25s;
+}
+
+.header .menu a:hover {
+    color: #9699A1;
+    transition: .25s;
+}
+
+.header .gray {
+    color: #9699A1;
+}
+
+.header .menu img {
+    border-radius: 8px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.avatar-menu {
+    position: relative;
+}
+
+.avatar-menu:hover > .hover-avatar {
+    opacity: 1;
+    transition: .4s;
+}
+
+.hover-avatar {
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #1c1c1da9;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.hover-avatar .iconify {
+    color: #326BFF; 
+    font-size: 26px;
+    transition: .25s;
+}
+
+.hover-avatar .iconify:hover {
+    color: #638ffd;
+    transition: .25s;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex !important;
+    justify-content: space-between;
+}
+
+main nav ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+main .menu a {
+    display: flex;
+    line-height: 32px;
+}
+
+main .menu a img {
+    margin-right: 15px;
+}
+
+main .menu {
+    width: 373px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 23px;
+    transition: 0.3s ease;
+}
+
+main .menu:hover {
+    cursor: pointer;
+    background-color: #F5F5F5;
+    transition: 0.3s ease;
+}
+
+main .menu a {
+    display: flex;
+    align-items: center;
+    margin-left: 37px;
+    color: #4D4D4D;
+    font-weight: 600;
+}
+
+main .active {
+    background-color: #F5F5F5;
+}
+
+.personal-info {
+    max-width: 586px;
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    padding: 25px 57px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 22px;
+    color: #648FFF;
+    margin-top: 0;
+}
+
+.person {
+    display: flex;
+}
+
+.username {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 263px;
+    margin-left: 25px;
+}
+
+.username > h3 {
+    color: #4C4C4C;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.username span {
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #9E9E9E;
+    max-width: 152px;
+}
+
+.person .big-avatar img {
+    width: 75px;
+    height: 75px;
+    border-radius: 8px;
+}
+
+.big-avatar {
+    position: relative;
+}
+
+.big-avatar:hover > .hover-big-avatar {
+    opacity: 1;
+    transition: .4s;
+}
+
+.hover-big-avatar {
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #1c1c1da9;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.hover-big-avatar .iconify {
+    color: #326BFF; 
+    font-size: 26px;
+    transition: .25s;
+}
+
+.hover-big-avatar .iconify:hover {
+    color: #638ffd;
+    transition: .25s;
+}
+
+.person-info .person-info_content {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.person-info .person-info_content div {
+    width: 214px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+label {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #4D4D4D;
+    font-size: 14px;
+}
+
+input[type="text"] {
+    background-color: #E9E9E9;
+    width: 100%;
+    height: 33px;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #4D4D4D;
+    font-size: 14px;
+    transition: .25s;
+}
+
+input[type="text"]::placeholder {
+    color: #9E9E9E;
+}
+
+input[type="text"]:focus,
+input[type="text"]:hover {
+    background-color: #dbdada;
+    transition: .25s;
+}
+
+.person-info .person-info_content .surname-inp {
+    margin-left: 44px;
+}
+
+.person-info .person-info_content .birth-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.person-info .person-info_content .birth-form .birth {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.submit {
+    width: 127px;
+    height: 33px;
+    background-color: #648FFF;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    transition: .25s;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: #7fa2fd;
+    transition: .25s;
+}
+
+.birth select {
+    background-color: #E9E9E9;
+    height: 33px;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #4D4D4D;
+    font-size: 14px;
+    transition: .25s;
+    padding: 0;
+}
+
+select:focus,
+select:hover {
+    cursor: pointer;
+    background-color: #dbdada;
+    transition: .25s;
+}
+
+.birth .day {
+    width: 50px;
+}
+
+.birth .month {
+    width: 72px;
+}
+
+.birth .year {
+    width: 65px;
+}
+
+.confidentiality {
+    display: none;
+    max-width: 586px;
+    border-radius: 20px;
+    padding: 24px 57px; 
+    background-color: #F5F5F5;
+}
+
+.confid_content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.confid_content div {
+    max-width: 214px;
+}
+
+.confid_content .email-inp {
+    margin-left: 44px;
+}
+
+.phone-inp {
+    margin-bottom: 25px;
+}
+
+.pass-inp {
+    margin-bottom: 25px;
+}
+
+.pass-form {
+    display: flex;
+    width: 100%;
+}
+
+.pass-form input:last-child {
+    margin-left: 44px;
+}
+
+.orders {
+    display: none;
+    max-width: 767px;
+    border-radius: 20px;
+    padding: 24px 57px; 
+    background-color: #F5F5F5;
+}
+
+.orders-content {
+    display: flex;
+}
+
+.order {
+    width: 288px;
+}
+
+.order:first-child {
+    margin-right: 77px;
+}
+
+.order-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0 31px 0;
+}
+
+.order-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-name h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: #4C4C4C;
+    margin-bottom: 7px;
+}
+
+.order-name time {
+    font-weight: 500;
+    font-size: 14px;
+    color: #4C4C4C;
+}
+
+.time-with-line {
+    display: block;
+    width: 100%;
+    border-bottom: 4px solid #E9E9E9;
+    padding: 18px 0 7px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #9E9E9E;
+}
+
+.order-status {
+    width: 90px;
+    height: 29px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 46px;
+}
+
+.green {
+    background-color: #D4EDDA;
+    color: #77B585;
+}
+
+.red {
+    background-color: #FAE7E6;
+    color: #DA4D44;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.order-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.order-details div {
+    width: 100%;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    justify-content: space-between;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.order-details div .label {
+    color: #9E9E9E;
+}
+
+.status .content div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 10px;
+    padding: 0; 
+}
+
+.order-details .price .content_gray {
+    color: #9E9E9E;
+}
+
+.status .content .circle_green {
+    background-color: #77B585;
+}
+
+.status .content .circle_red {
+    background-color: #DA4D44;
+}
+
+.status .content {
+    display: flex;
+    align-items: center;
+}
+
+.order-details div:nth-child(odd) {
+    background-color: #E9E9E9;
+}
+
+select {
+
+  /* styling and reset */
+
+  border: none;
+  font: 300 1em/100% "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+
+  /* reset */
+
+  border-radius: 0;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+}
+#id_birthdate_day {
+  text-align: center;
+  min-width: 50px;
+}
+#id_birthdate_month {
+  text-align: center;
+  min-width: 72px;
+}
+#id_birthdate_year {
+  text-align: center;
+  min-width: 65px;
+}
+
+input[type='file'] {
+  color: transparent;
+}
+.messages {
+  padding-left: 0;
+}
+.alert-success {
+  color: #6E9D79;
+  font-size: 17px;
+  background-color: #D4EDDA;
+  padding: 15px 35px 15px 15px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}

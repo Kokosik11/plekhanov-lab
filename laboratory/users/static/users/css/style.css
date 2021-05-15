@@ -181,12 +181,7 @@ input[type="password"]:focus {
 .social img {
   margin-right: 10px;
 }
-.profile {
-  display: flex;
-  flex-direction: column;
-  max-width: 1200px;
-  margin: auto;
-}
+
 .alert-success {
 	color: #6E9D79;
 	font-size: 20px;

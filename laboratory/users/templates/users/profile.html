@@ -1,34 +1,209 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plekhanov Lab - Аккаунт</title>
-  <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/profile.css' %}">
   <link rel="stylesheet" href="{% static 'mainpage/css/normalize.css' %}">
   <link rel="icon" type="image/png" href="../img/logo.ico">
 </head>
 <body>
-  <div class="profile">
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <div class="alert-success">{{ message }}</div>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    <h1>Це ваш профиль</h1>
-    <img src="{{ user.profile.image.url }}" style="width: 64px; height: 64px;" alt="">
-    <h2>Изменить данные</h2>
-    <form method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      {{ update_user.as_p }}
-      {{ img_profile.as_p }}
-      <button class="button blue" type="submit">Сохранить</button>
-    </form>
-  </div>
+  <header class="header">
+      <div class="logo">
+          <img src="/img/profile-logo.svg" alt="icon: logo">
+          <h1>Аккаунт</h1>
+      </div>
+
+      <nav>
+          <ul>
+              <li class="menu"><a href="#">Профиль</a></li>
+              <li class="menu"><a href="#">Мои заказы</a></li>
+              <li class="menu gray">Здравствуй, {{ user.first_name }}</li>
+              <li class="menu avatar-menu">
+                  <img src="{{ user.profile.image.url }}" width="42" alt="avatar">
+                  <div class="hover-avatar">
+                    <a href="{% url 'exit' %}">
+                      <img src="/img/Logout.svg" alt="icon: Logout">
+                    </a>
+                  </div>
+              </li>
+          </ul>
+      </nav>
+  </header>
+
+  <main>
+      <nav>
+          <ul>
+              <li class="menu person-btn active">
+                <a href="#">
+                  <img src="/img/Password.svg" width="25" alt="Password">Личная информация
+                </a>
+              </li>
+              <li class="menu order-btn">
+                <a href="#">
+                  <img src="/img/Bag.svg" width="26" alt="Bag">Заказы
+                </a>
+              </li>
+              <li class="menu confid-btn">
+                <a href="#">
+                  <img src="/img/Shield Done.svg" width="23" alt="Shield Done">Единый аккаунт (в разработке)
+                </a>
+              </li>
+          </ul>
+      </nav>
+
+      <section class="personal-info">
+          <h2>Личная информация</h2>
+          {% if messages %}
+          <ul class="messages">
+              {% for message in messages %}
+              <div class="alert-success">{{ message }}</div>
+              {% endfor %}
+          </ul>
+          {% endif %}
+          <form method="POST" enctype="multipart/form-data" class="person-info">
+            {% csrf_token %}
+          <div class="person">
+              <div class="big-avatar">
+                  <img src="{{ user.profile.image.url }}" width="75" alt="big avatar">
+                  <div class="hover-big-avatar">{{ img_profile.image }}</div>
+              </div>
+              <div class="username">
+                  <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+                  <span>Укажите основную информацию о себе</span>
+              </div>
+          </div>
+          <div class="person-info_content">
+              <div class="name-inp">
+                  <label for="name">Имя</label>
+                  {{ update_user.first_name }}
+              </div>
+              
+              <div class="surname-inp">
+                  <label for="surname">Фамилия</label>
+                  {{ update_user.last_name }}
+              </div>
+
+              <div class="name-inp">
+                <label for="surname">Телефон</label>
+                {{ img_profile.phone }}
+              </div>
+
+              <div class="surname-inp">
+                <label for="surname">Email</label>
+                {{ update_user.email }}
+              </div>
+
+              <div class="name-inp">
+                <label for="surname">Никнейм</label>
+                {{ update_user.username }}
+              </div>
+
+              <div class="surname-inp">
+              </div>
+              
+              <div class="birth-form">
+                  <label for="birth">Дата рождения</label>
+                  <div class="birth" id="birth">
+                    {{ img_profile.birthdate }}
+                  </div>
+              </div>
+          </div>
+              
+              <button class="submit" type="submit">Сохранить</button>
+          </form>
+      </section>
+
+      <section class="confidentiality">
+          <h2>Единый аккаунт</h2>
+      </section>
+
+      <section class="orders">
+          <h2>Заказы</h2>
+          <div class="orders-content">
+              <article class="order">
+                  <time class="time-with-line">10 мая 2020, 11:47</time>
+                  <header class="order-info">
+                      <div class="order-name">
+                          <h3>#4675</h3>
+                          <time>10 мая 2020, 11:47</time>
+                      </div>
+                      <div class="order-status green">Принят</div>
+                      <img src="/img/arrow-right.svg" alt="arrow" class="arrow">
+                  </header>
+                  
+                  <article class="order-details">
+                      <div class="client">
+                          <span class="label">Клиент</span>
+                          <span class="content">Андрей Криволасов</span>
+                      </div>
+                      <div class="service">
+                          <span class="label">Услуга</span>
+                          <span class="content">Лендинг пейдж</span>
+                      </div>
+                      <div class="price">
+                          <span class="label">Стоимость</span>
+                          <span class="content_gray">Расчитывается...</span>
+                      </div>
+                      <div class="status">
+                          <span class="label">Статус</span>
+                          <span class="content"><div class="circle_green"></div>Принят</span>
+                      </div>
+                  </article>
+              </article>
+  
+              <article class="order">
+                  <time class="time-with-line">12 мая 2020, 15:10</time>
+                  <header class="order-info">
+                      <div class="order-name">
+                          <h3>#4681</h3>
+                          <time>12 мая 2020, 15:10</time>
+                      </div>
+                      <div class="order-status red">Отменен</div>
+                      <img src="/img/arrow-right.svg" alt="arrow" class="arrow">
+                  </header>
+  
+                  <article class="order-details">
+                      <div class="client">
+                          <span class="label">Клиент</span>
+                          <span class="content">Андрей Криволасов</span>
+                      </div>
+                      <div class="service">
+                          <span class="label">Услуга</span>
+                          <span class="content">Лендинг пейдж</span>
+                      </div>
+                      <div class="price">
+                          <span class="label">Стоимость</span>
+                          <span class="content"></span>
+                      </div>
+                      <div class="status">
+                          <span class="label">Статус</span>
+                          <span class="content"><div class="circle_red"></div>Отменен</span>
+                      </div>
+                  </article>
+                  
+          </div>
+          
+
+          </article>
+      </section>
+  </main>
+
+  <script src="{% static 'users/js/script.js' %}"></script>
+  <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 </body>
 </html>
+
+
+<!-- <div class="profile">
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ update_user.as_p }}
+    {{ img_profile.as_p }}
+    <button class="button blue" type="submit">Сохранить</button>
+  </form>
+</div> -->

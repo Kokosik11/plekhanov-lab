@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .models import Profile
+from django.utils.translation import gettext as _
 
 class UserRegistration(UserCreationForm):
   username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Иван Иванов'}))
@@ -30,10 +31,10 @@ class UserProfile(forms.ModelForm):
 
 class ProfileImage(forms.ModelForm):
   birthdate = forms.DateField(widget = forms.SelectDateWidget(years=range(1930, 2021)))
+  image = forms.ImageField(label=_(''),required=False, error_messages = {'invalid':_("Image files only")}, widget=forms.FileInput)
 
   def __init__(self, *args, **kwards):
     super(ProfileImage, self).__init__(*args, **kwards)
-    self.fields['image'].label = 'Изображение'
     self.fields['phone'].label = 'Ваш номер телефона'
     self.fields['birthdate'].label = 'Дата рождения'
     
