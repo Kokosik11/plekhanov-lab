@@ -116,7 +116,7 @@ main {
   z-index: -1;
 }
 
-.container h2 {
+.h2-main {
   max-width: 611px;
   font-weight: 500;
   font-size: 45px;
@@ -124,6 +124,14 @@ main {
   color: #2E2F33;
   margin-bottom: 65px;
   margin-top: 50px;
+
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+.h2-main._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 .blue {
   color: #326BFF;
@@ -139,6 +147,15 @@ main {
   line-height: 37px;
   color: #000000;
   margin-bottom: 35px;
+
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+.container .checkout._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  transition: all 0.8s ease 0.4s;
 }
 .container span img {
   margin-right: 25px;
@@ -150,8 +167,16 @@ main {
   color: #326BFF;
   margin-top: 35px;
   margin-bottom: 39px;
-}
 
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+.container h1._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  transition: all 0.8s ease 0s;
+}
 .about-us {
   margin-top: 52px;
 }
@@ -183,7 +208,23 @@ main {
   max-width: 564px;
   margin-top: 30px;
 }
-
+.card img {
+  transform: scale(0);
+  transition: all 0.8s ease 0s;
+}
+.card._active img {
+  transform: scale(1);
+}
+.card-text {
+  transform: translate(0px, 50%);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+}
+.card._active .card-text {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  transition: all 0.8s ease 0.8s;
+}
 .services {
   margin-top: 300px;
 }
@@ -590,6 +631,18 @@ input[type=text]:focus {
   flex-wrap: wrap;
 }
 
+.blog_card-content {
+  transform: translate(120%, 0px);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+}
+
+.blog_card-content._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  transition: all 0.8s ease 0.6s; 
+}
+
 .last-new .blog-card .blog_card-content {
   display: flex;
   flex-direction: column;
@@ -622,6 +675,15 @@ input[type=text]:focus {
 
 .blog-image {
   position: relative;
+  transform: translate(-120%, 0px);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+}
+
+.blog-image._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  transition: all 0.8s ease 0s;
 }
 
 .new-more {
@@ -726,7 +788,14 @@ input[type=text]:focus {
 
 .ellipse {
   position: absolute;
+  transform: scale(0);
+  transition: all 0.8s ease 0s;
 } 
+
+.ellipse._active {
+  transform: scale(1);
+  transition: all 0.8s ease 0.8s;
+}
 
 .ellipse:nth-child(1) {
   top: 3%;
@@ -804,6 +873,15 @@ input[type=text]:focus {
   align-items: center;
   box-shadow: 5px 10px 30px rgba(50, 107, 255, 0.25);
   margin-top: 139px;
+  transform: translate(-120%, 0px);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+}
+
+.dev-cycle_card._active {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  transition: all 0.8s ease 0s;
 }
 
 .dev-cycle_card:nth-child(2n) {

@@ -17,35 +17,43 @@
     <style>
     .dev-cycle
     {
-    background-image:url('{{ STATIC_URL }}/img/dev-cycle/bg.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    position: relative;
+        background-image:url('{{ STATIC_URL }}/img/dev-cycle/bg.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        position: relative;
     }
     .dev-cycle_card-bg {
-    position: absolute;
-    background-image:url('{{ STATIC_URL }}/img/dev-cycle/noise.jpg');
-    background-size: 150px 150px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: .08;
-    border-radius: 20px;
-    z-index: -1;
+        position: absolute;
+        background-image:url('{{ STATIC_URL }}/img/dev-cycle/noise.jpg');
+        background-size: 150px 150px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .08;
+        border-radius: 20px;
+        z-index: -1;
     }
     .service-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    border-radius: 20px;
-    background-image:url('{{ STATIC_URL }}/img/line.svg');
-    background-color: #EEF3FF;
-    background-repeat: no-repeat;
-    margin-bottom: 65px;
-    max-width: 570px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        border-radius: 20px;
+        background-image:url('{{ STATIC_URL }}/img/line.svg');
+        background-color: #EEF3FF;
+        background-repeat: no-repeat;
+        margin-bottom: 65px;
+        max-width: 570px;
+
+        transform: translate(0px, 120%);
+        opacity: 0;
+        transition: all 0.8s ease 0.4s;
+    }
+    .service-card._active {
+        transform: translate(0px, 0px);
+        opacity: 1;
     }
     </style>
 
@@ -128,23 +136,23 @@
     <section class="mainpage">
         <div class="container">
             <img src="/img/background-mainpage.png" class="mainpage-img" alt="image: abstract">
-            <h2><span class="blue">{% trans "Лаборатория" %} </span>{% blocktrans %}графического дизайна и
+            <h2 class="h2-main _anim-items _anim-no-hide"><span class="blue">{% trans "Лаборатория" %} </span>{% blocktrans %}графического дизайна и
                 web-проектирования РЭУ
                 им. Плеханова, Минский филиал{% endblocktrans %}
             </h2>
-            <span class="checkout">
+            <span class="checkout _anim-items">
                 <img src="/img/check.svg" alt="icon: check mark">
                 {% trans "Быстро и качественно" %}
             </span>
-            <span class="checkout">
+            <span class="checkout _anim-items">
                 <img src="/img/check.svg" alt="icon: check mark">
                 {% trans "Поддержка на всех стадиях" %}
             </span>
-            <span class="checkout">
+            <span class="checkout _anim-items">
                 <img src="/img/check.svg" alt="icon: check mark">
                 {% trans "Индивидуальность" %}
             </span>
-            <h1>
+            <h1 class="_anim-items">
                 <span class="red">10+ </span>{% blocktrans %}успешных
                 проектов{% endblocktrans %}
             </h1>
@@ -153,7 +161,7 @@
 
     <section class="about-us">
         <div class="container-about-us">
-            <div class="card">
+            <div class="card _anim-items">
                 <div class="card-text">
                     <span class="card-title">{% trans "Лаборатория" %}</span>
                     <span class="card-subtitle">
@@ -167,7 +175,7 @@
                 </div>
                 <img src="/img/scientist.svg" loading="lazy" alt="image: scientist">
             </div>
-            <div class="card">
+            <div class="card _anim-items">
                 <img src="/img/team.svg" loading="lazy" alt="image: team">
                 <div class="card-text">
                     <span id="first" class="card-title anchor-us">{% trans "Кто мы?" %}</span>
@@ -195,13 +203,13 @@
             <div class="last-new">
                 {% for post in heading %}
                 <div class="blog-card">
-                    <div class="blog-image">
+                    <div class="blog-image _anim-items">
                         <img src="{{ post.image.url }}" loading="lazy" alt="blog-news-1" class="blog-card_image">
                         <div class="new-more">
                             <button><a href="{% url 'post-detail' post.slug %}">{% trans "Подробнее" %}</a></button>
                         </div>
                     </div>
-                    <div class="blog_card-content">
+                    <div class="blog_card-content _anim-items">
                         <time>{{ post.created_on }}</time>
                         <div class="blog-card_title">{{ post.title }}</div>
                         <div class="blog-card_text">
@@ -215,13 +223,13 @@
             <div class="others-new">
                 {% for post in default %}
                 <div class="blog-card">
-                    <div class="blog-image">
+                    <div class="blog-image _anim-items">
                         <img src="{{ post.image.url }}" loading="lazy" alt="blog-news-1" class="blog-card_image">
                         <div class="new-more">
                             <button><a href="{% url 'post-detail' post.slug %}">{% trans "Подробнее" %}</a></button>
                         </div>
                     </div>
-                    <div class="blog_card-content">
+                    <div class="blog_card-content _anim-items">
                         <time>{{ post.created_on }}</time>
                         <div class="blog-card_title">{{ post.title }}</div>
                         <div class="blog-card_text">
@@ -241,17 +249,17 @@
         </h2>
 
         <div class="ellipses">
-            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
-            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
-            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
-            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
-            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
-            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
-            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse _anim-items" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse _anim-items" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse _anim-items" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse _anim-items" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse _anim-items" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse _anim-items" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse _anim-items" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
         </div>
 
         <div class="dev-cycle_cards">
-            <div class="dev-cycle_card">
+            <div class="dev-cycle_card _anim-items">
                 <div class="dev-cycle_card-bg"></div>
                 <div class="dev-cycle_card-content">
                     <div class="dev-cycle_card-title">{% trans "Прототипирование дизайна" %}</div>
@@ -267,7 +275,7 @@
                 </div>
                 <img src="/img/dev-cycle/Development-rafiki 1.png" alt="" loading="lazy">
             </div>
-            <div class="dev-cycle_card">
+            <div class="dev-cycle_card _anim-items">
                 <div class="dev-cycle_card-bg"></div>
                 <div class="dev-cycle_card-content">
                     <div class="dev-cycle_card-title">{% trans "Разаботка технической части" %}</div>
@@ -281,7 +289,7 @@
                 </div>
                 <img src="/img/dev-cycle/Software engineer-pana 1.png" alt="" loading="lazy">
             </div>
-            <div class="dev-cycle_card">
+            <div class="dev-cycle_card _anim-items">
                 <div class="dev-cycle_card-bg"></div>
                 <div class="dev-cycle_card-content">
                     <div class="dev-cycle_card-title">{% trans "Графический дизайн и айдентика" %}</div>
@@ -303,7 +311,7 @@
             {% trans "Наши услуги" %}
         </h2>
         <div class="container-serveces">
-            <div class="service-card">
+            <div class="service-card _anim-items">
                 <span class="service-card-title">
                    {% trans 'Разрабокта веб-приложения' %}
                     <div class="dropdown-menu">
@@ -328,7 +336,7 @@
                 </div>
             </div>
 
-            <div class="service-card">
+            <div class="service-card _anim-items">
                 <span class="service-card-title">
                      {% blocktrans %}Графический дизайн{% endblocktrans %}
                     <div class="dropdown-menu">
@@ -352,7 +360,7 @@
                     </a>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="service-card _anim-items">
                 <span class="service-card-title">{% trans 'Seo/smm продвижение' %}</span>
                 <span class="service-card-subtitle">
                      {% blocktrans %}
@@ -368,7 +376,7 @@
                     </a>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="service-card _anim-items">
                 <span class="service-card-title"> {% trans 'Веб-дизайн (UI & UX)' %}</span>
                 <span class="service-card-subtitle">
                 {% blocktrans %}
@@ -627,10 +635,11 @@
     </footer>
 </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'mainpage/scripts/parallax.js' %}"></script>
     <script src="{% static 'mainpage/scripts/scrollbar.js' %}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'mainpage/scripts/header.js' %}"></script>
     <script src="{% static 'mainpage/scripts/popup.js' %}"></script>
+    <script src="{% static 'mainpage/scripts/animations.js' %}"></script>
 </body>
 </html>
