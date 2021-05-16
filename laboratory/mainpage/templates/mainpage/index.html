@@ -127,24 +127,24 @@
     <main>
     <section class="mainpage">
         <div class="container">
-            <img src="/img/background-mainpage.png" class="mainpage-img wow bounceInRight" alt="image: abstract">
-            <h2 class="wow fadeInUp"><span class="blue wow fadeIn">{% trans "Лаборатория" %} </span>{% blocktrans %}графического дизайна и
+            <img src="/img/background-mainpage.png" class="mainpage-img" alt="image: abstract">
+            <h2><span class="blue">{% trans "Лаборатория" %} </span>{% blocktrans %}графического дизайна и
                 web-проектирования РЭУ
                 им. Плеханова, Минский филиал{% endblocktrans %}
             </h2>
-            <span class="checkout wow fadeInLeft">
+            <span class="checkout">
                 <img src="/img/check.svg" alt="icon: check mark">
                 {% trans "Быстро и качественно" %}
             </span>
-            <span class="checkout wow fadeInLeft">
+            <span class="checkout">
                 <img src="/img/check.svg" alt="icon: check mark">
                 {% trans "Поддержка на всех стадиях" %}
             </span>
-            <span class="checkout wow fadeInLeft">
+            <span class="checkout">
                 <img src="/img/check.svg" alt="icon: check mark">
                 {% trans "Индивидуальность" %}
             </span>
-            <h1 class="wow fadeIn">
+            <h1>
                 <span class="red">10+ </span>{% blocktrans %}успешных
                 проектов{% endblocktrans %}
             </h1>
@@ -165,10 +165,10 @@
                         {% endblocktrans %}
                     </span>
                 </div>
-                <img src="/img/scientist.svg" loading="lazy" alt="image: scientist" class="wow bounceInRight">
+                <img src="/img/scientist.svg" loading="lazy" alt="image: scientist">
             </div>
             <div class="card">
-                <img src="/img/team.svg" loading="lazy" alt="image: team" class="wow bounceInLeft">
+                <img src="/img/team.svg" loading="lazy" alt="image: team">
                 <div class="card-text">
                     <span id="first" class="card-title anchor-us">{% trans "Кто мы?" %}</span>
                     <span class="card-subtitle">
@@ -196,7 +196,7 @@
                 {% for post in heading %}
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="{{ post.image.url }}" loading="lazy" alt="blog-news-1" class="blog-card_image wow fadeInUp">
+                        <img src="{{ post.image.url }}" loading="lazy" alt="blog-news-1" class="blog-card_image">
                         <div class="new-more">
                             <button><a href="{% url 'post-detail' post.slug %}">{% trans "Подробнее" %}</a></button>
                         </div>
@@ -216,7 +216,7 @@
                 {% for post in default %}
                 <div class="blog-card">
                     <div class="blog-image">
-                        <img src="{{ post.image.url }}" loading="lazy" alt="blog-news-1" class="blog-card_image wow fadeInUp">
+                        <img src="{{ post.image.url }}" loading="lazy" alt="blog-news-1" class="blog-card_image">
                         <div class="new-more">
                             <button><a href="{% url 'post-detail' post.slug %}">{% trans "Подробнее" %}</a></button>
                         </div>
@@ -241,21 +241,21 @@
         </h2>
 
         <div class="ellipses">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
-            <img class="ellipse wow bounceIn" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
+            <img class="ellipse" src="/img/dev-cycle/Ellipse 1.png" loading="lazy" alt="ellipse">
         </div>
 
         <div class="dev-cycle_cards">
             <div class="dev-cycle_card">
                 <div class="dev-cycle_card-bg"></div>
                 <div class="dev-cycle_card-content">
-                    <div class="dev-cycle_card-title wow fadeInDown">{% trans "Прототипирование дизайна" %}</div>
-                    <div class="dev-cycle_card-text wow fadeInUp">
+                    <div class="dev-cycle_card-title">{% trans "Прототипирование дизайна" %}</div>
+                    <div class="dev-cycle_card-text">
                     {% blocktrans %}
                         Полная работа над дизайном десктопного или мобильного приложения. Мы создаем
                         логотипы, svg-иллюстрации, используем 
@@ -265,13 +265,13 @@
                     {% endblocktrans %}
                     </div>
                 </div>
-                <img src="/img/dev-cycle/Development-rafiki 1.png" alt="" loading="lazy" class="wow fadeInRight">
+                <img src="/img/dev-cycle/Development-rafiki 1.png" alt="" loading="lazy">
             </div>
             <div class="dev-cycle_card">
                 <div class="dev-cycle_card-bg"></div>
                 <div class="dev-cycle_card-content">
-                    <div class="dev-cycle_card-title wow fadeInDown">{% trans "Разаботка технической части" %}</div>
-                    <div class="dev-cycle_card-text wow fadeInUp">
+                    <div class="dev-cycle_card-title">{% trans "Разаботка технической части" %}</div>
+                    <div class="dev-cycle_card-text">
                     {% blocktrans %}
                         Frontend и Backend разработка: python django, react.js, angular.js, vue.js, typescript, MySql, postgreSQL.
                         <br><br>
@@ -279,19 +279,19 @@
                     {% endblocktrans %}
                     </div>
                 </div>
-                <img src="/img/dev-cycle/Software engineer-pana 1.png" alt="" loading="lazy" class="wow fadeInLeft">
+                <img src="/img/dev-cycle/Software engineer-pana 1.png" alt="" loading="lazy">
             </div>
             <div class="dev-cycle_card">
                 <div class="dev-cycle_card-bg"></div>
                 <div class="dev-cycle_card-content">
-                    <div class="dev-cycle_card-title wow fadeInDown">{% trans "Графический дизайн и айдентика" %}</div>
-                    <div class="dev-cycle_card-text wow fadeInUp">
+                    <div class="dev-cycle_card-title">{% trans "Графический дизайн и айдентика" %}</div>
+                    <div class="dev-cycle_card-text">
                     {% blocktrans %}
                         Персонализированное брендирование, графический дизайн, дизайн логотипа, айдентика. Наслаждайтесь.
                     {% endblocktrans %}
                     </div>
                 </div>
-                <img src="/img/dev-cycle/Website Creator-rafiki 1.png" loading="lazy" alt="" class="wow fadeInRight">
+                <img src="/img/dev-cycle/Website Creator-rafiki 1.png" loading="lazy" alt="">
             </div>
         </div>
         <img class="wave" src="/img/dev-cycle/wave.png" loading="lazy" alt="wave">
@@ -303,7 +303,7 @@
             {% trans "Наши услуги" %}
         </h2>
         <div class="container-serveces">
-            <div class="service-card wow fadeInUp">
+            <div class="service-card">
                 <span class="service-card-title">
                    {% trans 'Разрабокта веб-приложения' %}
                     <div class="dropdown-menu">
@@ -328,7 +328,7 @@
                 </div>
             </div>
 
-            <div class="service-card wow fadeInUp">
+            <div class="service-card">
                 <span class="service-card-title">
                      {% blocktrans %}Графический дизайн{% endblocktrans %}
                     <div class="dropdown-menu">
@@ -352,7 +352,7 @@
                     </a>
                 </div>
             </div>
-            <div class="service-card wow fadeInUp">
+            <div class="service-card">
                 <span class="service-card-title">{% trans 'Seo/smm продвижение' %}</span>
                 <span class="service-card-subtitle">
                      {% blocktrans %}
@@ -368,7 +368,7 @@
                     </a>
                 </div>
             </div>
-            <div class="service-card wow fadeInUp">
+            <div class="service-card">
                 <span class="service-card-title"> {% trans 'Веб-дизайн (UI & UX)' %}</span>
                 <span class="service-card-subtitle">
                 {% blocktrans %}
@@ -540,11 +540,11 @@
             {% for project in all_projects %}
             <div class="project-card">
                 <a href="{% url 'project-detail' project.slug %}"><img src="{{ project.image.url }}" loading="lazy" alt="image: grifons" class="hvr-bob"></a>
-                <h3 class="project-card-title wow fadeInUp">{{ project.name }}</h3>
-                <span class="project-card-subtitle wow fadeInUp">
+                <h3 class="project-card-title">{{ project.name }}</h3>
+                <span class="project-card-subtitle">
                     {{ project.content }}
                 </span>
-                <div class="year wow fadeInUp">{{ project.year }}</div>
+                <div class="year">{{ project.year }}</div>
             </div>
             {% endfor %}
         </div>
@@ -553,7 +553,7 @@
     <section class="form" id="fifth">
         <div class="container-form">
             <div class="text">
-                <form action="#" method="POST" class="form-feedback wow bounceInLeft">
+                <form action="#" method="POST" class="form-feedback">
                     {% csrf_token %}
                     <h2> {% trans 'Свяжитесь с нами!' %}</h2>
                     <span> {% trans 'Как вас зовут?' %}</span>
@@ -565,18 +565,18 @@
                     <button type="submit"> {% trans 'Отправить' %}</button>
                 </form>
             </div>
-            <img src="/img/astronaut.svg" alt="image: astronaut" loading="lazy" class="wow bounceInRight">
+            <img src="/img/astronaut.svg" alt="image: astronaut" loading="lazy">
         </div>
     </section>
     </main>
         
 
     <footer>
-        <div class="map wow fadeInUp">
+        <div class="map">
             <img src="/img/map.png" loading="lazy" alt="image: map">
         </div>
 
-        <div class="footer-content wow fadeInRight">
+        <div class="footer-content">
             <img src="/img/lab-logo.svg" loading="lazy" width="92px" alt="lab-logo">
 
             <div class="footer-contacts">
@@ -629,12 +629,8 @@
 
     <script src="{% static 'mainpage/scripts/parallax.js' %}"></script>
     <script src="{% static 'mainpage/scripts/scrollbar.js' %}"></script>
-    <script src="{% static 'mainpage/scripts/wow.min.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{% static 'mainpage/scripts/header.js' %}"></script>
     <script src="{% static 'mainpage/scripts/popup.js' %}"></script>
-    <script>
-        new WOW().init();
-    </script>
 </body>
 </html>
