@@ -1,6 +1,5 @@
 from django.db import models
 from shortuuidfield import ShortUUIDField
-from django.contrib.auth.models import User
 
 STATUS = (
   (0, "Draft"),
@@ -54,32 +53,18 @@ class Feedback(models.Model):
     return self.email
 
   class Meta:
-    verbose_name = "Отзыв"
-    verbose_name_plural = "Отзывы"
+    verbose_name = "Отклик"
+    verbose_name_plural = "Отклики"
 
-# class Order(models.Model):
+class Services(models.Model):
+  created = models.DateTimeField('Создано', auto_now_add=True)
+  updated = models.DateTimeField('Обновлено', auto_now=True)
+  name = models.CharField("Название услуги", max_length=200)
+  price = models.DecimalField("Стоимость", max_digits=5, decimal_places=1, blank=True)
+  
+  def __str__(self):
+    return self.name
 
-#   CHOICESSTATUS = {
-#       ('Оформлен', 'Оформлен'),
-#       ('Принят', 'Принят'),
-#       ('Отменен', 'Отменен'),
-#       ('В процессе', 'В процессе'),
-#   }
-
-#   name = models.CharField('Имя', max_length=150)
-#   email = models.EmailField()
-#   phone = models.CharField('Телефон', max_length=50, default='')
-#   created = models.DateTimeField('Создано', auto_now_add=True)
-#   updated = models.DateTimeField('Обновлено', auto_now=True)
-#   status = models.CharField('Статус', max_length=100, default="Оформлен", choices=CHOICESSTATUS)
-#   commentary = models.TextField('Комментарий к заказу', max_length=500, blank=True)
-#   user = models.ForeignKey(User, blank=True, null=True, on_delete=models.PROTECT, related_name='orders', verbose_name="Заказы")
-
-#   def __str__(self):
-#       return self.name
-
-
-#   class Meta:
-#       ordering = ('-created',)
-#       verbose_name = 'Заказ'
-#       verbose_name_plural = "Заказы"
+  class Meta:
+    verbose_name = "Услуга"
+    verbose_name_plural = "Услуги"
