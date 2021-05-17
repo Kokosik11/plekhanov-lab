@@ -61,6 +61,7 @@ class Order(models.Model):
 class OrderItem(models.Model):
   order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
   service = models.ForeignKey(Services, verbose_name="Услуга", related_name='order_items', on_delete=models.CASCADE)
+  price = models.DecimalField('Цена', max_digits=10, decimal_places=1, default=0)
   
   def __str__(self):
     return f'{self.id}'

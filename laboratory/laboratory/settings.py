@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'laboratory.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'lab',
+        'NAME': 'laborant',
         'USER': 'root',
         'PASSWORD': '2554963',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on

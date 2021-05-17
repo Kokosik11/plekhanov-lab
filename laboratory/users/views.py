@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, UpdateView
 from .forms import UserRegistration, UserProfile, ProfileImage
 from django.contrib.auth.models import User
+from .models import Order
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
@@ -39,6 +40,7 @@ class RegisterView(ListView):
 
 @login_required
 def profile(request):
+    myorders = Order.objects.filter(user=request.user)
     if request.method == "POST":
         img_profile = ProfileImage(
             request.POST, request.FILES, instance=request.user.profile)
@@ -56,6 +58,7 @@ def profile(request):
     data = {
         'img_profile': img_profile,
         'update_user': update_user,
+        'myorders': myorders,
     }
 
     return render(request, 'users/profile.html', data)

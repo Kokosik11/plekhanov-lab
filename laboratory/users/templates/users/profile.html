@@ -58,6 +58,14 @@
 
       <section class="personal-info">
           <h2>Личная информация</h2>
+          {% for order in myorders %}
+            {{ order.number }}
+            {{ order.status }}
+          {% for item in order.items.all %}
+            {{ item.service }}
+            {{ item.price|floatformat }}
+          {% endfor %}
+          {% endfor %}
           {% if messages %}
           <ul class="messages">
               {% for message in messages %}

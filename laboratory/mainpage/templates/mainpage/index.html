@@ -550,7 +550,7 @@
                 <a href="{% url 'project-detail' project.slug %}"><img src="{{ project.image.url }}" loading="lazy" alt="image: grifons" class="hvr-bob"></a>
                 <h3 class="project-card-title">{{ project.name }}</h3>
                 <span class="project-card-subtitle">
-                    {{ project.content }}
+                    {{ project.content|truncatewords:8 }}
                 </span>
                 <div class="year">{{ project.year }}</div>
             </div>
