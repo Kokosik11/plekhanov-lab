@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'captcha',
     'users.apps.UsersConfig',
     'social_django',
+    'ckeditor',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -104,7 +105,7 @@ DATABASES = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'laboratoryrea@gmail.com'
-EMAIL_HOST_PASSWORD = 'ausqpdlliutsrmql' #past the key or password app here
+EMAIL_HOST_PASSWORD = 'qgngmgxhaiayuwbn' #past the key or password app here
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 

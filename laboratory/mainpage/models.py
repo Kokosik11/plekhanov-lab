@@ -1,5 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
 from shortuuidfield import ShortUUIDField
+from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 STATUS = (
   (0, "Draft"),
@@ -10,11 +13,15 @@ class Post(models.Model):
   title = models.CharField("Название", max_length=200)
   slug = models.SlugField("Ссылка", max_length=130, unique=True, help_text="Ссылка на пост")
   updated_on = models.DateTimeField(auto_now=True)
-  content = models.TextField() # Need to connect tinymice
+  content = RichTextField() # Need to connect tinymice
   created_on = models.DateTimeField(auto_now_add=True)
   status = models.IntegerField(choices=STATUS, default=0)
   is_head = models.BooleanField(default=False)
   image = models.ImageField("Фото", upload_to='post_images', blank=True)
+  views = models.IntegerField("Просмотры", default=0)
+
+  def get_absolute_url(self):
+    return reverse('post-detail', args=[self.slug])
 
   def __str__(self):
     return self.title
@@ -24,6 +31,16 @@ class Post(models.Model):
     verbose_name = "Пост"
     verbose_name_plural = "Посты"
 
+
+class Comment(models.Model):
+  post = models.ForeignKey(Post, on_delete=models.CASCADE)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+  reply = models.ForeignKey('self', on_delete=models.CASCADE, null=True, related_name="replies")
+  content = models.TextField("Тело комментария", max_length=200)
+  timestamp = models.DateTimeField("Время", auto_now_add=True)
+
+  def __str__(self):
+    return f'{self.post.title} - {self.user.first_name}'
 
 class Project(models.Model):
   name = models.CharField("Название проекта", max_length=200)

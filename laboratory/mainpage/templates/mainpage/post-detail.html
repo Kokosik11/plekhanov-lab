@@ -1,15 +1,169 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ post.title }}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <link rel="stylesheet" href="{% static 'mainpage/css/blog.css' %}">
+    <link rel="icon" type="image/png" href="/img/logo.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="post-entry">
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.content }}</p>
-  </div>
+    <header class="header">
+        <div class="logo">
+            <img src="/img/profile-logo.svg" alt="logo">
+            <h1>Аккаунт</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="menu"><a href="{% url 'blog' %}">Лаборатория</a></li>
+                <li class="menu"><a href="{% url 'profile' %}">Профиль</a></li>
+                <li class="menu gray">Здравствуйте, {{ user.first_name }}</li>
+                <li class="menu avatar-menu">
+                    <img src="{{ user.profile.image.url }}" width="42" alt="avatar">
+                    <div class="hover-avatar"><span class="iconify" data-inline="false" data-icon="uil:exit"></span></div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="post">
+            <article class="post-info">
+                <time>{{ post.created_on }}</time>
+                <div class="reading-time">
+                    <img src="/img/Time Circle.svg" alt="Time Circle">
+                    <span class="reading-text_gray">время чтения:</span>
+                    <span class="reading-text_blue">1 мин</span>
+                </div>
+            </article>
+
+            <article class="post-profile">
+                <img src="{{ post.image.url }}" alt="image: post" id="post-image">
+
+                <h2 class="post-title">{{ post.title }}</h2>
+                <span class="post-text">
+                  {{ post.content }}
+                </span>
+            </article>
+            <div class="line post-end"></div>
+            <article class="post-tags">
+                <img src="/img/tag.svg" alt="tag">
+                <span><a href="#">Лаборатория,</a><a href="#">REU IT-hub,</a><a href="#">REU Minsk</a></span>
+            </article>
+
+            <article class="post-actions">
+                <div class="actions-block">
+                    <div class="like">
+                        <svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="like-svg" fill-rule="evenodd" clip-rule="evenodd" d="M1.45995 12.0074C0.132303 7.86236 1.68514 2.70892 6.0368 1.30827C8.32585 0.569588 11.1507 1.18577 12.7555 3.39934C14.2687 1.10411 17.1752 0.574538 19.4617 1.30827C23.8122 2.70892 25.3737 7.86236 24.0473 12.0074C21.9809 18.5776 14.7711 22 12.7555 22C10.7411 22 3.59557 18.6543 1.45995 12.0074Z" stroke="#EB4226" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path class="like-svg" d="M17.3801 5.96631C18.8736 6.11974 19.8078 7.30385 19.7521 8.9631" stroke="#EB4226" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            
+                    </div>
+                </div>
+
+                <div class="actions-block">
+                    <div class="comments">
+                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="comments-svg" d="M2.478 10.6325L2.48113 10.6474C2.92713 12.7649 4.35416 14.5828 6.37377 15.5008L10.5 17.3763V15.1667H12.8333C16.055 15.1667 18.6667 12.555 18.6667 9.33333V8.16667C18.6667 4.94501 16.055 2.33333 12.8333 2.33333H8.16667C4.94501 2.33333 2.33333 4.94501 2.33333 8.16667V9.33333C2.33333 9.7771 2.38247 10.2066 2.47467 10.6177L2.478 10.6325ZM12.8333 21L5.40823 17.625C2.70418 16.3958 0.794815 13.9623 0.1979 11.1283C0.0683544 10.5507 0 9.95002 0 9.33333V8.16667C0 3.65634 3.65634 0 8.16667 0H12.8333C17.3437 0 21 3.65634 21 8.16667V9.33333C21 13.8437 17.3437 17.5 12.8333 17.5V21Z" fill="#648FFF"/>
+                        </svg>
+                            
+                        <span>{{ comments.count }} комментарий</span>
+                    </div>
+                    <div class="views">
+                        <svg width="29" height="24" viewBox="0 0 29 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="views-svg" fill-rule="evenodd" clip-rule="evenodd" d="M19.1137 11.6548C19.1137 14.2025 17.0476 16.2686 14.4999 16.2686C11.9523 16.2686 9.88611 14.2025 9.88611 11.6548C9.88611 9.1057 11.9523 7.04102 14.4999 7.04102C17.0476 7.04102 19.1137 9.1057 19.1137 11.6548Z" stroke="#648FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path class="views-svg" fill-rule="evenodd" clip-rule="evenodd" d="M1 11.6547C1 16.4407 7.04377 22.3093 14.5 22.3093C21.9548 22.3093 28 16.445 28 11.6547C28 6.8643 21.9548 1 14.5 1C7.04377 1 1 6.86868 1 11.6547Z" stroke="#648FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            
+                        <span>{{ post.views }}</span>
+                    </div>
+                    <div class="share">
+                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="share-svg" d="M16.2621 20.9998C15.1266 21.0129 14.0504 20.4953 13.3535 19.601C12.6567 18.7067 12.4193 17.5387 12.7121 16.4442L6.14327 12.6989C5.00818 13.7363 3.34434 13.9559 1.97789 13.2486C0.611449 12.5413 -0.166551 11.0578 0.030193 9.53477C0.226937 8.0117 1.35652 6.77344 2.85807 6.43482C4.35962 6.0962 5.91331 6.72935 6.74769 8.01989L12.7111 4.61895C12.6339 4.32815 12.5931 4.02895 12.5894 3.72816C12.5743 1.97662 13.7938 0.455078 15.5099 0.0841884C17.226 -0.286701 18.9674 0.594927 19.6804 2.19561C20.3935 3.79629 19.8823 5.67642 18.4562 6.69836C17.0301 7.72029 15.0808 7.60337 13.7877 6.41834L7.33322 10.0977C7.32683 10.3692 7.28879 10.639 7.21989 10.9016L13.7877 14.6459C14.9968 13.539 16.7959 13.3681 18.1927 14.2275C19.5895 15.087 20.2439 16.7674 19.795 18.3421C19.3461 19.9167 17.9032 21.0022 16.2621 20.9998ZM16.2621 15.7659C15.3928 15.7659 14.688 16.4689 14.688 17.3361C14.688 18.2033 15.3928 18.9062 16.2621 18.9062C17.1314 18.9062 17.8361 18.2033 17.8361 17.3361C17.8361 16.4689 17.1314 15.7659 16.2621 15.7659ZM3.66997 8.4386C2.80067 8.4386 2.09596 9.14157 2.09596 10.0087C2.09596 10.8759 2.80067 11.5789 3.66997 11.5789C4.53927 11.5789 5.24398 10.8759 5.24398 10.0087C5.24398 9.14157 4.53927 8.4386 3.66997 8.4386ZM16.2621 2.15801C15.3928 2.15801 14.688 2.86099 14.688 3.72816C14.688 4.59533 15.3928 5.2983 16.2621 5.2983C17.1314 5.2983 17.8361 4.59533 17.8361 3.72816C17.8361 2.86099 17.1314 2.15801 16.2621 2.15801Z" fill="#648FFF"/>
+                        </svg>
+                        
+                        <span>Поделиться</span>
+                    </div>
+                    <div class="report">
+                        <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="report-svg" d="M1.26667 21C0.567106 21 0 20.4469 0 19.7647V1.23535C0 0.553118 0.567106 2.95296e-05 1.26667 2.95296e-05H9.348C9.82953 -0.00320856 10.2713 0.260084 10.488 0.679469L11.4 2.47064H17.7333C18.4329 2.47064 19 3.0237 19 3.70593V13.5883C19 14.2705 18.4329 14.8235 17.7333 14.8235H10.906C10.429 14.8221 9.9933 14.5595 9.77867 14.1441L8.86667 12.353H2.53333V19.7647C2.53333 20.4469 1.96623 21 1.26667 21ZM2.53333 2.47064V9.88239H10.1333L11.4 12.353H16.4667V4.94122H10.1333L8.86667 2.47064H2.53333Z" fill="#648FFF"/>
+                        </svg>
+                            
+                        <span>Пожаловаться</span>
+                    </div>
+                    <div class="save">
+                        <svg width="19" height="23" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="save-svg" d="M5.46802 8.4247H13.0446" stroke="#648FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path class="save-svg" fill-rule="evenodd" clip-rule="evenodd" d="M9.25658 1C2.19727 1 1.00469 2.0301 1.00469 10.3163C1.00469 19.5927 0.831164 22 2.59516 22C4.35806 22 7.23727 17.9282 9.25658 17.9282C11.2759 17.9282 14.1551 22 15.918 22C17.682 22 17.5085 19.5927 17.5085 10.3163C17.5085 2.0301 16.3159 1 9.25658 1Z" stroke="#648FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            
+                        <span>Сохранить</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="comments-block">
+                <h3>Комментарии<span class="comment-count"> {{ comments.count }}</span></h3>
+                <div class="line comment-start"></div>
+                <div class="comments-content">
+                    <form method="post">
+                      {% csrf_token %}
+                      {{ comment_form.as_p }}
+                      {% if request.user.is_authenticated %}
+                        <input type="submit" value="Submit">
+                      {% else %}
+                        <input type="submit" value="Submit" disabled>
+                      {% endif %}
+                    </form>
+
+                  {% for comment in comments %}
+                  <div class="comment">
+                    <div class="commentator-info">
+                        <img src="{{ comment.user.profile.image.url }}" alt="Commentator: avatar">
+                        <h3 class="commentator-name">{{ comment.user.first_name }}</h3>
+                        <time>{{ comment.timestamp }}</time>
+                    </div>
+                    <div class="commentator-comment">
+                      {{ comment.content }}
+                    </div>
+                    <div class="commentator-actions">
+                        <span class="commentator-answer">Ответить</span>
+                        <img src="/img/Heart.svg" alt="Commentator: like" class="comment-like">
+                        <img src="/img/report.svg" alt="Commentator: report" class="comment-report">
+                    </div>
+
+                    <div class="comment-answers">
+                        <div class="comment">
+                            <div class="commentator-info">
+                                <img src="/img/comment-avatar_2.png" alt="Commentator: avatar">
+                                <h3 class="commentator-name">Николай Андреев</h3>
+                                <time>10 мая в 11:40</time>
+                            </div>
+                            <div class="commentator-comment">
+                                Очень может быть!!! Я тоже друзей позову! Не часто все-таки такая 
+                                движуха в филиалах университетов происходит) Надо обязательно приходить!
+                            </div>
+                            <div class="commentator-actions">
+                                <span class="commentator-answer">Ответить</span>
+                                <img src="/img/Heart.svg" alt="Commentator: like" class="comment-like">
+                                <img src="/img/report.svg" alt="Commentator: report" class="comment-report">
+                            </div>
+                        </div>
+                    </div>
+
+                  </div>
+                  {% endfor %}
+                </div>
+            </article>
+        </section>
+    </main>
+
 </body>
 </html>

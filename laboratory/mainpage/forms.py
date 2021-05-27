@@ -1,5 +1,5 @@
 from django import forms
-from .models import Feedback
+from .models import Feedback, Comment
 from captcha.fields import ReCaptchaField
 
 class FeedbackForm(forms.ModelForm):
@@ -10,3 +10,8 @@ class FeedbackForm(forms.ModelForm):
   class Meta:
     model = Feedback
     fields = ['name', 'email', 'phone']
+
+class CommentForm(forms.ModelForm):
+  class Meta:
+    model = Comment
+    fields = ('content',)
