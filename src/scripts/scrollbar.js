@@ -7,56 +7,18 @@ window.addEventListener('scroll', e => {
     let scrolled = (winScroll / height) * 100;
     progressbar.setAttribute("style", `height: ${scrolled}%`)
 
-    if(scrolled >= 20) {
-        const anchor = document.querySelector('.anchor[data-id="2"]');
-        anchor.classList.add("active-anchor")
-    }
+    const positions = [20, 40, 72, 87, 97];
 
-    if(scrolled >= 40) {
-        const anchor = document.querySelector('.anchor[data-id="3"]');
-        anchor.classList.add("active-anchor")
+    for(let i = 0; i < 6; i++) {
+        if(scrolled >= positions[i]) {
+            const anchor = document.querySelector(`.anchor[data-id="${i + 2}"]`);
+            anchor.classList.add("active-anchor")
+        }
+        if(scrolled < positions[i]) {
+            const anchor = document.querySelector(`.anchor[data-id="${i + 2}"]`);
+            anchor.classList.remove("active-anchor")
+        }
     }
-
-    if(scrolled >= 72) {
-        const anchor = document.querySelector('.anchor[data-id="4"]');
-        anchor.classList.add("active-anchor")
-    }
-    
-    if(scrolled >= 87) {
-        const anchor = document.querySelector('.anchor[data-id="5"]');
-        anchor.classList.add("active-anchor")
-    }
-
-    if(scrolled >= 97) {
-        const anchor = document.querySelector('.anchor[data-id="6"]');
-        anchor.classList.add("active-anchor")
-    }
-
-    if(scrolled < 97) {
-        const anchor = document.querySelector('.anchor[data-id="6"]');
-        anchor.classList.remove("active-anchor")
-    }
-
-    if(scrolled < 87) {
-        const anchor = document.querySelector('.anchor[data-id="5"]');
-        anchor.classList.remove("active-anchor")
-    }
-
-    if(scrolled < 72) {
-        const anchor = document.querySelector('.anchor[data-id="4"]');
-        anchor.classList.remove("active-anchor")
-    }
-
-    if(scrolled < 40) {
-        const anchor = document.querySelector('.anchor[data-id="3"]');
-        anchor.classList.remove("active-anchor")
-    }
-
-    if(scrolled < 20) {
-        const anchor = document.querySelector('.anchor[data-id="2"]');
-        anchor.classList.remove("active-anchor")
-    }
-
 
     // Надписи
     if(scrolled < 2.5) {
@@ -122,28 +84,10 @@ window.addEventListener('scroll', e => {
 })
 
 const anchors = document.querySelectorAll(".anchor");
+const anchorName = ["top", "first", "second", "third", "fourth", "fifth"];
 
-anchors[0].onclick = () => {
-    window.location.hash = "#top";
-}
-
-anchors[1].onclick = () => {
-    window.location.hash = "#first";
-}
-
-anchors[2].onclick = () => {
-    window.location.hash = "#second";
-
-}
-
-anchors[3].onclick = () => {
-    window.location.hash = "#third";
-}
-
-anchors[4].onclick = () => {
-    window.location.hash = "#fourth";
-}
-
-anchors[5].onclick = () => {
-    window.location.hash = "#fifth";
-}
+anchors.forEach((anchor, index) => {
+    anchor.onclick = () => {
+        window.location.hash = `#${anchorName[index]}`;
+    }
+})
