@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plekhanov Lab | Профиль</title>
+
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="./assets/logo.svg" alt="logo">
+            <h1>Аккаунт</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="menu"><a href="#">Профиль</a></li>
+                <li class="menu"><a href="#">Мои заказы</a></li>
+                <li class="menu gray">Здравствуй, Андрей</li>
+                <li class="menu avatar-menu">
+                    <img src="./assets/avatar.png" width="42" alt="avatar">
+                    <div class="hover-avatar"><span class="iconify" data-inline="false" data-icon="uil:exit"></span></div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+                <li class="menu person-btn active"><a href="#"><img src="./assets/Password.svg" width="25" alt="Password">Личная информация</a></li>
+                <li class="menu confid-btn"><a href="#"><img src="./assets/Shield Done.svg" width="23" alt="Shield Done">Конфиденциальность</a></li>
+                <li class="menu order-btn"><a href="#"><img src="./assets/Bag.svg" width="26" alt="Bag">Заказы</a></li>
+            </ul>
+        </nav>
+
+        <section class="personal-info">
+            <h2>Личная информация</h2>
+            <div class="person">
+                <div class="big-avatar">
+                    <img src="./assets/avatar.png" width="75" alt="big avatar">
+                    <div class="hover-big-avatar"><span class="iconify" data-inline="false" data-icon="feather:upload"></span></div>
+                </div>
+                <div class="username">
+                    <h3>Андрей Криволасов</h3>
+                    <span>Укажите основную информацию о себе</span>
+                </div>
+            </div>
+            <form class="person-info">
+                <div class="person-info_content">
+                    <div class="name-inp">
+                        <label for="name">Имя</label>
+                        <input type="text" name="name" id="name" value="Андрей" placeholder="Андрей">
+                    </div>
+                    
+                    <div class="surname-inp">
+                        <label for="surname">Фамилия</label>
+                        <input type="text" name="surname" id="surname" value="Криволасов" placeholder="Криволасов">
+                    </div>
+                    
+                    <div class="birth-form">
+                        <label for="birth">Дата рождения</label>
+                        <div class="birth" id="birth">
+                            <select name="day" class="day" id="day"></select>
+                            <select name="month" class="month" id="month"></select>
+                            <select name="year" class="year" id="year"></select>
+                        </div>
+                    </div>
+                </div>
+                
+                <input class="submit" type="submit" value="Сохранить">
+            </form>
+        </section>
+
+        <section class="confidentiality">
+            <h2>Конфиденциальность</h2>
+            <form>
+                <div class="confid_content">
+                    <div class="phone-inp">
+                        <label for="phone">Телефон</label>
+                        <input type="text" id="phone" name="phone" value="+375297682367" placeholder="+375297682367">
+                    </div>
+                    
+                    <div class="email-inp">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" value="example@mail.com" placeholder="example@mail.com">
+                    </div>
+                </div>
+    
+                <div class="pass-inp">
+                    <label for="pass">Изменить пароль</label>
+                    <div class="pass-form" id="pass">
+                        <input type="text" id="oldpass" name="oldpass" placeholder="Введите текущий пароль">
+                        <input type="text" id="newpass" name="newpass" placeholder="Введите новый пароль">
+                    </div>
+
+                </div>
+                
+                <input class="submit" type="submit" value="Сохранить">
+            </form>
+        </section>
+
+        <section class="orders">
+            <h2>Заказы</h2>
+            <div class="orders-content">
+                <article class="order">
+                    <time class="time-with-line">10 мая 2020, 11:47</time>
+                    <header class="order-info">
+                        <div class="order-name">
+                            <h3>#4675</h3>
+                            <time>10 мая 2020, 11:47</time>
+                        </div>
+                        <div class="order-status green">Принят</div>
+                        <img src="./assets/arrow.svg" alt="arrow" class="arrow">
+                    </header>
+                    
+                    <article class="order-details">
+                        <div class="client">
+                            <span class="label">Клиент</span>
+                            <span class="content">Андрей Криволасов</span>
+                        </div>
+                        <div class="service">
+                            <span class="label">Услуга</span>
+                            <span class="content">Лендинг пейдж</span>
+                        </div>
+                        <div class="price">
+                            <span class="label">Стоимость</span>
+                            <span class="content_gray">Расчитывается...</span>
+                        </div>
+                        <div class="status">
+                            <span class="label">Статус</span>
+                            <span class="content"><div class="circle_green"></div>Принят</span>
+                        </div>
+                    </article>
+                </article>
+    
+                <article class="order">
+                    <time class="time-with-line">12 мая 2020, 15:10</time>
+                    <header class="order-info">
+                        <div class="order-name">
+                            <h3>#4681</h3>
+                            <time>12 мая 2020, 15:10</time>
+                        </div>
+                        <div class="order-status red">Отменен</div>
+                        <img src="./assets/arrow.svg" alt="arrow" class="arrow">
+                    </header>
+    
+                    <article class="order-details">
+                        <div class="client">
+                            <span class="label">Клиент</span>
+                            <span class="content">Андрей Криволасов</span>
+                        </div>
+                        <div class="service">
+                            <span class="label">Услуга</span>
+                            <span class="content">Лендинг пейдж</span>
+                        </div>
+                        <div class="price">
+                            <span class="label">Стоимость</span>
+                            <span class="content"></span>
+                        </div>
+                        <div class="status">
+                            <span class="label">Статус</span>
+                            <span class="content"><div class="circle_red"></div>Отменен</span>
+                        </div>
+                    </article>
+                    
+            </div>
+            
+
+            </article>
+        </section>
+    </main>
+
+    <script src="./profile.js"></script>
+</body>
+</html>
