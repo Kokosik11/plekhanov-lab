@@ -91,13 +91,6 @@
                         
                         <span>Поделиться</span>
                     </div>
-                    <div class="report">
-                        <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="report-svg" d="M1.26667 21C0.567106 21 0 20.4469 0 19.7647V1.23535C0 0.553118 0.567106 2.95296e-05 1.26667 2.95296e-05H9.348C9.82953 -0.00320856 10.2713 0.260084 10.488 0.679469L11.4 2.47064H17.7333C18.4329 2.47064 19 3.0237 19 3.70593V13.5883C19 14.2705 18.4329 14.8235 17.7333 14.8235H10.906C10.429 14.8221 9.9933 14.5595 9.77867 14.1441L8.86667 12.353H2.53333V19.7647C2.53333 20.4469 1.96623 21 1.26667 21ZM2.53333 2.47064V9.88239H10.1333L11.4 12.353H16.4667V4.94122H10.1333L8.86667 2.47064H2.53333Z" fill="#648FFF"/>
-                        </svg>
-                            
-                        <span>Пожаловаться</span>
-                    </div>
                     <div class="save">
                         <svg width="19" height="23" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path class="save-svg" d="M5.46802 8.4247H13.0446" stroke="#648FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -112,58 +105,30 @@
             <article class="comments-block">
                 <h3>Комментарии<span class="comment-count"> {{ comments.count }}</span></h3>
                 <div class="line comment-start"></div>
-                <div class="comments-content">
-                    <form method="post">
-                      {% csrf_token %}
-                      {{ comment_form.as_p }}
-                      {% if request.user.is_authenticated %}
-                        <input type="submit" value="Submit">
-                      {% else %}
-                        <input type="submit" value="Submit" disabled>
-                      {% endif %}
-                    </form>
-
-                  {% for comment in comments %}
-                  <div class="comment">
-                    <div class="commentator-info">
-                        <img src="{{ comment.user.profile.image.url }}" alt="Commentator: avatar">
-                        <h3 class="commentator-name">{{ comment.user.first_name }}</h3>
-                        <time>{{ comment.timestamp }}</time>
-                    </div>
-                    <div class="commentator-comment">
-                      {{ comment.content }}
-                    </div>
-                    <div class="commentator-actions">
-                        <span class="commentator-answer">Ответить</span>
-                        <img src="/img/Heart.svg" alt="Commentator: like" class="comment-like">
-                        <img src="/img/report.svg" alt="Commentator: report" class="comment-report">
-                    </div>
-
-                    <div class="comment-answers">
-                        <div class="comment">
-                            <div class="commentator-info">
-                                <img src="/img/comment-avatar_2.png" alt="Commentator: avatar">
-                                <h3 class="commentator-name">Николай Андреев</h3>
-                                <time>10 мая в 11:40</time>
-                            </div>
-                            <div class="commentator-comment">
-                                Очень может быть!!! Я тоже друзей позову! Не часто все-таки такая 
-                                движуха в филиалах университетов происходит) Надо обязательно приходить!
-                            </div>
-                            <div class="commentator-actions">
-                                <span class="commentator-answer">Ответить</span>
-                                <img src="/img/Heart.svg" alt="Commentator: like" class="comment-like">
-                                <img src="/img/report.svg" alt="Commentator: report" class="comment-report">
-                            </div>
-                        </div>
-                    </div>
-
-                  </div>
-                  {% endfor %}
-                </div>
+                {% include 'mainpage/comments.html' %}
             </article>
         </section>
     </main>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).on('submit', '.submit_comment', function(event){
+            event.preventDefault();
+            console.log($(this).serialize());
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: function(response) {
+                    $('.comments-content').html(response['form']);
+                    $('textarea').val('');
+                },
+                error: function(rs, e) {
+                    console.log(rs.responseText);
+                },
+            });
+        });
+    </script>
 </body>
 </html>

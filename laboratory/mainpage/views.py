@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.template.loader import render_to_string
+from django.http import JsonResponse
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 from .models import Post, Project, Comment
@@ -41,7 +43,7 @@ def mainpage(request):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug, status=1)
-    comments = Comment.objects.filter(post=post).order_by('-id')
+    comments = Comment.objects.filter(post=post, reply=None).order_by('-id')
     post_object = Post.objects.get(slug=slug)
     post_object.views = post_object.views + 1
     post_object.save()
@@ -50,9 +52,10 @@ def post_detail(request, slug):
       comment_form = CommentForm(request.POST or None)
       if comment_form.is_valid():
         content = request.POST.get('content')
+        comment_qs = None
         comment = Comment.objects.create(post=post, user=request.user, content=content)
         comment.save()
-        return HttpResponseRedirect(post.get_absolute_url())
+        # return HttpResponseRedirect(post.get_absolute_url())
     else:
       comment_form = CommentForm()
 
@@ -61,6 +64,10 @@ def post_detail(request, slug):
         'comments': comments,
         'comment_form': comment_form,
     }
+
+    if request.is_ajax():
+      html = render_to_string('mainpage/comments.html', context, request=request)
+      return JsonResponse({'form': html})
 
     return render(request, 'mainpage/post-detail.html', context)
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
-from .models import Post, Project, Feedback, Services
+from .models import Post, Project, Feedback, Services, Comment
 
 @admin.register(Post)
 class PostAdmin(TranslationAdmin):
@@ -28,6 +28,7 @@ class FeedbackAdmin(admin.ModelAdmin):
     ordering = ['name']
 
 admin.site.register(Services)
+admin.site.register(Comment)
 
 admin.site.site_title = 'Администрирование Лаборатории'
 admin.site.site_header = 'Лаборатория Графического дизайна и веб-проектирования'

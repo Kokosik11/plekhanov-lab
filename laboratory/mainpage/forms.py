@@ -12,6 +12,7 @@ class FeedbackForm(forms.ModelForm):
     fields = ['name', 'email', 'phone']
 
 class CommentForm(forms.ModelForm):
+  content = forms.CharField(widget=forms.Textarea(attrs={'rows': '3', 'cols': '70'}))
   class Meta:
     model = Comment
     fields = ('content',)

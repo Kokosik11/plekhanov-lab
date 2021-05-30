@@ -1,0 +1,32 @@
+<div class="comments-content">
+  <h2>Написать комментарий</h2>
+  <form method="post" class="submit_comment" action=".">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    {% if request.user.is_authenticated %}
+      <button type="submit">Отправить</button>
+    {% else %}
+      <input type="submit" value="Отправить" disabled>
+    {% endif %}
+  </form>
+
+{% for comment in comments %}
+<div class="comment">
+  <div class="commentator-info">
+      <img src="{{ comment.user.profile.image.url }}" alt="Commentator: avatar">
+      <h3 class="commentator-name">{{ comment.user.first_name }} {{ comment.user.last_name }}</h3>
+      <time>{{ comment.timestamp }}</time>
+  </div>
+  <div class="commentator-comment">
+    {{ comment.content }}
+  </div>
+  <div class="commentator-actions">
+      <svg width="26" height="23" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg" class="comment-like">
+          <path class="like-svg" fill-rule="evenodd" clip-rule="evenodd" d="M1.45995 12.0074C0.132303 7.86236 1.68514 2.70892 6.0368 1.30827C8.32585 0.569588 11.1507 1.18577 12.7555 3.39934C14.2687 1.10411 17.1752 0.574538 19.4617 1.30827C23.8122 2.70892 25.3737 7.86236 24.0473 12.0074C21.9809 18.5776 14.7711 22 12.7555 22C10.7411 22 3.59557 18.6543 1.45995 12.0074Z" stroke="#EB4226" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="like-svg" d="M17.3801 5.96631C18.8736 6.11974 19.8078 7.30385 19.7521 8.9631" stroke="#EB4226" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <img src="/img/report.svg" alt="Commentator: report" class="comment-report">
+  </div>
+</div>
+{% endfor %}
+</div>
