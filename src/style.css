@@ -283,7 +283,7 @@ main {
   line-height: 27px;
   color: #5F626A;
   max-width: 466px;
-  padding-left: 50px;
+  padding: 0 50px;
 }
 .service-card-title img {
   margin-left: 10px;
