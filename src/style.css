@@ -372,6 +372,54 @@ main {
   background: #EEF3FF;
 }
 
+.burger{
+  display: none;
+  position: relative;
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  align-self: center;
+}
+.burger span, .burger span:before, .burger span:after{
+  width: 100%;
+  position: absolute;
+  height: 5px;
+  background: #83a6ff;
+  display: block;
+  transition: .3s;
+  border-radius: 5px;
+}
+.burger span:before{
+  content: "";
+  top: -15px;
+  transition: top 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.burger span{
+  top: 20px;
+}
+.burger span:after{
+  content: "";
+  bottom: -15px;
+  transition: bottom 300ms 300ms, transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.burger span.active:before{
+  content: "";
+  top: 0px;
+  transform: rotate(45deg);
+  transition: top 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.burger span.active:after{
+  content: "";
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: bottom 300ms, transform 300ms 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.burger span.active{
+  background: rgba(255, 255, 255, 0); 
+}
+
 @keyframes glowing {
   0% { background-position: 0 0; }
   50% { background-position: 400% 0; }
@@ -973,21 +1021,6 @@ footer {
   }
 }
 
-.burger{
-	transition: transform 0.25s;
-}
-.active .burger:nth-of-type(1){
-	transform: rotate(45deg);
-	transform-origin: -1px 3px;
-}
-.active .burger:nth-of-type(2){
-	display: none;
-}
-.active .burger:nth-of-type(3){
-	transform: rotate(-45deg);
-	transform-origin: 0px 13px;
-}
-
 @media (max-width: 1061px) {
   .blog-content {
     justify-content: center;
@@ -1039,11 +1072,18 @@ footer {
   }
 
   .header-menu[data-type="icons"] {
-    padding-left: 20px;
+    padding: 0 75px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 
   .header-menu[data-type="links"] {
     display: none;
+  }
+
+  .burger {
+    display: block;
   }
 }
 
@@ -1434,4 +1474,15 @@ time span {
   .service-card .buttons {
     flex-direction: column;
   }
+}
+
+@media (max-width: 460px) {
+  .header-menu[data-type="icons"] {
+    padding: 0 10px;
+  }
+
+  .header-menu-list a {
+    margin: 0;
+  }
+
 }
