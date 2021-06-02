@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from shortuuidfield import ShortUUIDField
 from django.urls import reverse
 from ckeditor.fields import RichTextField
+from taggit.managers import TaggableManager
 
 STATUS = (
   (0, "Draft"),
@@ -19,6 +20,7 @@ class Post(models.Model):
   is_head = models.BooleanField(default=False)
   image = models.ImageField("Фото", upload_to='post_images', blank=True)
   views = models.IntegerField("Просмотры", default=0)
+  tags = TaggableManager()
 
   def get_absolute_url(self):
     return reverse('post-detail', args=[self.slug])

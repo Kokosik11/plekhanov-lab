@@ -8,12 +8,15 @@ from .forms import FeedbackForm, CommentForm
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
+from taggit.models import Tag
+from django.template.defaultfilters import slugify
 
 def mainpage(request):
   posts = Post.objects.filter(is_head=False, status=1).order_by('-created_on')
   heading = Post.objects.filter(is_head=True, status=1)
   all_projects = Project.objects.filter(status=1)
   form = FeedbackForm(request.POST)
+  common_tags = Post.tags.most_common()[:4]
   if form.is_valid():
     feedback = form.save()
     name = form.cleaned_data.get('name')
@@ -37,9 +40,29 @@ def mainpage(request):
       'heading': heading,
       'all_projects': all_projects,
       'form': form,
+      'common_tags': common_tags,
   }
   
   return render(request, 'mainpage/index.html', context)
+
+def posts(request):
+  posts = Post.objects.filter(is_head=False, status=1).order_by('-created_on')
+
+  context = {
+    'posts': posts,
+  }
+
+  return render(request, 'mainpage/posts.html', context)
+
+
+def tagged(request, slug):
+  tag = get_object_or_404(Tag, slug=slug)
+  posts = Post.objects.filter(tags=tag)
+  context = {
+    'tag': tag,
+    'posts': posts,
+  }
+  return render(request, 'mainpage/posts.html', context)
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug, status=1)

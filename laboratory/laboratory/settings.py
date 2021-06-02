@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'social_django',
     'ckeditor',
+    'taggit',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -94,7 +95,7 @@ WSGI_APPLICATION = 'laboratory.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'laborant',
+        'NAME': 'my_lab',
         'USER': 'root',
         'PASSWORD': '2554963',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
