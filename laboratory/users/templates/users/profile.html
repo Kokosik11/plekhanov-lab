@@ -21,7 +21,6 @@
       <nav>
           <ul>
               <li class="menu"><a href="{% url 'blog' %}">Лаборатория</a></li>
-              <li class="menu"><a href="#">Мои заказы</a></li>
               <li class="menu gray">Здравствуй, {{ user.first_name }}</li>
               <li class="menu avatar-menu">
                   <img src="{{ user.profile.image.url }}" width="42" alt="avatar">
@@ -58,14 +57,6 @@
 
       <section class="personal-info">
           <h2>Личная информация</h2>
-          {% for order in myorders %}
-            {{ order.number }}
-            {{ order.status }}
-          {% for item in order.items.all %}
-            {{ item.service }}
-            {{ item.price|floatformat }}
-          {% endfor %}
-          {% endfor %}
           {% if messages %}
           <ul class="messages">
               {% for message in messages %}
@@ -133,71 +124,70 @@
       <section class="orders">
           <h2>Заказы</h2>
           <div class="orders-content">
+              {% for order in myorders %}
               <article class="order">
-                  <time class="time-with-line">10 мая 2020, 11:47</time>
+                  <time class="time-with-line">{{ order.created }}</time>
                   <header class="order-info">
                       <div class="order-name">
-                          <h3>#4675</h3>
-                          <time>10 мая 2020, 11:47</time>
+                          <h3>#{{ order.number }}</h3>
+                          <time>{{ order.created }}</time>
                       </div>
-                      <div class="order-status green">Принят</div>
+                      {% if order.status == "Принят" %}
+                        <div class="order-status green">
+                          {{ order.status }}
+                        </div>
+                      {% elif order.status == "В процессе" %}
+                        <div class="order-status yellow">
+                          {{ order.status }}
+                        </div>
+                      {% elif order.status == "Оформлен" %}
+                        <div class="order-status grey">
+                          {{ order.status }}
+                        </div>
+                      {% elif order.status == "Отменен" %}
+                        <div class="order-status red">
+                          {{ order.status }}
+                        </div>
+                      {% endif %}
                       <img src="/img/arrow-right.svg" alt="arrow" class="arrow">
                   </header>
                   
                   <article class="order-details">
                       <div class="client">
                           <span class="label">Клиент</span>
-                          <span class="content">Андрей Криволасов</span>
+                          <span class="content">{{ order.user.first_name }} {{ order.user.last_name }}</span>
                       </div>
                       <div class="service">
                           <span class="label">Услуга</span>
-                          <span class="content">Лендинг пейдж</span>
+                          {% for item in order.items.all %}
+                          <span class="content">{{ item.service }}</span>
+                          {% endfor %}
                       </div>
                       <div class="price">
                           <span class="label">Стоимость</span>
-                          <span class="content_gray">Расчитывается...</span>
+                          {% for item in order.items.all %}
+                          <span class="content_gray">{{ item.price|floatformat }}</span>
+                          {% endfor %}
                       </div>
                       <div class="status">
                           <span class="label">Статус</span>
-                          <span class="content"><div class="circle_green"></div>Принят</span>
+                          <span class="content">
+                            {% if order.status == "Принят" %}
+                            <div class="circle_green"></div>
+                            {% elif order.status == "В процессе" %}
+                            <div class="circle_yellow"></div>
+                            {% elif order.status == "Оформлен" %}
+                            <div class="circle_grey"></div>
+                            {% elif order.status == "Отменен" %}
+                            <div class="circle_red"></div>
+                            {% endif %}
+                            {{ order.status }}
+                          </span>
                       </div>
                   </article>
               </article>
-  
-              <article class="order">
-                  <time class="time-with-line">12 мая 2020, 15:10</time>
-                  <header class="order-info">
-                      <div class="order-name">
-                          <h3>#4681</h3>
-                          <time>12 мая 2020, 15:10</time>
-                      </div>
-                      <div class="order-status red">Отменен</div>
-                      <img src="/img/arrow-right.svg" alt="arrow" class="arrow">
-                  </header>
-  
-                  <article class="order-details">
-                      <div class="client">
-                          <span class="label">Клиент</span>
-                          <span class="content">Андрей Криволасов</span>
-                      </div>
-                      <div class="service">
-                          <span class="label">Услуга</span>
-                          <span class="content">Лендинг пейдж</span>
-                      </div>
-                      <div class="price">
-                          <span class="label">Стоимость</span>
-                          <span class="content"></span>
-                      </div>
-                      <div class="status">
-                          <span class="label">Статус</span>
-                          <span class="content"><div class="circle_red"></div>Отменен</span>
-                      </div>
-                  </article>
-                  
+              {% endfor %}    
           </div>
-          
-
-          </article>
       </section>
   </main>
 

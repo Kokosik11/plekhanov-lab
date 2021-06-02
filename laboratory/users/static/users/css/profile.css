@@ -401,14 +401,13 @@ select:hover {
 
 .orders-content {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .order {
-    width: 288px;
-}
-
-.order:first-child {
-    margin-right: 77px;
+    width: 300px;
+    margin-bottom: 40px;
 }
 
 .order-info {
@@ -448,7 +447,7 @@ select:hover {
 }
 
 .order-status {
-    width: 90px;
+    width: 105px;
     height: 29px;
     border-radius: 8px;
     display: flex;
@@ -467,6 +466,16 @@ select:hover {
 .red {
     background-color: #FAE7E6;
     color: #DA4D44;
+}
+
+.yellow {
+    background-color: #F6DC7F;
+    color: #C1AF6F;
+}
+
+.grey {
+    background-color: #DCDADA;
+    color: #A5A3A3;
 }
 
 .arrow {
@@ -513,6 +522,14 @@ select:hover {
 
 .status .content .circle_red {
     background-color: #DA4D44;
+}
+
+.status .content .circle_grey {
+    background-color: #A5A3A3;
+}
+
+.status .content .circle_yellow {
+    background-color: #C1AF6F;
 }
 
 .status .content {

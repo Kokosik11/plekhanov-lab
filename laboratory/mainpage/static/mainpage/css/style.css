@@ -1736,3 +1736,12 @@ time span {
     flex-direction: column;
   }
 }
+@media (max-width: 460px) {
+  .header-menu[data-type="icons"] {
+    padding: 0 10px;
+  }
+
+  .header-menu-list a {
+    margin: 0;
+  }
+}
