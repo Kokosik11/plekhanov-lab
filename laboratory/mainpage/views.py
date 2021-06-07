@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 from .models import Post, Project, Comment
-from .forms import FeedbackForm, CommentForm
+from .forms import FeedbackForm, CommentForm, OrderCreateForm
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
@@ -15,25 +15,37 @@ def mainpage(request):
   posts = Post.objects.filter(is_head=False, status=1).order_by('-created_on')
   heading = Post.objects.filter(is_head=True, status=1)
   all_projects = Project.objects.filter(status=1)
-  form = FeedbackForm(request.POST)
   common_tags = Post.tags.most_common()[:4]
-  if form.is_valid():
-    feedback = form.save()
-    name = form.cleaned_data.get('name')
-    email = form.cleaned_data.get('email')
-    phone = form.cleaned_data.get('phone')
-    num = feedback.uuid
-    messages.add_message(request, messages.INFO, f'Спасибо за оставленную заявку, {name}!')
-    send_mail(
-      'Ваша заявка успешно добавлена.',
-      f'Здравствуйте, {name}.\n\nВаша заявка № {num} успешно зарегистрирована. \n\nВ скором времени наша команда свяжется с вами по номеру {phone}.',
-      settings.EMAIL_HOST_USER,
-      [f'{email}'],
-      fail_silently=False,
-    )
-    return redirect('blog')
+  if request.method == "POST":
+    form = FeedbackForm(request.POST)
+    if form.is_valid():
+      name = form.cleaned_data.get('name')
+      email = form.cleaned_data.get('email')
+      phone = form.cleaned_data.get('phone')
+      feedback = form.save()
+      num = feedback.uuid
+      messages.add_message(request, messages.INFO, f'Спасибо за оставленную заявку, {name}!')
+      send_mail(
+        'Ваша заявка успешно добавлена.',
+        f'Здравствуйте, {name}.\n\nВаша заявка № {num} успешно зарегистрирована. \n\nВ скором времени наша команда свяжется с вами по номеру {phone}.',
+        settings.EMAIL_HOST_USER,
+        [f'{email}'],
+        fail_silently=False,
+      )
+      return redirect('blog')
   else:
     form = FeedbackForm()
+
+  if request.method == "POST":
+    order_form = OrderCreateForm(request.POST)
+    if order_form.is_valid():
+      commentary = order_form.cleaned_data.get('commentary')
+      order = order_form.save(commit=False)
+      order.user = request.user
+      order.save()
+      return redirect('blog')
+  else:
+    order_form = OrderCreateForm()
 
   context = {
       'posts': posts,
@@ -41,6 +53,7 @@ def mainpage(request):
       'all_projects': all_projects,
       'form': form,
       'common_tags': common_tags,
+      'order_form': order_form,
   }
   
   return render(request, 'mainpage/index.html', context)

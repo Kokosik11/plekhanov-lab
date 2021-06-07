@@ -159,15 +159,11 @@
                       </div>
                       <div class="service">
                           <span class="label">Услуга</span>
-                          {% for item in order.items.all %}
-                          <span class="content">{{ item.service }}</span>
-                          {% endfor %}
+                          <span class="content">{{ order.item }}</span>
                       </div>
                       <div class="price">
                           <span class="label">Стоимость</span>
-                          {% for item in order.items.all %}
-                          <span class="content_gray">{{ item.price|floatformat }}</span>
-                          {% endfor %}
+                          <span class="content_gray">{{ order.item.price|floatformat }}</span>
                       </div>
                       <div class="status">
                           <span class="label">Статус</span>

@@ -1,3 +1,4 @@
+from users.models import Order
 from django import forms
 from .models import Feedback, Comment
 from captcha.fields import ReCaptchaField
@@ -16,3 +17,9 @@ class CommentForm(forms.ModelForm):
   class Meta:
     model = Comment
     fields = ('content',)
+
+class OrderCreateForm(forms.ModelForm):
+  commentary = forms.CharField(required=False, label='Комментарий', widget=forms.Textarea(attrs={'placeholder': 'Примечания к заказу'}))
+  class Meta:
+    model = Order
+    fields = ('commentary', 'item',)

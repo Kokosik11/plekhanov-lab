@@ -29,6 +29,13 @@ class Profile(models.Model):
     User._meta.get_field('email')._unique = True
 
 
+class OrderItem(models.Model):
+  service = models.ForeignKey(Services, verbose_name="Услуга", related_name='order_items', on_delete=models.CASCADE)
+  price = models.DecimalField('Цена', max_digits=10, decimal_places=1, default=0)
+  
+  def __str__(self):
+    return f'{self.service.name}'
+
 class Order(models.Model):
 
   CHOICESSTATUS = {
@@ -48,6 +55,7 @@ class Order(models.Model):
   user = models.ForeignKey(User, blank=True, null=True, on_delete=models.PROTECT, related_name='orders', verbose_name="Заказы")
   commentary = models.TextField('Комментарий к заказу', max_length=500, blank=True)
   paid = models.BooleanField('Оплачено', default=False)
+  item = models.ForeignKey(OrderItem, blank=True, null=True, on_delete=models.CASCADE, verbose_name="Услуги")
 
   def __str__(self):
     return f'{self.user.username} - {self.number}'
@@ -56,12 +64,3 @@ class Order(models.Model):
     ordering = ('-created',)
     verbose_name = 'Заказ'
     verbose_name_plural = "Заказы"
-
-
-class OrderItem(models.Model):
-  order = models.ForeignKey(Order, related_name='items', on_delete=models.CASCADE)
-  service = models.ForeignKey(Services, verbose_name="Услуга", related_name='order_items', on_delete=models.CASCADE)
-  price = models.DecimalField('Цена', max_digits=10, decimal_places=1, default=0)
-  
-  def __str__(self):
-    return f'{self.id}'

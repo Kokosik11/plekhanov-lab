@@ -339,9 +339,8 @@
                      {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <button class="glow-on-hover">{% trans 'Заказать' %}</button>
                     <a href="#popup_2" class="popup-link">
-                        <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
+                        <button class="glow-on-hover"> {% trans 'Подробнее' %}</button>
                     </a>
                 </div>
             </div>
@@ -364,9 +363,8 @@
                      {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <button class="glow-on-hover">{% trans 'Заказать' %}</button>
                     <a href="#popup" class="popup-link">
-                        <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
+                        <button class="glow-on-hover"> {% trans 'Подробнее' %}</button>
                     </a>
                 </div>
             </div>
@@ -380,9 +378,8 @@
                      {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <button class="glow-on-hover">{% trans 'Заказать' %}</button>
                     <a href="#popup_3" class="popup-link">
-                        <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
+                        <button class="glow-on-hover"> {% trans 'Подробнее' %}</button>
                     </a>
                 </div>
             </div>
@@ -395,14 +392,42 @@
                 {% endblocktrans %}
                 </span>
                 <div class="buttons">
-                    <button class="glow-on-hover">{% trans 'Заказать' %}</button>
                     <a href="popup_4" class="popup-link">
-                        <button class="glow-on-hover secondary"> {% trans 'Подробнее' %}</button>
+                        <button class="glow-on-hover"> {% trans 'Подробнее' %}</button>
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <div id="popup_5" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+            <a href="#header" class="popup__close close-popup">X</a>
+                <div class="popup__subtitle">
+                    <div class="container-form">
+                        <div class="text">
+                            <form action="#" method="POST" class="form-feedback">
+                                {% csrf_token %}
+                                <h2>Сделать заказ</h2>
+                                <span>Выберите услугу</span>
+                                {{ order_form.item }}
+                                <span>Комментарий к заказу</span>
+                                {{ order_form.commentary }}
+                                <button type="submit">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons centered">
+        <a href="#popup_5" class="popup-link">
+            <button class="glow-on-hover main">Заказать работу</button>
+        </a>
+    </div>
 
     <div id="popup" class="popup">
         <div class="popup__body">
@@ -590,12 +615,8 @@
         
 
     <footer>
-        <div class="map">
-            <img src="/img/map.png" loading="lazy" alt="image: map">
-        </div>
-
         <div class="footer-content">
-            <img src="/img/lab-logo.svg" loading="lazy" width="92px" alt="lab-logo">
+            <img src="/img/lab-logo-footer.svg" loading="lazy" alt="lab-logo">
 
             <div class="footer-contacts">
                 <h3> {% trans 'Заказать работу' %}</h3>
@@ -635,9 +656,9 @@
                 <nav>
                     <ul>
                         <li><a target="_blank" href="https://linkedin.com/"><img src="/img/social-icons/linkedin.svg" loading="lazy" alt="linkedin"></a></li>
-                        <li><a target="_blank" href="https://dribbble.com/"><img src="/img/social-icons/dribbble.svg" loading="lazy" alt="dribbble"></a></li>
+                        <li><a target="_blank" href="https://t.me/reulab"><img src="/img/social-icons/telegram.svg" loading="lazy" alt="telegram"></a></li>
                         <li><a target="_blank" href="https://instagram.com/"><img src="/img/social-icons/instagram.svg" loading="lazy" alt="instagram"></a></li>
-                        <li><a target="_blank" href="https://facebook.com/"><img src="/img/social-icons/facebook.svg" loading="lazy" alt="facebook"></a></li>
+                        <li><a target="_blank" href="https://vk.com/reulab"><img src="/img/social-icons/vk.svg" loading="lazy" alt="vk"></a></li>
                     </ul>
                 </nav>
             </div>
