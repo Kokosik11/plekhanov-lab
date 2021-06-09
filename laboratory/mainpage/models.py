@@ -21,9 +21,13 @@ class Post(models.Model):
   image = models.ImageField("Фото", upload_to='post_images', blank=True)
   views = models.IntegerField("Просмотры", default=0)
   tags = TaggableManager()
+  likes = models.ManyToManyField(User, related_name="likes", blank=True)
 
   def get_absolute_url(self):
     return reverse('post-detail', args=[self.slug])
+
+  def total_likes(self):
+    return self.likes.count()
 
   def __str__(self):
     return self.title

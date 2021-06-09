@@ -668,16 +668,19 @@ input[type=text]:focus {
   max-width: 344px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
-
+.blog-card.posts {
+  margin-right: 70px;
+}
 .others-new {
   width: 1200px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
+.others-new.posts {
+  justify-content: flex-start;
+}
 .last-new .blog-card {
   max-width: 1200px;
   display: flex;

@@ -258,13 +258,13 @@ a {
 }
 
 .like-svg {
-    fill: #eb442600;
     transition: .25s;
 }
 
 .like-svg:hover {
     fill: #eb4426;
     cursor: pointer;
+    stroke: #eb4426;
     transition: .25s;
 }
 
@@ -386,4 +386,27 @@ label[for=id_content] {
 }
 .comments-content h2 {
     color: #787878;
+}
+.button-like {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.share {
+    align-items: center;
+}
+.share a img {
+    margin-right: 15px;
+}
+.like {
+    display: flex;
+    align-items: center;
+}
+.like p {
+    font-weight: 600;
+    color: #626D7A;
+}
+.like .p-active {
+    font-weight: 600;
+    color: #EB4226;
 }

@@ -1,0 +1,23 @@
+<div class="like">
+  <form action="{% url 'like_post' post.slug %}" method="POST">
+      {% csrf_token %}
+      {% if is_liked %}
+      <button type="submit" id="like" name="post_id" value="{{ post.id }}" class="button-like">
+          <svg width="26" height="23" viewBox="0 0 26 23" fill="#EB4226" xmlns="http://www.w3.org/2000/svg">
+              <path class="like-svg" fill-rule="evenodd" clip-rule="evenodd" d="M1.45995 12.0074C0.132303 7.86236 1.68514 2.70892 6.0368 1.30827C8.32585 0.569588 11.1507 1.18577 12.7555 3.39934C14.2687 1.10411 17.1752 0.574538 19.4617 1.30827C23.8122 2.70892 25.3737 7.86236 24.0473 12.0074C21.9809 18.5776 14.7711 22 12.7555 22C10.7411 22 3.59557 18.6543 1.45995 12.0074Z" stroke="#EB4226" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </button>
+      {% else %}
+      <button type="submit" id="like" name="post_id" value="{{ post.id }}" class="button-like">
+          <svg width="26" height="23" viewBox="0 0 26 23" fill="#626D7A" xmlns="http://www.w3.org/2000/svg">
+              <path class="like-svg" fill-rule="evenodd" clip-rule="evenodd" d="M1.45995 12.0074C0.132303 7.86236 1.68514 2.70892 6.0368 1.30827C8.32585 0.569588 11.1507 1.18577 12.7555 3.39934C14.2687 1.10411 17.1752 0.574538 19.4617 1.30827C23.8122 2.70892 25.3737 7.86236 24.0473 12.0074C21.9809 18.5776 14.7711 22 12.7555 22C10.7411 22 3.59557 18.6543 1.45995 12.0074Z" stroke="#626D7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </button>
+      {% endif %}
+  </form>
+  {% if is_liked %}
+  <p class="p-active">{{ total_likes }}</p>
+  {% else %}
+  <p>{{ total_likes }}</p>
+  {% endif %}
+</div>

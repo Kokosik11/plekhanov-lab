@@ -10,6 +10,7 @@ from django.conf import settings
 from django.contrib import messages
 from taggit.models import Tag
 from django.template.defaultfilters import slugify
+from django.contrib.auth.decorators import login_required
 
 def mainpage(request):
   posts = Post.objects.filter(is_head=False, status=1).order_by('-created_on')
@@ -39,10 +40,18 @@ def mainpage(request):
   if request.method == "POST":
     order_form = OrderCreateForm(request.POST)
     if order_form.is_valid():
-      commentary = order_form.cleaned_data.get('commentary')
+      name = request.user.first_name
+      email = request.user.email
       order = order_form.save(commit=False)
       order.user = request.user
       order.save()
+      send_mail(
+        'Ваш заказ успешно создан.',
+        f'Здравствуйте, {name}.\n\nВаша заявка № {order} успешно создана. \n\nВ скором времени мы обработаем и примем ваш заказ',
+        settings.EMAIL_HOST_USER,
+        [f'{email}'],
+        fail_silently=False,
+      )
       return redirect('blog')
   else:
     order_form = OrderCreateForm()
@@ -79,6 +88,9 @@ def tagged(request, slug):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug, status=1)
+    is_liked = False
+    if post.likes.filter(id=request.user.id).exists():
+      is_liked = True
     comments = Comment.objects.filter(post=post, reply=None).order_by('-id')
     post_object = Post.objects.get(slug=slug)
     post_object.views = post_object.views + 1
@@ -97,6 +109,8 @@ def post_detail(request, slug):
 
     context = {
         'post': post,
+        'is_liked': is_liked,
+        'total_likes': post.total_likes(),
         'comments': comments,
         'comment_form': comment_form,
     }
@@ -106,6 +120,26 @@ def post_detail(request, slug):
       return JsonResponse({'form': html})
 
     return render(request, 'mainpage/post-detail.html', context)
+
+
+@login_required
+def like_post(request, slug):
+  post = get_object_or_404(Post, slug=slug)
+  is_liked = False
+  if post.likes.filter(id=request.user.id).exists():
+    post.likes.remove(request.user)
+    is_liked = False
+  else:
+    post.likes.add(request.user)
+    is_liked = True
+  context = {
+      'post': post,
+      'is_liked': is_liked,
+      'total_likes': post.total_likes(),
+  }
+  if request.is_ajax():
+    html = render_to_string('mainpage/likes.html', context, request=request)
+    return JsonResponse({'form': html})
 
 
 class ProjectDetailView(DetailView):
