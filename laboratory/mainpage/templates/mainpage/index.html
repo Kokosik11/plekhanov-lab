@@ -6,7 +6,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
     <title>Plekhanov Lab</title>
+    <meta name="title" content="Лаборатория графического дизайна и web-проектирования РЭУ им. Плеханова, Минский филиал">
+    <meta name="description" content="Лаборатория графического дизайна и web-проектирования РЭУ имени Плеханова, Минский филиал - место современных решений в области IT технологий."
+    Наша команда - сплоченный коллектив целеустремленных разработчиков и дизайнеров, которые выполняют свою работу с душой и энтузиазмом. Лаборатория графического дизайна и web-проектирования РЭУ имени Плеханова, Минский филиал - место со своей атмосферой и студенческим задором."">
+	<meta name="keywords" content="Plekhanov Lab, Графческий дизайн, веб-разработка, веб-проектирование, услуги по разработке, продвижение, smm, web development, РЭУ, Российский Экономический Университет им. Г.В. Плеханова">
+	<meta name="Author" content="Plekhanov Lab">
+	<meta name="Copyright" content="Plekhanov Lab">
+	<meta name="Address" content="Минск, Радиальная 40/1, 6 этаж, правое крыло">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="post">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="Лаборатория графического дизайна и web-проектирования РЭУ им. Плеханова, Минский филиал">
+    <meta property="og:description" content="Лаборатория графического дизайна и web-проектирования РЭУ имени Плеханова, Минский филиал - место современных решений в области IT технологий."
+    Наша команда - сплоченный коллектив целеустремленных разработчиков и дизайнеров, которые выполняют свою работу с душой и энтузиазмом. Лаборатория графического дизайна и web-проектирования РЭУ имени Плеханова, Минский филиал - место со своей атмосферой и студенческим задором."">
+    <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="Лаборатория графического дизайна и web-проектирования РЭУ им. Плеханова, Минский филиал">
+    <meta property="twitter:description" content="Лаборатория графического дизайна и web-проектирования РЭУ имени Плеханова, Минский филиал - место современных решений в области IT технологий."
+    Наша команда - сплоченный коллектив целеустремленных разработчиков и дизайнеров, которые выполняют свою работу с душой и энтузиазмом. Лаборатория графического дизайна и web-проектирования РЭУ имени Плеханова, Минский филиал - место со своей атмосферой и студенческим задором."">
+    <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
     <link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'mainpage/css/normalize.css' %}">
     <link rel="icon" type="image/png" href="../img/logo.ico">
@@ -388,7 +412,7 @@
                 <span class="service-card-subtitle">
                 {% blocktrans %}
                     Уникальный дизайн для вашего
-                    сайта/приложения'
+                    сайта/приложения
                 {% endblocktrans %}
                 </span>
                 <div class="buttons">
@@ -628,6 +652,27 @@
                 </nav>
             </div>
 
+            <div class="footer-contacts">
+                <h3>Адрес</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#">Минск, радиальная 40/1, <br>6 этаж, правое крыло</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-social">
+                <h3> {% trans 'Социальное' %}</h3>
+                <nav>
+                    <ul>
+                        <li><a target="_blank" href="https://linkedin.com/"><img src="/img/social-icons/linkedin.svg" loading="lazy" alt="linkedin"></a></li>
+                        <li><a target="_blank" href="https://t.me/reulab"><img src="/img/social-icons/telegram.svg" loading="lazy" alt="telegram"></a></li>
+                        <li><a target="_blank" href="https://instagram.com/"><img src="/img/social-icons/instagram.svg" loading="lazy" alt="instagram"></a></li>
+                        <li><a target="_blank" href="https://vk.com/reulab"><img src="/img/social-icons/vk.svg" loading="lazy" alt="vk"></a></li>
+                    </ul>
+                </nav>
+            </div>
+
             <div class="footer-language">
                 <h3> {% trans 'Язык' %}</h3>
                 <nav>
@@ -645,20 +690,8 @@
                                     </option>
                                 {% endfor %}
                             </select>
-                            <input type="submit" value="Go" class="lan-button">
+                            <input type="submit" value="Вперед" class="lan-button">
                         </form>
-                    </ul>
-                </nav>
-            </div>
-
-            <div class="footer-social">
-                <h3> {% trans 'Социальное' %}</h3>
-                <nav>
-                    <ul>
-                        <li><a target="_blank" href="https://linkedin.com/"><img src="/img/social-icons/linkedin.svg" loading="lazy" alt="linkedin"></a></li>
-                        <li><a target="_blank" href="https://t.me/reulab"><img src="/img/social-icons/telegram.svg" loading="lazy" alt="telegram"></a></li>
-                        <li><a target="_blank" href="https://instagram.com/"><img src="/img/social-icons/instagram.svg" loading="lazy" alt="instagram"></a></li>
-                        <li><a target="_blank" href="https://vk.com/reulab"><img src="/img/social-icons/vk.svg" loading="lazy" alt="vk"></a></li>
                     </ul>
                 </nav>
             </div>
